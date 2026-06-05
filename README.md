@@ -7,11 +7,12 @@ ATTENTION: we should use the Large file storage (LFS) of git to store the record
 The following file structure can be adapted and extended in the proceedings of the study:
 
 |01_experiment
-    |openSesame--contains the osII version-files created during the project. (exception first testing versions)
 
-    |stimuli-- contains all audio and image materials used for the experiment
+--|openSesame:contains the osII version-files created during the project. (exception first testing versions)
 
-|02_analytics--
+--|stimuli: contains all audio and image materials used for the experiment
+
+|02_analytics
 
 |03_paper--contains all presentations, materials and pdfs of final report.
 

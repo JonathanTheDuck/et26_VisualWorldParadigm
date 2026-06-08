@@ -17,5 +17,4 @@ The following file structure can be adapted and extended in the proceedings of t
 |03_paper--contains all presentations, materials and pdfs of final report.
 
 
-
 [...]

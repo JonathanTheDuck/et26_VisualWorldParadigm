@@ -1,0 +1,6 @@
+id,sentence,image_file,audio_file,objects,role,timeout
+7,The housewife will fry the mushrooms,pic8.png,7_r.wav,"['  knife', ' jug', ' weighing scales ']",restrictive,3000
+11,The man will repair the washing machine ,pic12.png,11_r.wav,"['   mirror', ' wastebin', ' dog ']",restrictive,3000
+47,The musician will move the violin ,pic48.png,47_n.wav,"['  bow', ' stand', ' sheet music', ' gum ']",non-restrictive,3000
+45,The baker will inspect the dough ,pic46.png,45_n.wav,"['  glass', ' hammer', ' ladle ']",non-restrictive,3000
+51,The girl will eat the pineapple,pic_mismatch_1.png,mismatch_1.wav,"['  envelope', ' scissors', ' sticker', ' rubber band ']",mismatch,3000

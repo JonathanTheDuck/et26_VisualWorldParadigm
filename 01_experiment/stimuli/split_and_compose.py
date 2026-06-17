@@ -5,7 +5,7 @@ split_and_compose.py
 Batch pipeline for the VWP eye-tracking experiment:
   img_matrices/{N}_{TL}_{TR}_{BR}_{BL}.png
       → discrete crops  (img_discrete/)
-      → trial canvas    (img_composition/pic{N}.png)
+      → trial canvases  (img_composition/{N}_pos{1-4}_{nosub|sub}.png)
 
 Filename convention
 ───────────────────
@@ -34,22 +34,30 @@ Subject image lookup
   convention). Falls back to --subject FILE (one image for every trial)
   if no per-item match exists, else no subject image is drawn.
 
-Latin-square counterbalancing
-──────────────────────────────
-  1. Target screen position
-     By default TL (the target) always lands in slot0 (leftmost), which
-     confounds "target identity" with "screen position". Each pic N is
-     instead given a cyclic rotation r = N % 4, which shifts every role
-     (TL/TR/BR/BL) by r slots. Across the 50-item set this makes the
-     target land in each of the 4 slots an (approximately) equal number
-     of times. The resulting target slot/x-pixel for every pic is written
-     to position_assignment.csv for later AOI/analysis cross-referencing.
+Trial canvas variants
+─────────────────────
+  Every item is composed in all 4 target positions (filename pos1-pos4;
+  rotation 0-3 internally) and both with/without the subject image — 8
+  files per item — so any participant-group/condition combination can
+  pick the right one later without re-running PIL. See compose_trial.
 
-  2. Restrictive / non-restrictive list assignment
-     Mirrors the two-list design in Altmann & Kamide (1999): for each
-     item, List A and List B always use opposite verb versions, so each
-     list ends up with an even 25/25 restrictive/non-restrictive split.
-     Generated on demand into creatingDataStructure/list_assignment.csv.
+Participant-group CSVs (--participants)
+────────────────────────────────────────
+  4 CSVs (creatingDataStructure/participant_group{1-4}.csv), one per
+  participant group, 50 rows each (one row per item; `id` = item id
+  0-49, matching sentences.csv, not a subject identifier). 20 real
+  participants / 4 groups = 5 each; all 5 participants in a group see
+  the identical file, so which subjects use which file is tracked
+  externally, not as a column.
+    - Verb version is fixed by item order for every group: id 0-24 use
+      the restrictive sentence, id 25-49 use the non-restrictive one.
+    - Target position only varies for the restrictive half: rotation =
+      (id + group) % 4, so the same item lands in a different on-screen
+      slot for each group, and a single group still cycles through all
+      4 slots across its 25 restrictive items. Non-restrictive items use
+      a fixed rotation (0) since position isn't critical there.
+    - Subject-image presence alternates by item id (even id -> no
+      subject, odd id -> with subject), same pattern in every group.
 
 Usage
 ─────
@@ -65,11 +73,11 @@ Usage
   # Only process specific pic IDs
   python split_and_compose.py --ids 14 15 16
 
-  # Keep existing img_composition/pic{N}.png files (only write discrete crops)
+  # Keep existing img_composition/*.png files (only write discrete crops)
   python split_and_compose.py --no-overwrite
 
-  # Generate the List A / List B verb-version counterbalancing CSV only
-  python split_and_compose.py --lists
+  # Generate the 4 participant-group CSVs only
+  python split_and_compose.py --participants
 """
 
 import argparse
@@ -93,18 +101,28 @@ SUBJECTS_DIR = MATRICES_DIR / "subjects"
 IMG_DIR      = STIMULI_DIR / "img_composition"
 
 SENTENCES_CSV       = STIMULI_DIR / "creatingDataStructure" / "sentences.csv"
-POSITION_LOG        = STIMULI_DIR / "position_assignment.csv"
-LIST_ASSIGNMENT_CSV = STIMULI_DIR / "creatingDataStructure" / "list_assignment.csv"
+PARTICIPANT_CSV_DIR = STIMULI_DIR / "creatingDataStructure"
 
 # ── Trial canvas settings (match Code 2 from project notes) ───────────────────
+#
+# Layout proportions are defined at 1x below, then scaled up by SCALE so every
+# element's target box is closer to the source assets' native resolution
+# (subjects ~1100-1400px, discrete crops ~550-700px) and needs less downscaling.
 
-CANVAS_W, CANVAS_H = 1200, 700
-SUBJECT_SIZE        = (350, 250)
-SUBJECT_Y           = 50
-OPTION_SIZE         = (200, 200)
-OPTION_Y            = 420
-OPTION_X            = [80, 340, 600, 860]   # 4 horizontal slots
+SCALE = 2
+
+CANVAS_W, CANVAS_H = 1200 * SCALE, 700 * SCALE
+SUBJECT_SIZE        = (420 * SCALE, 300 * SCALE)
+SUBJECT_Y           = 50 * SCALE
+OPTION_SIZE         = (200 * SCALE, 200 * SCALE)
+OPTION_Y            = 420 * SCALE
+OPTION_X            = [x * SCALE for x in (80, 340, 600, 860)]   # 4 horizontal slots
 ROLE_ORDER          = ["TL", "TR", "BR", "BL"]   # TL = target, others = distractors
+
+# ── Participant-group design ───────────────────────────────────────────────────
+
+N_GROUPS       = 4
+N_RESTRICTIVE  = 25   # item ids < this use the restrictive sentence/audio
 
 # ── Filename parser ────────────────────────────────────────────────────────────
 
@@ -153,17 +171,6 @@ def fit_image(img: Image.Image, target: tuple[int, int]) -> Image.Image:
     return canvas
 
 
-def latin_square_rotation(n: int) -> int:
-    """
-    Cyclic Latin-square rotation index (0-3) for pic N.
-    Rotation 0 reproduces the original fixed layout (target/TL in slot0).
-    Rotation r shifts every role r slots to the right (wrapping around),
-    so across the full stimulus set each role lands in each of the 4
-    screen slots an (approximately) equal number of times.
-    """
-    return n % 4
-
-
 def role_to_slot(rotation: int) -> dict[str, int]:
     """Map each role (TL/TR/BR/BL) to a screen slot index (0-3) for a given rotation."""
     return {role: (i + rotation) % 4 for i, role in enumerate(ROLE_ORDER)}
@@ -176,9 +183,8 @@ def compose_trial(
 ) -> Image.Image:
     """
     Compose a trial canvas: optional subject at top, 4 objects in a row at bottom.
-    `rotation` (see latin_square_rotation) cyclically shifts which screen
-    slot each role lands in; rotation=0 puts TL (the target) in slot0,
-    same as the original fixed layout.
+    `rotation` (0-3) cyclically shifts which screen slot each role lands
+    in; rotation=0 puts TL (the target) in slot0 (leftmost).
     """
     canvas = Image.new("RGB", (CANVAS_W, CANVAS_H), "white")
 
@@ -247,7 +253,7 @@ def find_subject_file(subject: str) -> Path | None:
     return None
 
 
-# ── List A / List B verb-version assignment ────────────────────────────────────
+# ── Participant-group CSVs ──────────────────────────────────────────────────────
 
 def load_sentence_ids() -> list[int]:
     """Read just the item ids (column 0) from sentences.csv, in file order."""
@@ -261,26 +267,59 @@ def load_sentence_ids() -> list[int]:
     return ids
 
 
-def generate_list_assignment() -> list[dict]:
+def load_sentence_texts() -> dict[int, tuple[str, str]]:
+    """Map sentence id -> (sentence1 restrictive text, sentence2 non-restrictive text)."""
+    texts = {}
+    with open(SENTENCES_CSV, newline="", encoding="utf-8-sig") as f:
+        reader = csv.reader(f)
+        next(reader, None)   # header
+        for row in reader:
+            if row and row[0].strip().isdigit():
+                sid = int(row[0].strip())
+                texts[sid] = (
+                    row[1].strip() if len(row) > 1 else "",
+                    row[2].strip() if len(row) > 2 else "",
+                )
+    return texts
+
+
+def participant_row(sid: int, group: int, sentence_texts: dict[int, tuple[str, str]]) -> dict:
     """
-    Two-list counterbalancing of verb version (restrictive/non-restrictive),
-    mirroring Altmann & Kamide (1999): for every item, List A and List B
-    always take opposite versions, so each list ends up with an even
-    25/25 restrictive/non-restrictive split across the 50-item set.
+    One OpenSesame trial-table row for item `sid` as seen by `group` (0-3).
+    See the module docstring ("Participant-group CSVs") for the rules.
     """
-    rows = []
-    for sid in load_sentence_ids():
-        list_a = "restrictive" if sid % 2 == 0 else "non-restrictive"
-        list_b = "non-restrictive" if list_a == "restrictive" else "restrictive"
-        rows.append({
-            "id":            sid,
-            "image_file":    f"pic{sid + 1}.png",
-            "listA_audio":   f"{sid}_{'r' if list_a == 'restrictive' else 'n'}.wav",
-            "listA_version": list_a,
-            "listB_audio":   f"{sid}_{'r' if list_b == 'restrictive' else 'n'}.wav",
-            "listB_version": list_b,
-        })
-    return rows
+    restrictive  = sid < N_RESTRICTIVE
+    rotation     = (sid + group) % 4 if restrictive else 0
+    subj_variant = "nosub" if sid % 2 == 0 else "sub"
+    sent1, sent2 = sentence_texts.get(sid, ("", ""))
+    return {
+        "id":              sid,
+        "image_file":      f"{sid + 1}_pos{rotation + 1}_{subj_variant}.png",
+        "audio_file":      f"{sid}_{'r' if restrictive else 'n'}.wav",
+        "sentence":        sent1 if restrictive else sent2,
+        "condition":       "restrictive" if restrictive else "non-restrictive",
+        "target_position": rotation,
+        "timeout":         3000,
+    }
+
+
+def generate_participant_csvs() -> list[Path]:
+    """Write creatingDataStructure/participant_group{1-4}.csv, 50 rows each."""
+    ids            = load_sentence_ids()
+    sentence_texts = load_sentence_texts()
+    out_paths = []
+    for group in range(N_GROUPS):
+        rows = [participant_row(sid, group, sentence_texts) for sid in ids]
+        out  = PARTICIPANT_CSV_DIR / f"participant_group{group + 1}.csv"
+        with open(out, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=[
+                "id", "image_file", "audio_file", "sentence",
+                "condition", "target_position", "timeout",
+            ])
+            writer.writeheader()
+            writer.writerows(rows)
+        out_paths.append(out)
+    return out_paths
 
 
 # ── Main pipeline ──────────────────────────────────────────────────────────────
@@ -301,24 +340,15 @@ def main() -> None:
                     help="Only write img_discrete/ crops; never touch img_composition/")
     ap.add_argument("--dry-run", action="store_true",
                     help="Print what would be processed without writing any files")
-    ap.add_argument("--lists", action="store_true",
-                    help="Generate creatingDataStructure/list_assignment.csv "
-                         "(List A/B verb-version counterbalancing) and exit")
+    ap.add_argument("--participants", action="store_true",
+                    help="Generate the 4 creatingDataStructure/participant_group{1-4}.csv "
+                         "files and exit")
     args = ap.parse_args()
 
-    if args.lists:
-        rows = generate_list_assignment()
-        with open(LIST_ASSIGNMENT_CSV, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=[
-                "id", "image_file", "listA_audio", "listA_version",
-                "listB_audio", "listB_version",
-            ])
-            writer.writeheader()
-            writer.writerows(rows)
-        n_a_restrictive = sum(1 for r in rows if r["listA_version"] == "restrictive")
-        print(f"Wrote {len(rows)} rows -> {LIST_ASSIGNMENT_CSV}")
-        print(f"  List A: {n_a_restrictive} restrictive / {len(rows) - n_a_restrictive} non-restrictive")
-        print(f"  List B: {len(rows) - n_a_restrictive} restrictive / {n_a_restrictive} non-restrictive")
+    if args.participants:
+        paths = generate_participant_csvs()
+        for p in paths:
+            print(f"Wrote 50 rows -> {p}")
         return
 
     if not MATRICES_DIR.exists():
@@ -356,26 +386,15 @@ def main() -> None:
         print("No matching files found.")
         return
 
-    n_ok = n_skip = n_err = 0
-    position_log_rows = []
+    n_ok = n_err = 0
+    n_trial_files = 0
 
     for n, objs, src_path in entries:
         tl, tr, bl, br = objs   # filename order: obj1=TL, obj2=TR, obj3=BL, obj4=BR
-        rotation = latin_square_rotation(n)
-        slots    = role_to_slot(rotation)
-        pic_out  = IMG_DIR      / f"pic{n}.png"
         disc_tl  = DISCRETE_DIR / f"{n}_{tl}_TL.png"
         disc_tr  = DISCRETE_DIR / f"{n}_{tr}_TR.png"
         disc_br  = DISCRETE_DIR / f"{n}_{br}_BR.png"
         disc_bl  = DISCRETE_DIR / f"{n}_{bl}_BL.png"
-
-        position_log_rows.append({
-            "pic":         n,
-            "target":      tl,
-            "rotation":    rotation,
-            "target_slot": slots["TL"],
-            "target_x":    OPTION_X[slots["TL"]],
-        })
 
         sid           = n - 1   # sentence id in sentences.csv (pic N = id N-1)
         subject       = subjects_by_id.get(sid, "")
@@ -392,39 +411,58 @@ def main() -> None:
             subject_status    = (f"MISSING (expected subjects/subject-the {subject}.png)"
                                   if subject else "MISSING (no subject noun found)")
 
-        print(f"\npic{n:02d}  {tl}(TL)  {tr}(TR)  {br}(BR)  {bl}(BL)"
-              f"   [rotation={rotation}, target→slot{slots['TL']} (x={OPTION_X[slots['TL']]})]")
+        print(f"\npic{n:02d}  {tl}(TL)  {tr}(TR)  {br}(BR)  {bl}(BL)")
         print(f"  source:   {src_path.name}")
         print(f"  subject:  {subject_status}")
 
-        if args.no_overwrite and pic_out.exists():
-            print(f"  SKIP trial canvas (exists): {pic_out.name}")
-            n_skip += 1
+        variants = [("nosub", None)]
+        if item_subject_img is not None:
+            variants.append(("sub", item_subject_img))
+
+        disc_paths   = [("TL", disc_tl), ("TR", disc_tr), ("BR", disc_br), ("BL", disc_bl)]
+        discrete_exists = all(path.exists() for _, path in disc_paths)
 
         if args.dry_run:
-            print(f"  [dry-run] would write discrete → img_discrete/{n}_*.png")
-            print(f"  [dry-run] would write trial   → img_composition/pic{n}.png")
+            if discrete_exists:
+                print(f"  [dry-run] discrete already exists, would keep as-is (not overwritten)")
+            else:
+                print(f"  [dry-run] would write discrete → img_discrete/{n}_*.png")
+            if not args.discrete_only:
+                names = [f"{n}_pos{r + 1}_{v}.png" for r in range(4) for v, _ in variants]
+                print(f"  [dry-run] would write {len(names)} trial file(s): "
+                      f"{names[0]} … {names[-1]}")
             n_ok += 1
             continue
 
         try:
-            collage = Image.open(src_path).convert("RGBA")
-            quads   = crop_quadrants(collage)
+            if discrete_exists:
+                # Never re-crop over existing discrete files — they may have
+                # been hand-fixed (e.g. cleaner split than the automatic crop).
+                quads = {key: Image.open(path).convert("RGBA") for key, path in disc_paths}
+                print(f"  discrete: kept existing (not re-cropped)")
+            else:
+                collage = Image.open(src_path).convert("RGBA")
+                quads   = crop_quadrants(collage)
+                for key, path in disc_paths:
+                    quads[key].convert("RGB").save(path)
+                print(f"  discrete: {n}_{tl}_TL.png  {n}_{tr}_TR.png  "
+                      f"{n}_{br}_BR.png  {n}_{bl}_BL.png")
 
-            # 1. Save discrete quadrant crops
-            for key, path in [("TL", disc_tl), ("TR", disc_tr),
-                               ("BR", disc_br), ("BL", disc_bl)]:
-                quads[key].convert("RGB").save(path)
-            print(f"  discrete: {n}_{tl}_TL.png  {n}_{tr}_TR.png  "
-                  f"{n}_{br}_BR.png  {n}_{bl}_BL.png")
-
-            # 2. Compose and save trial canvas
+            # 2. Compose and save every (rotation x subject-variant) trial canvas
             if args.discrete_only:
                 print(f"  trial:    SKIPPED (--discrete-only)")
-            elif not (args.no_overwrite and pic_out.exists()):
-                trial = compose_trial(quads, item_subject_img, rotation=rotation)
-                trial.save(pic_out)
-                print(f"  trial:    pic{n}.png  ({CANVAS_W}×{CANVAS_H})")
+            else:
+                written = 0
+                for rotation in range(4):
+                    for variant_name, variant_img in variants:
+                        out_path = IMG_DIR / f"{n}_pos{rotation + 1}_{variant_name}.png"
+                        if args.no_overwrite and out_path.exists():
+                            continue
+                        trial = compose_trial(quads, variant_img, rotation=rotation)
+                        trial.save(out_path)
+                        written += 1
+                print(f"  trial:    {written} file(s) written  ({CANVAS_W}×{CANVAS_H})")
+                n_trial_files += written
 
             n_ok += 1
 
@@ -432,20 +470,10 @@ def main() -> None:
             print(f"  ERROR: {e}")
             n_err += 1
 
-    if not args.dry_run and position_log_rows:
-        with open(POSITION_LOG, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=[
-                "pic", "target", "rotation", "target_slot", "target_x",
-            ])
-            writer.writeheader()
-            writer.writerows(position_log_rows)
-
     print(f"\n{'─'*52}")
-    print(f"Done.  OK: {n_ok}   Skipped: {n_skip}   Errors: {n_err}")
+    print(f"Done.  OK: {n_ok}   Errors: {n_err}   Trial files written: {n_trial_files}")
     print(f"Discrete images : {DISCRETE_DIR}")
     print(f"Trial images    : {IMG_DIR}")
-    if not args.dry_run and position_log_rows:
-        print(f"Position log    : {POSITION_LOG}")
     if n_subject_missing:
         print(f"Subject images missing: {n_subject_missing}/{len(entries)} "
               f"(expected in {SUBJECTS_DIR}/)")

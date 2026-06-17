@@ -56,8 +56,8 @@ Participant-group CSVs (--participants)
       slot for each group, and a single group still cycles through all
       4 slots across its 25 restrictive items. Non-restrictive items use
       a fixed rotation (0) since position isn't critical there.
-    - Subject-image presence alternates by item id (even id -> no
-      subject, odd id -> with subject), same pattern in every group.
+    - Both subject variants are listed per row (image_nosub, image_sub,
+      same target position) rather than picking one per item.
 
 Usage
 ─────
@@ -290,11 +290,11 @@ def participant_row(sid: int, group: int, sentence_texts: dict[int, tuple[str, s
     """
     restrictive  = sid < N_RESTRICTIVE
     rotation     = (sid + group) % 4 if restrictive else 0
-    subj_variant = "nosub" if sid % 2 == 0 else "sub"
     sent1, sent2 = sentence_texts.get(sid, ("", ""))
     return {
         "id":              sid,
-        "image_file":      f"{sid + 1}_pos{rotation + 1}_{subj_variant}.png",
+        "image_nosub":     f"{sid + 1}_pos{rotation + 1}_nosub.png",
+        "image_sub":       f"{sid + 1}_pos{rotation + 1}_sub.png",
         "audio_file":      f"{sid}_{'r' if restrictive else 'n'}.wav",
         "sentence":        sent1 if restrictive else sent2,
         "condition":       "restrictive" if restrictive else "non-restrictive",
@@ -313,7 +313,7 @@ def generate_participant_csvs() -> list[Path]:
         out  = PARTICIPANT_CSV_DIR / f"participant_group{group + 1}.csv"
         with open(out, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=[
-                "id", "image_file", "audio_file", "sentence",
+                "id", "image_nosub", "image_sub", "audio_file", "sentence",
                 "condition", "target_position", "timeout",
             ])
             writer.writeheader()

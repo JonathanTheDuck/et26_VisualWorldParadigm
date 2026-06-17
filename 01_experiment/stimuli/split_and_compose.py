@@ -298,7 +298,7 @@ def participant_row(sid: int, group: int, sentence_texts: dict[int, tuple[str, s
         "audio_file":      f"{sid}_{'r' if restrictive else 'n'}.wav",
         "sentence":        sent1 if restrictive else sent2,
         "condition":       "restrictive" if restrictive else "non-restrictive",
-        "target_position": rotation,
+        "target_position": rotation + 1,
         "timeout":         3000,
     }
 

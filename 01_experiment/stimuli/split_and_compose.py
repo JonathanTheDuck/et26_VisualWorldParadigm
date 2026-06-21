@@ -22,9 +22,13 @@ Trial canvas layout  (1200 × 700 px, white background)
 ───────────────────
   ┌─────────────────────────────────────────────┐
   │             [subject image]                  │  ← per-item, top-centre
-  │                                              │
-  │  [slot0]  [slot1]  [slot2]  [slot3]          │  ← 4 options, bottom row
-  └─────────────────────────────────────────────┘
+  │     [slot0]              [slot3]             │  ← 4 options on a
+  │           [slot1]  [slot2]                   │    semicircle/ellipse
+  └─────────────────────────────────────────────┘    around the subject
+
+  Options sit on an ellipse around the subject (see SEMICIRCLE_GAP /
+  SEMICIRCLE_ANGLES) rather than a fixed row, so every option is an equal
+  visual gap from the subject regardless of which slot it lands in.
 
 Subject image lookup
 ─────────────────────
@@ -51,11 +55,12 @@ Participant-group CSVs (--participants)
   externally, not as a column.
     - Verb version is fixed by item order for every group: id 0-24 use
       the restrictive sentence, id 25-49 use the non-restrictive one.
-    - Target position only varies for the restrictive half: rotation =
-      (id + group) % 4, so the same item lands in a different on-screen
-      slot for each group, and a single group still cycles through all
-      4 slots across its 25 restrictive items. Non-restrictive items use
-      a fixed rotation (0) since position isn't critical there.
+    - Target position rotates for every item (restrictive and
+      non-restrictive alike): rotation = (id + group) % 4, so the same
+      item lands in a different on-screen slot for each group, and a
+      single group cycles through all 4 slots across its items. All 4
+      rotated images already exist for every item (see compose_trial),
+      so this is purely a CSV lookup, no image regeneration needed.
     - Both subject variants are listed per row (image_nosub, image_sub,
       same target position) rather than picking one per item.
 
@@ -82,6 +87,7 @@ Usage
 
 import argparse
 import csv
+import math
 import re
 import sys
 from pathlib import Path
@@ -115,9 +121,13 @@ CANVAS_W, CANVAS_H = 1200 * SCALE, 700 * SCALE
 SUBJECT_SIZE        = (420 * SCALE, 300 * SCALE)
 SUBJECT_Y           = 50 * SCALE
 OPTION_SIZE         = (200 * SCALE, 200 * SCALE)
-OPTION_Y            = 420 * SCALE
-OPTION_X            = [x * SCALE for x in (80, 340, 600, 860)]   # 4 horizontal slots
 ROLE_ORDER          = ["TL", "TR", "BR", "BL"]   # TL = target, others = distractors
+
+# Options sit on an ellipse around the subject (semicircle layout) instead of
+# a fixed row, so every option is an equal visual gap from the subject's edge
+# regardless of which slot the target rotates into.
+SEMICIRCLE_GAP    = 95 * SCALE
+SEMICIRCLE_ANGLES = [15, 65, 115, 165]   # degrees, slot0..slot3 (screen y-down)
 
 # ── Participant-group design ───────────────────────────────────────────────────
 
@@ -182,21 +192,31 @@ def compose_trial(
     rotation:    int = 0,
 ) -> Image.Image:
     """
-    Compose a trial canvas: optional subject at top, 4 objects in a row at bottom.
-    `rotation` (0-3) cyclically shifts which screen slot each role lands
-    in; rotation=0 puts TL (the target) in slot0 (leftmost).
+    Compose a trial canvas: optional subject at top-centre, 4 objects on a
+    semicircle ellipse around it. `rotation` (0-3) cyclically shifts which
+    angle slot each role lands in; rotation=0 puts TL (the target) at
+    SEMICIRCLE_ANGLES[0].
     """
     canvas = Image.new("RGB", (CANVAS_W, CANVAS_H), "white")
+
+    center_x = CANVAS_W // 2
+    center_y = SUBJECT_Y + SUBJECT_SIZE[1] // 2
 
     if subject_img is not None:
         subj = fit_image(subject_img.copy(), SUBJECT_SIZE)
         sx   = (CANVAS_W - SUBJECT_SIZE[0]) // 2
         canvas.paste(subj, (sx, SUBJECT_Y), subj)
 
+    a = SUBJECT_SIZE[0] / 2 + SEMICIRCLE_GAP + OPTION_SIZE[0] / 2
+    b = SUBJECT_SIZE[1] / 2 + SEMICIRCLE_GAP + OPTION_SIZE[1] / 2
+
     slots = role_to_slot(rotation)
     for pos_key in ROLE_ORDER:
+        angle = math.radians(SEMICIRCLE_ANGLES[slots[pos_key]])
+        ox = center_x + a * math.cos(angle)
+        oy = center_y + b * math.sin(angle)
         opt = fit_image(quadrants[pos_key].copy(), OPTION_SIZE)
-        canvas.paste(opt, (OPTION_X[slots[pos_key]], OPTION_Y), opt)
+        canvas.paste(opt, (int(ox - OPTION_SIZE[0] / 2), int(oy - OPTION_SIZE[1] / 2)), opt)
 
     return canvas
 
@@ -289,7 +309,7 @@ def participant_row(sid: int, group: int, sentence_texts: dict[int, tuple[str, s
     See the module docstring ("Participant-group CSVs") for the rules.
     """
     restrictive  = sid < N_RESTRICTIVE
-    rotation     = (sid + group) % 4 if restrictive else 0
+    rotation     = (sid + group) % 4
     sent1, sent2 = sentence_texts.get(sid, ("", ""))
     return {
         "id":              sid,

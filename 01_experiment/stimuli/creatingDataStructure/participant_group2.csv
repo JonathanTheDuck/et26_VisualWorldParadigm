@@ -24,28 +24,28 @@ id,image_nosub,image_sub,audio_file,sentence,condition,target_position,timeout
 22,23_pos4_nosub.png,23_pos4_sub.png,22_r.wav,The girl will zip the coat,restrictive,4,3000
 23,24_pos1_nosub.png,24_pos1_sub.png,23_r.wav,The girl will knit the scarf,restrictive,1,3000
 24,25_pos2_nosub.png,25_pos2_sub.png,24_r.wav,The girl will groom the rabbit,restrictive,2,3000
-25,26_pos1_nosub.png,26_pos1_sub.png,25_n.wav,The man will move the canvas,non-restrictive,1,3000
-26,27_pos1_nosub.png,27_pos1_sub.png,26_n.wav,The woman will blow grab the candle,non-restrictive,1,3000
+25,26_pos3_nosub.png,26_pos3_sub.png,25_n.wav,The man will move the canvas,non-restrictive,3,3000
+26,27_pos4_nosub.png,27_pos4_sub.png,26_n.wav,The woman will blow grab the candle,non-restrictive,4,3000
 27,28_pos1_nosub.png,28_pos1_sub.png,27_n.wav,The boy will touch the lamp,non-restrictive,1,3000
-28,29_pos1_nosub.png,29_pos1_sub.png,28_n.wav,The cat will push the milk,non-restrictive,1,3000
-29,30_pos1_nosub.png,30_pos1_sub.png,29_n.wav,The grandmother will eadturn the newspaper,non-restrictive,1,3000
-30,31_pos1_nosub.png,31_pos1_sub.png,30_n.wav,The girl will grab the dice,non-restrictive,1,3000
+28,29_pos2_nosub.png,29_pos2_sub.png,28_n.wav,The cat will push the milk,non-restrictive,2,3000
+29,30_pos3_nosub.png,30_pos3_sub.png,29_n.wav,The grandmother will eadturn the newspaper,non-restrictive,3,3000
+30,31_pos4_nosub.png,31_pos4_sub.png,30_n.wav,The girl will grab the dice,non-restrictive,4,3000
 31,32_pos1_nosub.png,32_pos1_sub.png,31_n.wav,The woman will examine the bottle,non-restrictive,1,3000
-32,33_pos1_nosub.png,33_pos1_sub.png,32_n.wav,The woman will carry the beer,non-restrictive,1,3000
-33,34_pos1_nosub.png,34_pos1_sub.png,33_n.wav,The boy will open the suitcase,non-restrictive,1,3000
-34,35_pos1_nosub.png,35_pos1_sub.png,34_n.wav,The boy will move the radio,non-restrictive,1,3000
+32,33_pos2_nosub.png,33_pos2_sub.png,32_n.wav,The woman will carry the beer,non-restrictive,2,3000
+33,34_pos3_nosub.png,34_pos3_sub.png,33_n.wav,The boy will open the suitcase,non-restrictive,3,3000
+34,35_pos4_nosub.png,35_pos4_sub.png,34_n.wav,The boy will move the radio,non-restrictive,4,3000
 35,36_pos1_nosub.png,36_pos1_sub.png,35_n.wav,The girl will squeeze the mascara,non-restrictive,1,3000
-36,37_pos1_nosub.png,37_pos1_sub.png,36_n.wav,The kid will stack the lego,non-restrictive,1,3000
-37,38_pos1_nosub.png,38_pos1_sub.png,37_n.wav,The boy will move the banana,non-restrictive,1,3000
-38,39_pos1_nosub.png,39_pos1_sub.png,38_n.wav,The woman will carry the apron,non-restrictive,1,3000
+36,37_pos2_nosub.png,37_pos2_sub.png,36_n.wav,The kid will stack the lego,non-restrictive,2,3000
+37,38_pos3_nosub.png,38_pos3_sub.png,37_n.wav,The boy will move the banana,non-restrictive,3,3000
+38,39_pos4_nosub.png,39_pos4_sub.png,38_n.wav,The woman will carry the apron,non-restrictive,4,3000
 39,40_pos1_nosub.png,40_pos1_sub.png,39_n.wav,The boy will move the shoelace,non-restrictive,1,3000
-40,41_pos1_nosub.png,41_pos1_sub.png,40_n.wav,The girl will hold the blouse,non-restrictive,1,3000
-41,42_pos1_nosub.png,42_pos1_sub.png,41_n.wav,The boy will move the orange,non-restrictive,1,3000
-42,43_pos1_nosub.png,43_pos1_sub.png,42_n.wav,The woman will wash the shirt,non-restrictive,1,3000
+40,41_pos2_nosub.png,41_pos2_sub.png,40_n.wav,The girl will hold the blouse,non-restrictive,2,3000
+41,42_pos3_nosub.png,42_pos3_sub.png,41_n.wav,The boy will move the orange,non-restrictive,3,3000
+42,43_pos4_nosub.png,43_pos4_sub.png,42_n.wav,The woman will wash the shirt,non-restrictive,4,3000
 43,44_pos1_nosub.png,44_pos1_sub.png,43_n.wav,The man will wipe the safe,non-restrictive,1,3000
-44,45_pos1_nosub.png,45_pos1_sub.png,44_n.wav,The baker will inspect the dough,non-restrictive,1,3000
-45,46_pos1_nosub.png,46_pos1_sub.png,45_n.wav,The chef will carry the carrot,non-restrictive,1,3000
-46,47_pos1_nosub.png,47_pos1_sub.png,46_n.wav,The musician will move the violin,non-restrictive,1,3000
+44,45_pos2_nosub.png,45_pos2_sub.png,44_n.wav,The baker will inspect the dough,non-restrictive,2,3000
+45,46_pos3_nosub.png,46_pos3_sub.png,45_n.wav,The chef will carry the carrot,non-restrictive,3,3000
+46,47_pos4_nosub.png,47_pos4_sub.png,46_n.wav,The musician will move the violin,non-restrictive,4,3000
 47,48_pos1_nosub.png,48_pos1_sub.png,47_n.wav,The girl will move the carpet,non-restrictive,1,3000
-48,49_pos1_nosub.png,49_pos1_sub.png,48_n.wav,The child will inlatecarry the balloon,non-restrictive,1,3000
-49,50_pos1_nosub.png,50_pos1_sub.png,49_n.wav,The man will pick up the stamp,non-restrictive,1,3000
+48,49_pos2_nosub.png,49_pos2_sub.png,48_n.wav,The child will inlatecarry the balloon,non-restrictive,2,3000
+49,50_pos3_nosub.png,50_pos3_sub.png,49_n.wav,The man will pick up the stamp,non-restrictive,3,3000

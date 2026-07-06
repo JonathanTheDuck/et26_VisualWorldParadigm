@@ -1,19 +1,19 @@
 id, sentence1, sentence2,ot1,ot2,oot3,0t4
 0,The boy will eat the cake,The boy will move the cake,  toy car, ball, toy train 
-1,The woman will drink the wine,The woman will  try the wine,  cheese, lipstick, chair, plant 
-2,The policeman will arrest the man,The policeman will  search the man,  car, dustbin, houses, cat 
-3,The woman will bathe the baby,The woman will  touch the baby,  plant, rocking-horse, stool 
-4,The boy will bounce the ball,The boy will  throw the ball,  paper plane, shuttle-cock, acorns, bicycle 
-5,The hiker will climb the mountain,The hiker will  photograph the mountain,  animal, moon, cactus 
+1,The woman will drink the wine,The woman will try the wine,  cheese, lipstick, chair, plant 
+2,The policeman will arrest the man,The policeman will search the man,  car, dustbin, houses, cat 
+3,The woman will bathe the baby,The woman will touch the baby,  plant, rocking-horse, stool 
+4,The boy will bounce the ball,The boy will throw the ball,  paper plane, shuttle-cock, acorns, bicycle 
+5,The hiker will climb the mountain,The hiker will photograph the mountain,  animal, moon, cactus 
 6,The housewife will fry the mushrooms,The housewife will  wash the mushrooms,  knife, jug, weighing scales 
-7,The doctor will inject the child,The doctor will  check the child,  TV monitor, microscope, books, toy bear 
-8,The woman will play the piano ,The woman will  dust the piano,   table, television, telephone 
+7,The doctor will inject the child,The doctor will check the child,  TV monitor, microscope, books, toy bear 
+8,The woman will play the piano ,The woman will dust the piano,   table, television, telephone 
 9,The woman will read the book ,The woman will open the book,   door, bag, jar, cup 
-10,The man will repair the washing machine ,The man will  wipe the washing machine,   mirror, wastebin, dog 
-11,The baby will ring the bell ,The baby will  kick the bell,   drum, bricks, duck 
-12,The man will sail the boat ,The man will  watch the boat,   birds, car, sun 
+10,The man will repair the washing machine ,The man will wipe the washing machine,   mirror, wastebin, dog 
+11,The baby will ring the bell ,The baby will kick the bell,   drum, bricks, duck 
+12,The man will sail the boat ,The man will watch the boat,   birds, car, sun 
 13,The man will smoke the cigarettes ,The man will  collect the cigarettes,   filofax, glasses, briefcase, clock 
-14,The boy will walk the dog ,The boy will  feed the dog,   bird, pig, hen, ball  
+14,The boy will walk the dog ,The boy will feed the dog,   bird, pig, hen, ball  
 15,The businessman will wear the hat ,The businessman will  forget the hat,   wallet, folder, magnifying glass, chair 
 16,The woman will wear the dress ,The woman will  carry the dress ,  lantern, ribbon, backpack 
 17,The man will chop the wood , The man will  move the wood , bucket, rope, stone, ladder 

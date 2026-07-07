@@ -63,6 +63,9 @@ Participant-group CSVs (--participants)
       so this is purely a CSV lookup, no image regeneration needed.
     - Both subject variants are listed per row (image_nosub, image_sub,
       same target position) rather than picking one per item.
+    - position{1-4} name the object shown in each on-screen slot for that
+      trial (object set is fixed per item, cyclically rotated by rotation;
+      the target always lands on position == target_position).
 
 Usage
 ─────
@@ -287,6 +290,25 @@ def load_sentence_ids() -> list[int]:
     return ids
 
 
+def load_item_objects() -> dict[int, dict[str, str]]:
+    """
+    Map item id (= pic N - 1) -> {role: object} read from img_matrices
+    filenames ({N}_{TL}_{TR}_{BL}_{BR}.png). Used to record which object sits
+    in each on-screen slot per trial (see participant_row / position columns).
+    """
+    objects = {}
+    if not MATRICES_DIR.exists():
+        return objects
+    for p in sorted(MATRICES_DIR.glob("*.png")):
+        parsed = parse_matrix_filename(p.name)
+        if parsed is None:
+            continue
+        n, objs = parsed                       # objs = [TL, TR, BL, BR]
+        tl, tr, bl, br = objs
+        objects[n - 1] = {"TL": tl, "TR": tr, "BR": br, "BL": bl}
+    return objects
+
+
 def load_sentence_texts() -> dict[int, tuple[str, str]]:
     """Map sentence id -> (sentence1 restrictive text, sentence2 non-restrictive text)."""
     texts = {}
@@ -303,18 +325,35 @@ def load_sentence_texts() -> dict[int, tuple[str, str]]:
     return texts
 
 
-def participant_row(sid: int, group: int, sentence_texts: dict[int, tuple[str, str]]) -> dict:
+def participant_row(
+    sid: int,
+    group: int,
+    sentence_texts: dict[int, tuple[str, str]],
+    item_objects: dict[int, dict[str, str]],
+) -> dict:
     """
     One OpenSesame trial-table row for item `sid` as seen by `group` (0-3).
     See the module docstring ("Participant-group CSVs") for the rules.
+
+    position{1-4} record which object sits in each on-screen slot for this
+    trial. rotation cyclically shifts the roles across slots (role_to_slot);
+    inverting that, the object at position k is the role that maps to slot
+    (k-1), i.e. ROLE_ORDER[(k-1-rotation) % 4]. The target (TL) therefore
+    always lands on position == target_position.
     """
     restrictive  = sid < N_RESTRICTIVE
     rotation     = (sid + group) % 4
     sent1, sent2 = sentence_texts.get(sid, ("", ""))
+    roles        = item_objects.get(sid, {})
+    positions    = {
+        f"position{k}": roles.get(ROLE_ORDER[(k - 1 - rotation) % 4], "")
+        for k in range(1, 5)
+    }
     return {
         "id":              sid,
         "image_nosub":     f"{sid + 1}_pos{rotation + 1}_nosub.png",
         "image_sub":       f"{sid + 1}_pos{rotation + 1}_sub.png",
+        **positions,
         "audio_file":      f"{sid}_{'r' if restrictive else 'n'}.wav",
         "sentence":        sent1 if restrictive else sent2,
         "condition":       "restrictive" if restrictive else "non-restrictive",
@@ -327,13 +366,16 @@ def generate_participant_csvs() -> list[Path]:
     """Write creatingDataStructure/participant_group{1-4}.csv, 50 rows each."""
     ids            = load_sentence_ids()
     sentence_texts = load_sentence_texts()
+    item_objects   = load_item_objects()
     out_paths = []
     for group in range(N_GROUPS):
-        rows = [participant_row(sid, group, sentence_texts) for sid in ids]
+        rows = [participant_row(sid, group, sentence_texts, item_objects) for sid in ids]
         out  = PARTICIPANT_CSV_DIR / f"participant_group{group + 1}.csv"
         with open(out, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=[
-                "id", "image_nosub", "image_sub", "audio_file", "sentence",
+                "id", "image_nosub", "image_sub",
+                "position1", "position2", "position3", "position4",
+                "audio_file", "sentence",
                 "condition", "target_position", "timeout",
             ])
             writer.writeheader()

@@ -67,6 +67,23 @@ Participant-group CSVs (--participants)
       trial (object set is fixed per item, cyclically rotated by rotation;
       the target always lands on position == target_position).
 
+8-group counterbalanced CSVs (--participants8)
+──────────────────────────────────────────────
+  An alternative design that makes verb version a within-item factor
+  instead of fixing it by item order. Written to a separate subfolder,
+  creatingDataStructure/participant_groups_8/participant_group{1-8}.csv,
+  so the 4-group CSVs above are left untouched. Condition and target
+  position are fully crossed (a 2x4 Graeco-Latin square):
+    - condition = restrictive if (id + group) % 2 == 0 else non-restrictive
+    - rotation  = (id + group // 2) % 4
+  Every group has exactly 25 restrictive / 25 non-restrictive; every item
+  appears 4x in each condition across the 8 groups and visits all 8
+  (condition x position) cells exactly once; every participant still sees
+  each item once, in one condition only. Same image files as the 4-group
+  design (the visual array is condition-independent); only audio_file
+  (_r/_n) and sentence differ. Needs participants in multiples of 8 for
+  equal group sizes. See participant_row_8.
+
 Usage
 ─────
   # Process all images in img_matrices/
@@ -86,6 +103,9 @@ Usage
 
   # Generate the 4 participant-group CSVs only
   python split_and_compose.py --participants
+
+  # Generate the 8-group counterbalanced CSVs (separate subfolder)
+  python split_and_compose.py --participants8
 """
 
 import argparse
@@ -135,7 +155,8 @@ SEMICIRCLE_ANGLES = [15, 65, 115, 165]   # degrees, slot0..slot3 (screen y-down)
 # ── Participant-group design ───────────────────────────────────────────────────
 
 N_GROUPS       = 4
-N_RESTRICTIVE  = 25   # item ids < this use the restrictive sentence/audio
+N_GROUPS_8     = 8    # 8-group design: condition x position fully counterbalanced
+N_RESTRICTIVE  = 25   # item ids < this use the restrictive sentence/audio (4-group design)
 
 # ── Filename parser ────────────────────────────────────────────────────────────
 
@@ -325,24 +346,38 @@ def load_sentence_texts() -> dict[int, tuple[str, str]]:
     return texts
 
 
-def participant_row(
+PARTICIPANT_FIELDNAMES = [
+    "id", "image_nosub", "image_sub",
+    "position1", "position2", "position3", "position4",
+    "audio_file", "sentence",
+    "condition", "target_position", "timeout",
+]
+
+
+def build_participant_row(
     sid: int,
-    group: int,
+    rotation: int,
+    restrictive: bool,
     sentence_texts: dict[int, tuple[str, str]],
     item_objects: dict[int, dict[str, str]],
 ) -> dict:
     """
-    One OpenSesame trial-table row for item `sid` as seen by `group` (0-3).
-    See the module docstring ("Participant-group CSVs") for the rules.
+    One OpenSesame trial-table row for item `sid`, given the design decision
+    (rotation 0-3 and restrictive True/False) already made by the caller. This
+    is shared by both the 4-group and 8-group designs; only how `rotation` and
+    `restrictive` are chosen differs between them.
 
-    position{1-4} record which object sits in each on-screen slot for this
-    trial. rotation cyclically shifts the roles across slots (role_to_slot);
-    inverting that, the object at position k is the role that maps to slot
-    (k-1), i.e. ROLE_ORDER[(k-1-rotation) % 4]. The target (TL) therefore
-    always lands on position == target_position.
+    The visual array (image, object positions) depends only on rotation and is
+    condition-independent, because both sentence versions of an item share the
+    same target object. Only audio_file (_r/_n) and sentence switch with
+    condition.
+
+    position{1-4} record which object sits in each on-screen slot. rotation
+    cyclically shifts the roles across slots (role_to_slot); inverting that,
+    the object at position k is the role that maps to slot (k-1), i.e.
+    ROLE_ORDER[(k-1-rotation) % 4]. The target (TL) therefore always lands on
+    position == target_position.
     """
-    restrictive  = sid < N_RESTRICTIVE
-    rotation     = (sid + group) % 4
     sent1, sent2 = sentence_texts.get(sid, ("", ""))
     roles        = item_objects.get(sid, {})
     positions    = {
@@ -362,6 +397,46 @@ def participant_row(
     }
 
 
+def participant_row(
+    sid: int,
+    group: int,
+    sentence_texts: dict[int, tuple[str, str]],
+    item_objects: dict[int, dict[str, str]],
+) -> dict:
+    """
+    4-group design row for item `sid` as seen by `group` (0-3): condition is
+    fixed by item (id < N_RESTRICTIVE -> restrictive), only target position
+    rotates by group. See the module docstring ("Participant-group CSVs").
+    """
+    restrictive = sid < N_RESTRICTIVE
+    rotation    = (sid + group) % 4
+    return build_participant_row(sid, rotation, restrictive, sentence_texts, item_objects)
+
+
+def participant_row_8(
+    sid: int,
+    group: int,
+    sentence_texts: dict[int, tuple[str, str]],
+    item_objects: dict[int, dict[str, str]],
+) -> dict:
+    """
+    8-group design row for item `sid` as seen by `group` (0-7): condition AND
+    target position are fully counterbalanced (a 2x4 Graeco-Latin square).
+
+        condition = restrictive if (sid + group) % 2 == 0 else non-restrictive
+        rotation  = (sid + group // 2) % 4
+
+    Properties (verified): every group has exactly 25 restrictive / 25
+    non-restrictive; every item appears 4x restrictive and 4x non-restrictive
+    across the 8 groups and visits each of the 8 (condition x position) cells
+    exactly once; every participant still sees each item exactly once, in one
+    condition only. Requires both audio versions (_r and _n) per item.
+    """
+    restrictive = (sid + group) % 2 == 0
+    rotation    = (sid + group // 2) % 4
+    return build_participant_row(sid, rotation, restrictive, sentence_texts, item_objects)
+
+
 def generate_participant_csvs() -> list[Path]:
     """Write creatingDataStructure/participant_group{1-4}.csv, 50 rows each."""
     ids            = load_sentence_ids()
@@ -372,12 +447,31 @@ def generate_participant_csvs() -> list[Path]:
         rows = [participant_row(sid, group, sentence_texts, item_objects) for sid in ids]
         out  = PARTICIPANT_CSV_DIR / f"participant_group{group + 1}.csv"
         with open(out, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=[
-                "id", "image_nosub", "image_sub",
-                "position1", "position2", "position3", "position4",
-                "audio_file", "sentence",
-                "condition", "target_position", "timeout",
-            ])
+            writer = csv.DictWriter(f, fieldnames=PARTICIPANT_FIELDNAMES)
+            writer.writeheader()
+            writer.writerows(rows)
+        out_paths.append(out)
+    return out_paths
+
+
+def generate_participant_csvs_8() -> list[Path]:
+    """
+    Write the 8-group counterbalanced design to
+    creatingDataStructure/participant_groups_8/participant_group{1-8}.csv,
+    50 rows each. Kept in a separate subfolder so the original 4-group CSVs
+    are left untouched. See participant_row_8 for the design.
+    """
+    ids            = load_sentence_ids()
+    sentence_texts = load_sentence_texts()
+    item_objects   = load_item_objects()
+    out_dir        = PARTICIPANT_CSV_DIR / "participant_groups_8"
+    out_dir.mkdir(exist_ok=True)
+    out_paths = []
+    for group in range(N_GROUPS_8):
+        rows = [participant_row_8(sid, group, sentence_texts, item_objects) for sid in ids]
+        out  = out_dir / f"participant_group{group + 1}.csv"
+        with open(out, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=PARTICIPANT_FIELDNAMES)
             writer.writeheader()
             writer.writerows(rows)
         out_paths.append(out)
@@ -405,10 +499,19 @@ def main() -> None:
     ap.add_argument("--participants", action="store_true",
                     help="Generate the 4 creatingDataStructure/participant_group{1-4}.csv "
                          "files and exit")
+    ap.add_argument("--participants8", action="store_true",
+                    help="Generate the 8-group counterbalanced design under "
+                         "creatingDataStructure/participant_groups_8/ and exit")
     args = ap.parse_args()
 
     if args.participants:
         paths = generate_participant_csvs()
+        for p in paths:
+            print(f"Wrote 50 rows -> {p}")
+        return
+
+    if args.participants8:
+        paths = generate_participant_csvs_8()
         for p in paths:
             print(f"Wrote 50 rows -> {p}")
         return

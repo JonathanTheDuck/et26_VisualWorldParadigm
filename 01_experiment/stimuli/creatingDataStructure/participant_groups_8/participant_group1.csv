@@ -1,0 +1,51 @@
+id,image_nosub,image_sub,position1,position2,position3,position4,audio_file,sentence,condition,target_position,timeout
+0,1_pos1_nosub.png,1_pos1_sub.png,cake,toy-car,toy-train,ball,0_r.wav,The boy will eat the cake,restrictive,1,3000
+1,2_pos2_nosub.png,2_pos2_sub.png,lipstick,wine,cheese,chair,1_n.wav,The woman will try the wine,non-restrictive,2,3000
+2,3_pos3_nosub.png,3_pos3_sub.png,houses,dustbin,man,car,2_r.wav,The policeman will arrest the man,restrictive,3,3000
+3,4_pos4_nosub.png,4_pos4_sub.png,plant,stool,rocking-horse,baby,3_n.wav,The woman will touch the baby,non-restrictive,4,3000
+4,5_pos1_nosub.png,5_pos1_sub.png,ball,paper-plane,acorns,shuttle-cock,4_r.wav,The boy will bounce the ball,restrictive,1,3000
+5,6_pos2_nosub.png,6_pos2_sub.png,moon,mountain,animal,cactus,5_n.wav,The hiker will photograph the mountain,non-restrictive,2,3000
+6,7_pos3_nosub.png,7_pos3_sub.png,weighing-scales,jug,mushrooms,knife,6_r.wav,The housewife will fry the mushrooms,restrictive,3,3000
+7,8_pos4_nosub.png,8_pos4_sub.png,tv-monitor,toy-bear,microscope,child,7_n.wav,The doctor will check the child,non-restrictive,4,3000
+8,9_pos1_nosub.png,9_pos1_sub.png,piano,table,telephone,television,8_r.wav,The woman will play the piano,restrictive,1,3000
+9,10_pos2_nosub.png,10_pos2_sub.png,bag,book,door,cup,9_n.wav,The woman will open the book,non-restrictive,2,3000
+10,11_pos3_nosub.png,11_pos3_sub.png,dog,wastebin,washing-machine,mirror,10_r.wav,The man will repair the washing machine,restrictive,3,3000
+11,12_pos4_nosub.png,12_pos4_sub.png,drum,duck,bricks,bell,11_n.wav,The baby will kick the bell,non-restrictive,4,3000
+12,13_pos1_nosub.png,13_pos1_sub.png,boat,birds,sun,car,12_r.wav,The man will sail the boat,restrictive,1,3000
+13,14_pos2_nosub.png,14_pos2_sub.png,glasses,cigarettes,filofax,briefcase,13_n.wav,The man will  collect the cigarettes,non-restrictive,2,3000
+14,15_pos3_nosub.png,15_pos3_sub.png,ball,hen,dog,bird,14_r.wav,The boy will walk the dog,restrictive,3,3000
+15,16_pos4_nosub.png,16_pos4_sub.png,wallet,magnifying-glass,folder,hat,15_n.wav,The businessman will  forget the hat,non-restrictive,4,3000
+16,17_pos1_nosub.png,17_pos1_sub.png,dress,lantern,backpack,ribbon,16_r.wav,The woman will wear the dress,restrictive,1,3000
+17,18_pos2_nosub.png,18_pos2_sub.png,rope,wood,bucket,stone,17_n.wav,The man will  move the wood,non-restrictive,2,3000
+18,19_pos3_nosub.png,19_pos3_sub.png,feather,leaf,football,stick,18_r.wav,The boy will kick the football,restrictive,3,3000
+19,20_pos4_nosub.png,20_pos4_sub.png,spoon,spatula,bowl,bread,19_n.wav,The chef will clean the bread,non-restrictive,4,3000
+20,21_pos1_nosub.png,21_pos1_sub.png,kitten,block,crayon,cup,20_r.wav,The baby will hug the kitten,restrictive,1,3000
+21,22_pos2_nosub.png,22_pos2_sub.png,cushion,flower,magazine,vase,21_n.wav,The woman will move the flower,non-restrictive,2,3000
+22,23_pos3_nosub.png,23_pos3_sub.png,poster,towel,coat,hook,22_r.wav,The girl will zip the coat,restrictive,3,3000
+23,24_pos4_nosub.png,24_pos4_sub.png,pencil,needle,card,scarf,23_n.wav,The girl will hold the scarf,non-restrictive,4,3000
+24,25_pos1_nosub.png,25_pos1_sub.png,rabbit,plate,potato,glass,24_r.wav,The girl will groom the rabbit,restrictive,1,3000
+25,26_pos2_nosub.png,26_pos2_sub.png,rope,canvas,keyboard,peach,25_n.wav,The man will move the canvas,non-restrictive,2,3000
+26,27_pos3_nosub.png,27_pos3_sub.png,coin,coaster,candle,package,26_r.wav,The woman will blow out the candle,restrictive,3,3000
+27,28_pos4_nosub.png,28_pos4_sub.png,switch,frame,picture,lamp,27_n.wav,The boy will touch the lamp,non-restrictive,4,3000
+28,29_pos1_nosub.png,29_pos1_sub.png,milk,glove,nut,sock,28_r.wav,The cat will drink the milk,restrictive,1,3000
+29,30_pos2_nosub.png,30_pos2_sub.png,tissue,newspaper,comb,eraser,29_n.wav,The grandmother will eadturn the newspaper,non-restrictive,2,3000
+30,31_pos3_nosub.png,31_pos3_sub.png,watch,headphones,dice,cap,30_r.wav,The girl will roll the dice,restrictive,3,3000
+31,32_pos4_nosub.png,32_pos4_sub.png,lemon,sponge,seed,bottle,31_n.wav,The woman will examine the bottle,non-restrictive,4,3000
+32,33_pos1_nosub.png,33_pos1_sub.png,beer,mug,biscuit,kettle,32_r.wav,The woman will brew the beer,restrictive,1,3000
+33,34_pos2_nosub.png,34_pos2_sub.png,gift,suitcase,envelope,box,33_n.wav,The boy will open the suitcase,non-restrictive,2,3000
+34,35_pos3_nosub.png,35_pos3_sub.png,notebook,pillow,radio,puzzle,34_r.wav,The boy will switch on the radio,restrictive,3,3000
+35,36_pos4_nosub.png,36_pos4_sub.png,brush,mirror,pot,mascara,35_n.wav,The girl will squeeze the mascara,non-restrictive,4,3000
+36,37_pos1_nosub.png,37_pos1_sub.png,lego,papers,boxes,clips,36_r.wav,The kid will build the lego,restrictive,1,3000
+37,38_pos2_nosub.png,38_pos2_sub.png,key,banana,mitten,marker,37_n.wav,The boy will move the banana,non-restrictive,2,3000
+38,39_pos3_nosub.png,39_pos3_sub.png,broom,cloth,apron,mop,38_r.wav,The woman will tie the apron,restrictive,3,3000
+39,40_pos4_nosub.png,40_pos4_sub.png,shampoo,mat,buckle,shoelace,39_n.wav,The boy will move the shoelace,non-restrictive,4,3000
+40,41_pos1_nosub.png,41_pos1_sub.png,blouse,pin,toothbrish,iron,40_r.wav,The girl will button the blouse,restrictive,1,3000
+41,42_pos2_nosub.png,42_pos2_sub.png,shell,orange,stone,cone,41_n.wav,The boy will move the orange,non-restrictive,2,3000
+42,43_pos3_nosub.png,43_pos3_sub.png,chalk,ruler,shirt,apple,42_r.wav,The woman will sew the shirt,restrictive,3,3000
+43,44_pos4_nosub.png,44_pos4_sub.png,pan,bolt,handle,safe,43_n.wav,The man will wipe the safe,non-restrictive,4,3000
+44,45_pos1_nosub.png,45_pos1_sub.png,dough,glass,ladle,hammer,44_r.wav,The baker will knead the dough,restrictive,1,3000
+45,46_pos2_nosub.png,46_pos2_sub.png,pot,carrot,laddle,peeler,45_n.wav,The chef will carry the carrot,non-restrictive,2,3000
+46,47_pos3_nosub.png,47_pos3_sub.png,gum,stand,violin,bow,46_r.wav,The musician will tune the violin,restrictive,3,3000
+47,48_pos4_nosub.png,48_pos4_sub.png,dustpan,roller,footstool,carpet,47_n.wav,The girl will move the carpet,non-restrictive,4,3000
+48,49_pos1_nosub.png,49_pos1_sub.png,stamp,envelope,rubberband,scissors,48_r.wav,The child will inflate the balloon,restrictive,1,3000
+49,50_pos2_nosub.png,50_pos2_sub.png,pouch,balloon,pump,flag,49_n.wav,The man will pick up the stamp,non-restrictive,2,3000

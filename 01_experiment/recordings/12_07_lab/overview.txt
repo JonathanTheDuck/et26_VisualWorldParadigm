@@ -1,0 +1,3 @@
+subjNr,group_nr
+1 	2
+2	3

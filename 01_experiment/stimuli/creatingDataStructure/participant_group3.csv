@@ -47,5 +47,5 @@ id,image_nosub,image_sub,position1,position2,position3,position4,audio_file,sent
 45,46_pos4_nosub.png,46_pos4_sub.png,laddle,peeler,pot,carrot,45_n.wav,The chef will carry the carrot,non-restrictive,4,3000
 46,47_pos1_nosub.png,47_pos1_sub.png,violin,bow,gum,stand,46_n.wav,The musician will move the violin,non-restrictive,1,3000
 47,48_pos2_nosub.png,48_pos2_sub.png,footstool,carpet,dustpan,roller,47_n.wav,The girl will move the carpet,non-restrictive,2,3000
-48,49_pos3_nosub.png,49_pos3_sub.png,rubberband,scissors,stamp,envelope,48_n.wav,The child will inlatecarry the balloon,non-restrictive,3,3000
-49,50_pos4_nosub.png,50_pos4_sub.png,pump,flag,pouch,balloon,49_n.wav,The man will pick up the stamp,non-restrictive,4,3000
+48,49_pos3_nosub.png,49_pos3_sub.png,flag,pouch,balloon,pump,48_n.wav,The child will carry the balloon,non-restrictive,3,3000
+49,50_pos4_nosub.png,50_pos4_sub.png,envelope,rubberband,scissors,stamp,49_n.wav,The man will pick up the stamp,non-restrictive,4,3000

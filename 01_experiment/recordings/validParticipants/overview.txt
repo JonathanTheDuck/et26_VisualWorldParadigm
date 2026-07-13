@@ -1,0 +1,6 @@
+subjNr,group_nr,notes
+1, 	2,-
+2,	3,-
+3,	4,glasses but calibration looked good
+4,	5,
+5,	6,contact lenses, calibration maybe suboptimal, check accuracy

@@ -91,10 +91,10 @@ with open ("creatingDataStructure/sentences_fromGdoc.csv",mode='r') as f:
         #perform tts for both restrictive and non restrictive version. 
         for indx in (1,2):
             if indx==1:
-                audio_path=f"audio_v01/{a[0]}_r.wav"
+                audio_path=f"audio_v02/{a[0]}_r.wav"
                 role="restrictive"
             elif indx==2:
-                audio_path=f"audio_v01/{a[0]}_n.wav"
+                audio_path=f"audio_v02/{a[0]}_n.wav"
                 role="non-restrictive"
             align(id=a[0], tex=a[indx], audio_path=audio_path, role=role)
     annotation_df=pd.DataFrame(annotation_rows, columns=["id","word","SentenceRole","WordRole","start","end","sentence"])

@@ -13,6 +13,11 @@ Outputs (saved to OUTPUT_DIR)
   fixation_critical_window.csv  Every fixation event inside the critical window
   growth_curves.csv             Fixation proportions in 50 ms bins (growth curves)
 
+  plots/growth_curve.png              Target vs. distractor fixation curves over time, by condition
+  plots/fixation_proportions.png      Mean 4-way AOI fixation proportions, by condition
+  plots/target_advantage.png          Target-vs-distractor advantage, by condition (box + points)
+  plots/aoi_fixation_qc.png           Raw critical-window fixations plotted over the AOI boxes (sanity check)
+
 Design notes
 ------------
 * All timing stays on the GazePoint clock (seconds) throughout.
@@ -36,20 +41,48 @@ The 4-way output uses slot labels (pos1–pos4). To add specific object names
 for the non-target slots, provide a stimulus list CSV with columns:
     sentence_id, pos1_object, pos2_object, pos3_object, pos4_object
 and call add_object_names(props_df, stimulus_list_path) at the end of main().
+
+Portability
+-----------
+This script is designed to be run straight after cloning the repo — no
+path editing required. All input/output paths are resolved relative to
+this script's own location:
+
+    <repo>/02_analytics/Analysis_pipeline_m/
+        ├── analysis_pipeline.py   <- this file
+        ├── Input/                 <- put j.tsv, j.csv, annotation_audiov1.csv here
+        └── Output/                <- results are written here (created automatically)
+
+If you need to point at different files/folders, either:
+  - drop your files into Input/ using the same filenames, or
+  - override via command-line arguments (see `python analysis_pipeline.py --help`), or
+  - override via environment variables VWP_GAZE_TSV / VWP_TRIAL_CSV /
+    VWP_ANNOTATION_CSV / VWP_OUTPUT_DIR / VWP_INPUT_DIR.
 """
 
+import os
 import sys
+import argparse
 import pandas as pd
 import numpy as np
 from pathlib import Path
 
+import matplotlib
+matplotlib.use("Agg")   # headless-safe backend; plots are saved to file, not shown interactively
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+
 # ──────────────────────────────────────────────────────────────
-# CONFIGURATION
+# CONFIGURATION — relative to this script's location in the repo
 # ──────────────────────────────────────────────────────────────
-GAZE_TSV       = r"C:\Users\mmudali\Downloads\j.tsv"
-TRIAL_CSV      = r"C:\Users\mmudali\Downloads\j.csv"
-ANNOTATION_CSV = r"C:\Users\mmudali\Downloads\annotation_audiov1.csv"
-OUTPUT_DIR     = r"C:\Users\mmudali\Downloads"
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+DEFAULT_INPUT_DIR  = Path(os.environ.get("VWP_INPUT_DIR", SCRIPT_DIR / "Input"))
+DEFAULT_OUTPUT_DIR = Path(os.environ.get("VWP_OUTPUT_DIR", SCRIPT_DIR / "Output"))
+
+DEFAULT_GAZE_TSV       = Path(os.environ.get("VWP_GAZE_TSV", DEFAULT_INPUT_DIR / "j.tsv"))
+DEFAULT_TRIAL_CSV      = Path(os.environ.get("VWP_TRIAL_CSV", DEFAULT_INPUT_DIR / "j.csv"))
+DEFAULT_ANNOTATION_CSV = Path(os.environ.get("VWP_ANNOTATION_CSV", DEFAULT_INPUT_DIR / "annotation_audiov1.csv"))
 
 GROWTH_CURVE_BIN_MS = 50   # time-bin width for growth curves
 
@@ -420,18 +453,245 @@ def add_object_names(props_df, stimulus_list_path):
 
 
 # ──────────────────────────────────────────────────────────────
+# VISUALIZATIONS
+# ──────────────────────────────────────────────────────────────
+
+_CONDITION_COLORS = {"restrictive": "#1f77b4", "non-restrictive": "#d62728"}
+_AOI_COLORS = {"pos1": "#1f77b4", "pos2": "#ff7f0e", "pos3": "#2ca02c",
+               "pos4": "#d62728", "subject": "#7f7f7f"}
+
+
+def _condition_color(cond, fallback_cycle=iter(plt.rcParams["axes.prop_cycle"].by_key()["color"])):
+    return _CONDITION_COLORS.get(cond, next(fallback_cycle))
+
+
+def plot_growth_curve(growth_df, out_path):
+    """
+    Classic visual-world-paradigm growth curve: proportion of fixation time
+    on the target vs. the average distractor, over time bins from verb
+    offset to target onset, plotted separately per condition.
+    """
+    if growth_df.empty:
+        print("  [plot] skipped growth curve — no growth-curve data")
+        return
+
+    df = growth_df.copy()
+    df["role"] = np.where(
+        df["aoi"] == "subject", "subject",
+        np.where(df["aoi"] == ("pos" + df["target_pos"].astype(str)), "target", "distractor")
+    )
+
+    agg = (df.groupby(["condition", "bin_start_ms", "role"])["prop_fixating"]
+             .mean().reset_index())
+
+    fig, axes = plt.subplots(1, agg["condition"].nunique(), figsize=(6 * agg["condition"].nunique(), 4.5),
+                              sharey=True, squeeze=False)
+    axes = axes[0]
+
+    role_style = {"target": dict(color="#1f77b4", linestyle="-", linewidth=2.2, label="Target"),
+                  "distractor": dict(color="#d62728", linestyle="--", linewidth=2.2, label="Distractor (mean)"),
+                  "subject": dict(color="#7f7f7f", linestyle=":", linewidth=1.6, label="Subject")}
+
+    for ax, cond in zip(axes, sorted(agg["condition"].unique())):
+        sub = agg[agg["condition"] == cond]
+        for role in ("target", "distractor", "subject"):
+            r = sub[sub["role"] == role].sort_values("bin_start_ms")
+            if r.empty:
+                continue
+            ax.plot(r["bin_start_ms"], r["prop_fixating"], **role_style[role])
+        ax.set_title(cond)
+        ax.set_xlabel("Time from verb offset (ms)")
+        ax.axhline(0.25, color="black", linewidth=0.7, linestyle=":", alpha=0.4)
+        ax.set_ylim(-0.02, 1.02)
+        ax.grid(alpha=0.25)
+
+    axes[0].set_ylabel("Proportion of time fixating")
+    axes[0].legend(loc="upper left", fontsize=9, frameon=False)
+    fig.suptitle("Fixation growth curves: verb offset → target onset", y=1.02, fontsize=12)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def plot_fixation_proportions(props_df, out_path):
+    """
+    Bar chart of mean 4-way AOI fixation proportions (pos1-4) by condition,
+    matching the CONDITION SUMMARY table printed to console.
+    """
+    if props_df.empty:
+        print("  [plot] skipped fixation proportions — no trial data")
+        return
+
+    pos_cols = ["prop_pos1", "prop_pos2", "prop_pos3", "prop_pos4"]
+    summary = props_df.groupby("condition")[pos_cols].mean()
+
+    conditions = summary.index.tolist()
+    n_cond = len(conditions)
+    x = np.arange(len(pos_cols))
+    width = 0.8 / n_cond
+
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    for i, cond in enumerate(conditions):
+        ax.bar(x + i * width - (0.8 - width) / 2, summary.loc[cond, pos_cols].values,
+               width=width, label=cond, color=_condition_color(cond))
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(["pos1\n(top-right)", "pos2\n(top-left)",
+                         "pos3\n(bottom-left)", "pos4\n(bottom-right)"])
+    ax.set_ylabel("Mean proportion of fixation time")
+    ax.set_title("4-way AOI fixation distribution by condition")
+    ax.legend(frameon=False)
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def plot_target_advantage(props_df, out_path):
+    """
+    Box plot (with individual sentence points overlaid) of target_advantage
+    = P(target) - mean(P(distractors)), by condition.
+    """
+    if props_df.empty:
+        print("  [plot] skipped target advantage — no trial data")
+        return
+
+    conditions = sorted(props_df["condition"].unique())
+    data = [props_df.loc[props_df["condition"] == c, "target_advantage"].values for c in conditions]
+
+    fig, ax = plt.subplots(figsize=(5.5, 4.5))
+    try:
+        bp = ax.boxplot(data, tick_labels=conditions, patch_artist=True, showfliers=False, widths=0.5)
+    except TypeError:  # matplotlib < 3.9 doesn't know tick_labels
+        bp = ax.boxplot(data, labels=conditions, patch_artist=True, showfliers=False, widths=0.5)
+    for patch, cond in zip(bp["boxes"], conditions):
+        patch.set_facecolor(_condition_color(cond))
+        patch.set_alpha(0.35)
+
+    rng = np.random.default_rng(0)
+    for i, (cond, vals) in enumerate(zip(conditions, data), start=1):
+        jitter = rng.uniform(-0.08, 0.08, size=len(vals))
+        ax.scatter(np.full(len(vals), i) + jitter, vals, color=_condition_color(cond),
+                   s=22, alpha=0.75, zorder=3, edgecolor="white", linewidth=0.4)
+
+    ax.axhline(0, color="black", linewidth=0.8, alpha=0.5)
+    ax.set_ylabel("Target advantage  (P(target) − mean P(distractor))")
+    ax.set_title("Target advantage by condition")
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def plot_aoi_qc(crit_df, out_path):
+    """
+    Quality-control scatter plot: every raw critical-window fixation
+    (FPOGX, FPOGY in normalized screen space) plotted over the AOI
+    bounding boxes, colored by assigned AOI. Useful for sanity-checking
+    that AOI_NORM boxes actually line up with where people looked.
+    """
+    if crit_df.empty:
+        print("  [plot] skipped AOI QC plot — no critical-window fixations")
+        return
+
+    fig, ax = plt.subplots(figsize=(7.5, 4.3))
+
+    for name, (x1, y1, x2, y2) in AOI_NORM.items():
+        rect = mpatches.Rectangle((x1, y1), x2 - x1, y2 - y1,
+                                   facecolor=_AOI_COLORS.get(name, "#999999"),
+                                   alpha=0.15, edgecolor=_AOI_COLORS.get(name, "#999999"),
+                                   linewidth=1.3)
+        ax.add_patch(rect)
+        ax.text(x1, y1 - 0.015, name, fontsize=8, color=_AOI_COLORS.get(name, "#999999"))
+
+    for aoi, sub in crit_df.groupby("aoi"):
+        ax.scatter(sub["FPOGX"], sub["FPOGY"], s=10, alpha=0.6,
+                   color=_AOI_COLORS.get(aoi, "#000000"), label=aoi, edgecolor="none")
+
+    ax.set_xlim(0, 1)
+    ax.set_ylim(1, 0)   # y=0 at top, matching screen coordinates
+    ax.set_xlabel("FPOGX (normalized screen space)")
+    ax.set_ylabel("FPOGY (normalized screen space)")
+    ax.set_title("QC: critical-window fixations vs. AOI boxes")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.15), ncol=5, frameon=False, fontsize=8)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def generate_visualizations(props_df, crit_df, growth_df, plots_dir):
+    """Generate and save all plots to plots_dir. Never raises — a failed
+    plot is logged and skipped so it can't take down the rest of the pipeline."""
+    plots_dir.mkdir(parents=True, exist_ok=True)
+    print("\nGenerating visualizations...")
+    for fn, args, filename in [
+        (plot_growth_curve,        (growth_df,), "growth_curve.png"),
+        (plot_fixation_proportions,(props_df,),  "fixation_proportions.png"),
+        (plot_target_advantage,    (props_df,),  "target_advantage.png"),
+        (plot_aoi_qc,               (crit_df,),  "aoi_fixation_qc.png"),
+    ]:
+        try:
+            fn(*args, plots_dir / filename)
+        except Exception as e:
+            print(f"  [plot] FAILED ({filename}): {e}")
+
+
+# ──────────────────────────────────────────────────────────────
+# CLI
+# ──────────────────────────────────────────────────────────────
+
+def parse_args():
+    p = argparse.ArgumentParser(
+        description="Eye-Tracking Visual World Paradigm analysis pipeline. "
+                     "By default reads j.tsv, j.csv and annotation_audiov1.csv "
+                     "from the Input/ folder next to this script, and writes "
+                     "results to the Output/ folder next to this script."
+    )
+    p.add_argument("--gaze-tsv", type=Path, default=DEFAULT_GAZE_TSV,
+                    help=f"Path to GazePoint TSV (default: {DEFAULT_GAZE_TSV})")
+    p.add_argument("--trial-csv", type=Path, default=DEFAULT_TRIAL_CSV,
+                    help=f"Path to OpenSesame trial CSV (default: {DEFAULT_TRIAL_CSV})")
+    p.add_argument("--annotation-csv", type=Path, default=DEFAULT_ANNOTATION_CSV,
+                    help=f"Path to forced-alignment annotation CSV (default: {DEFAULT_ANNOTATION_CSV})")
+    p.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR,
+                    help=f"Directory to write results to (default: {DEFAULT_OUTPUT_DIR})")
+    p.add_argument("--skip-plots", action="store_true",
+                    help="Skip generating PNG visualizations (only write CSV outputs)")
+    return p.parse_args()
+
+
+# ──────────────────────────────────────────────────────────────
 # MAIN
 # ──────────────────────────────────────────────────────────────
 
 def main():
-    out = Path(OUTPUT_DIR)
+    args = parse_args()
+
+    gaze_tsv       = args.gaze_tsv
+    trial_csv      = args.trial_csv
+    annotation_csv = args.annotation_csv
+    out            = args.output_dir
+
+    for f, label in [(gaze_tsv, "gaze TSV"), (trial_csv, "trial CSV"), (annotation_csv, "annotation CSV")]:
+        if not f.exists():
+            sys.exit(
+                f"ERROR: {label} not found at {f}\n"
+                f"Place your input files in {DEFAULT_INPUT_DIR} "
+                f"(using the default filenames j.tsv, j.csv, annotation_audiov1.csv), "
+                f"or pass explicit paths via command-line flags. Run with --help for options."
+            )
+
     out.mkdir(parents=True, exist_ok=True)
 
     # ── Load ──────────────────────────────────────────────────
     print("Loading data...")
-    gaze_df  = load_gaze(GAZE_TSV)
-    trial_df = load_trials(TRIAL_CSV)
-    ann_df   = load_annotation(ANNOTATION_CSV)
+    gaze_df  = load_gaze(gaze_tsv)
+    trial_df = load_trials(trial_csv)
+    ann_df   = load_annotation(annotation_csv)
 
     subject_nr = int(trial_df["subject_nr"].iloc[0])
     print(f"  Subject {subject_nr}  |  {len(trial_df)} trials in CSV")
@@ -577,6 +837,10 @@ def main():
     if not growth_df.empty:
         growth_df.to_csv(growth_path, index=False)
         print(f"Saved: {growth_path}  ({len(growth_df)} time-bin rows)")
+
+    # ── Plots ─────────────────────────────────────────────────
+    if not args.skip_plots:
+        generate_visualizations(props_df, crit_df, growth_df, out / "plots")
 
     return props_df, crit_df, growth_df
 

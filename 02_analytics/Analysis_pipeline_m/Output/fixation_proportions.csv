@@ -1,6 +1,6 @@
 subject_nr,trial,condition,sentence,target_word,target_position,prop_pos1,prop_pos2,prop_pos3,prop_pos4,prop_subject,prop_target,target_advantage,fixation_entropy,no_object_gaze,total_window_ms,obj_gaze_ms,sentence_id,audio_id
 6,9,restrictive,The boy will eat the cake,cake,3,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,210.0,0.0,0,0
-6,14,restrictive,The woman will drink the wine,wine,4,1.0,0.0,0.0,0.0,0.765775,0.0,-0.333333,0.0,False,273.0,53.08,1,1
+6,14,restrictive,The woman will drink the wine,wine,4,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,273.0,0.0,1,1
 6,0,restrictive,The policeman will arrest the man,man,1,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,210.0,0.0,2,2
 6,16,restrictive,The woman will bathe the baby,baby,2,0.581814,0.418186,0.0,0.0,0.0,0.418186,0.224248,0.9806,False,357.0,330.14,3,3
 6,27,restrictive,The boy will bounce the ball,ball,3,1.0,0.0,0.0,0.0,0.861022,0.0,-0.333333,0.0,False,231.0,25.59,4,4
@@ -10,42 +10,42 @@ subject_nr,trial,condition,sentence,target_word,target_position,prop_pos1,prop_p
 6,25,restrictive,The woman will play the piano,piano,3,1.0,0.0,0.0,0.0,0.0,0.0,-0.333333,0.0,False,252.0,252.0,8,8
 6,46,restrictive,The woman will read the book,book,4,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,252.0,0.0,9,9
 6,34,restrictive,The man will repair the washing machine,machine,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,840.0,0.0,10,10
-6,23,restrictive,The baby will ring the bell,bell,2,1.0,0.0,0.0,0.0,0.0,0.0,-0.333333,0.0,False,189.0,182.17,11,11
+6,23,restrictive,The baby will ring the bell,bell,2,1.0,0.0,0.0,0.0,0.0,0.0,-0.333333,0.0,False,189.0,109.59,11,11
 6,13,restrictive,The man will sail the boat,boat,3,0.0,1.0,0.0,0.0,0.0,0.0,-0.333333,0.0,False,252.0,245.17,12,12
 6,8,restrictive,The man will smoke the cigarettes,cigarettes,4,1.0,0.0,0.0,0.0,0.0,0.0,-0.333333,0.0,False,252.0,252.0,13,13
 6,43,restrictive,The boy will walk the dog,dog,1,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,252.0,252.0,14,14
 6,20,restrictive,The businessman will wear the hat,hat,2,0.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,False,273.0,266.16,15,15
-6,37,restrictive,The woman will wear the dress,dress,3,0.0,0.0,1.0,0.0,0.0,1.0,1.0,0.0,False,273.0,113.49,16,16
+6,37,restrictive,The woman will wear the dress,dress,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,273.0,0.0,16,16
 6,17,restrictive,The man will chop the wood,wood,4,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,294.0,0.0,17,17
-6,48,restrictive,The boy will kick the football,football,1,0.743236,0.0,0.256764,0.0,0.0,0.743236,0.657647,0.821825,False,273.0,246.14,18,18
-6,5,restrictive,The chef will slice the bread,bread,2,0.0,0.0,1.0,0.0,0.0,0.0,-0.333333,0.0,False,231.0,224.65,19,19
+6,48,restrictive,The boy will kick the football,football,1,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,273.0,182.94,18,18
+6,5,restrictive,The chef will slice the bread,bread,2,0.0,0.0,1.0,0.0,0.0,0.0,-0.333333,0.0,False,231.0,185.74,19,19
 6,7,restrictive,The baby will hug the kitten,kitten,3,0.0,0.0,1.0,0.0,0.0,1.0,1.0,0.0,False,315.0,315.0,20,20
 6,45,restrictive,The woman will water the flower,flower,4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,273.0,0.0,21,21
 6,4,restrictive,The girl will zip the coat,coat,1,0.0,1.0,0.0,0.0,0.0,0.0,-0.333333,0.0,False,252.0,225.43,22,22
 6,33,restrictive,The girl will knit the scarf,scarf,2,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,273.0,0.0,23,23
 6,3,restrictive,The girl will groom the rabbit,rabbit,3,1.0,0.0,0.0,0.0,0.81013,0.0,-0.333333,0.0,False,273.0,30.14,24,24
 6,31,non-restrictive,The man will move the canvas,canvas,4,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,189.0,0.0,25,25
-6,39,non-restrictive,The woman will blow grab the candle,candle,1,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,210.0,66.52,26,26
+6,39,non-restrictive,The woman will blow grab the candle,candle,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,210.0,0.0,26,26
 6,44,non-restrictive,The boy will touch the lamp,lamp,2,1.0,0.0,0.0,0.0,0.0,0.0,-0.333333,0.0,False,273.0,266.16,27,27
 6,36,non-restrictive,The cat will push the milk,milk,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,252.0,0.0,28,28
-6,49,non-restrictive,The grandmother will eadturn the newspaper,newspaper,4,1.0,0.0,0.0,0.0,0.512874,0.0,-0.333333,0.0,False,273.0,120.14,29,29
+6,49,non-restrictive,The grandmother will eadturn the newspaper,newspaper,4,1.0,0.0,0.0,0.0,0.0,0.0,-0.333333,0.0,False,273.0,120.14,29,29
 6,47,non-restrictive,The girl will grab the dice,dice,1,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,273.0,273.0,30,30
 6,11,non-restrictive,The woman will examine the bottle,bottle,2,0.0,0.0,0.0,1.0,0.0,0.0,-0.333333,0.0,False,231.0,224.17,31,31
 6,32,non-restrictive,The woman will carry the beer,beer,3,0.0,0.0,0.0,1.0,0.0,0.0,-0.333333,0.0,False,294.0,287.65,32,32
 6,28,non-restrictive,The boy will open the suitcase,suitcase,4,0.0,0.0,1.0,0.0,0.0,0.0,-0.333333,0.0,False,273.0,233.74,33,33
-6,40,non-restrictive,The boy will move the radio,radio,1,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,273.0,157.07,34,34
+6,40,non-restrictive,The boy will move the radio,radio,1,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,273.0,257.66,34,34
 6,29,non-restrictive,The girl will squeeze the mascara,mascara,2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,168.0,0.0,35,35
 6,38,non-restrictive,The kid will stack the lego,lego,3,0.0,0.0,1.0,0.0,0.0,1.0,1.0,0.0,False,273.0,54.55,36,36
-6,18,non-restrictive,The boy will move the banana,banana,4,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,189.0,0.0,37,37
-6,24,non-restrictive,The woman will carry the apron,apron,1,0.0,0.0,1.0,0.0,0.0,0.0,-0.333333,0.0,False,378.0,194.34,38,38
-6,35,non-restrictive,The boy will move the shoelace,shoelace,2,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,231.0,0.0,39,39
-6,2,non-restrictive,The girl will hold the blouse,blouse,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,189.0,0.0,40,40
+6,18,non-restrictive,The boy will move the banana,banana,4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,189.0,0.0,37,37
+6,24,non-restrictive,The woman will carry the apron,apron,1,0.0,0.0,1.0,0.0,0.0,0.0,-0.333333,0.0,False,378.0,263.85,38,38
+6,35,non-restrictive,The boy will move the shoelace,shoelace,2,0.0,1.0,0.0,0.0,0.900179,1.0,1.0,0.0,False,231.0,18.38,39,39
+6,2,non-restrictive,The girl will hold the blouse,blouse,3,0.0,0.0,0.0,1.0,0.0,0.0,-0.333333,0.0,False,189.0,189.0,40,40
 6,1,non-restrictive,The boy will move the orange,orange,4,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,294.0,0.0,41,41
 6,19,non-restrictive,The woman will wash the shirt,shirt,1,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,False,273.0,266.17,42,42
 6,42,non-restrictive,The man will wipe the safe,safe,2,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,273.0,0.0,43,43
 6,12,non-restrictive,The baker will inspect the dough,dough,3,0.0,0.0,0.497159,0.502841,0.0,0.497159,0.329545,0.999977,False,231.0,204.14,44,44
 6,41,non-restrictive,The chef will carry the carrot,carrot,4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,True,273.0,0.0,45,45
 6,30,non-restrictive,The musician will move the violin,violin,1,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,231.0,0.0,46,46
-6,15,non-restrictive,The girl will move the carpet,carpet,2,0.0,0.0,0.0,1.0,0.0,0.0,-0.333333,0.0,False,189.0,22.79,47,47
+6,15,non-restrictive,The girl will move the carpet,carpet,2,0.0,0.0,0.0,1.0,0.0,0.0,-0.333333,0.0,False,189.0,182.16,47,47
 6,6,non-restrictive,The child will inlatecarry the balloon,balloon,3,0.623785,0.376215,0.0,0.0,0.0,0.0,-0.333333,0.955325,False,231.0,203.66,48,48
 6,10,non-restrictive,The man will pick up the stamp,stamp,4,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,True,378.0,0.0,49,49

@@ -9,16 +9,30 @@ Inputs
 
 Outputs (saved to OUTPUT_DIR)
 ------
-  fixation_proportions.csv      Per-trial 4-way fixation proportions + metrics
-  fixation_critical_window.csv  Every fixation event inside the critical window
-  growth_curves.csv             Fixation proportions in 50 ms bins (growth curves)
+  fixation_proportions.csv       Per-trial 4-way fixation proportions + metrics
+  fixation_critical_window.csv   Every fixation event inside the critical window
+  growth_curves.csv              Fixation proportions in 50 ms bins (growth curves)
+  raw_gaze_critical_window.csv   Every raw (per-sample) gaze point inside the critical window
+
+  plots/growth_curve.png              Target vs. distractor fixation curves over time, by condition
+  plots/fixation_proportions.png      Mean 4-way AOI fixation proportions, by condition
+  plots/target_advantage.png          Target-vs-distractor advantage, by condition (box + points)
+  plots/aoi_fixation_qc.png           Fixation-level events plotted over the AOI boxes (sanity check)
+  plots/raw_gaze_points.png           Raw per-sample gaze point density over the AOI boxes
 
 Design notes
 ------------
 * All timing stays on the GazePoint clock (seconds) throughout.
   The audio onset marker written to the TSV USER column is used directly,
-  so no cross-clock conversion is needed.
-* GazePoint's own fixation detection (FPOGID / FPOGS / FPOGD) is used.
+  so no cross-clock conversion is needed. TIME and FPOGS are on the same
+  clock (verified: FPOGS is always <= TIME, since a fixation's reported
+  start time precedes the current sample's TIME by construction).
+* Fixation *timing* (FPOGS/FPOGD, and the FPOGID grouping itself) still
+  comes from GazePoint's onboard fixation algorithm. Fixation *position*
+  is computed by this script as the mean BPOGX/BPOGY ("Best Point of
+  Gaze" — GazePoint's fused left+right-eye raw sample) across the valid
+  (BPOGV==1) samples inside each FPOGID group, rather than trusting
+  GazePoint's own pre-averaged FPOGX/FPOGY.
 * The critical window per trial is [verb_offset, target_onset] relative to
   audio onset, both sourced from the forced-alignment annotation.
 * AOI bounding boxes were measured from 1_pos1_sub.png (2400×1400 px) and
@@ -61,6 +75,11 @@ import argparse
 import pandas as pd
 import numpy as np
 from pathlib import Path
+
+import matplotlib
+matplotlib.use("Agg")   # headless-safe backend; plots are saved to file, not shown interactively
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 
 # ──────────────────────────────────────────────────────────────
 # CONFIGURATION — relative to this script's location in the repo
@@ -141,13 +160,38 @@ def load_trials(path):
     return df
 
 
-def load_annotation(path):
+def load_annotation(path, time_unit="auto"):
     """
     Load forced-alignment CSV.
+
+    time_unit : "auto" | "seconds" | "ms"
+        Forced-alignment tools differ in whether 'start'/'end' are reported
+        in seconds (e.g. 1.26) or milliseconds (e.g. 1260). This function
+        can auto-detect it: real sentences in this paradigm run well under
+        20 seconds, so if the median 'end' value is > 20 we assume the
+        column is in milliseconds and convert to seconds. Pass "seconds" or
+        "ms" explicitly to skip the heuristic if you already know the unit.
+
     Returns one row per (sentence_id, condition) with columns:
         id, condition, verb_offset_s, target_onset_s, target_word
+    All returned times are in seconds, regardless of the input unit.
     """
     df = pd.read_csv(path)
+
+    if time_unit == "auto":
+        median_end = df["end"].median()
+        detected = "ms" if median_end > 20 else "seconds"
+        print(f"  [annotation] time unit auto-detected as '{detected}' "
+              f"(median 'end' value = {median_end:.3g})")
+        time_unit = detected
+
+    if time_unit == "ms":
+        df = df.copy()
+        df["start"] = df["start"] / 1000.0
+        df["end"]   = df["end"]   / 1000.0
+    elif time_unit != "seconds":
+        raise ValueError(f"Unknown time_unit '{time_unit}' — must be 'auto', 'seconds', or 'ms'")
+
     verbs = (df[df["WordRole"] == "ROOT"]
              [["id", "SentenceRole", "end"]]
              .rename(columns={"end": "verb_offset_s",
@@ -215,23 +259,32 @@ def segment_trials(gaze_df):
 def collapse_to_fixations(gaze_seg):
     """
     Collapse a per-trial gaze segment into one row per fixation.
-    Uses GazePoint's onboard fixation detection (FPOGID groups).
-    Drops samples where FPOGV != 1 (invalid / tracking loss).
+    Uses GazePoint's onboard fixation detection (FPOGID groups) to define
+    *which samples belong to which fixation*, but derives the fixation's
+    X/Y position by averaging the raw per-sample BPOGX/BPOGY ("Best Point
+    Of Gaze" — GazePoint's fused left+right-eye estimate) rather than
+    trusting GazePoint's own pre-smoothed FPOGX/FPOGY. Validity is checked
+    on BPOGV (not FPOGV) since BPOGV is what governs BPOGX/BPOGY.
+
+    FPOGS/FPOGD (fixation start time and duration) still come from
+    GazePoint's own fixation algorithm — BPOG is a raw per-sample stream
+    and has no notion of fixation duration on its own.
 
     Returns DataFrame with columns: FPOGID, FPOGX, FPOGY, FPOGS, FPOGD
+        FPOGX, FPOGY = mean BPOGX, BPOGY across valid samples in the fixation
         FPOGS = fixation start (GazePoint seconds)
         FPOGD = fixation duration (GazePoint seconds, taken from last sample
                 in each group — GazePoint continuously updates FPOGD)
     """
-    valid = gaze_seg[gaze_seg["FPOGV"] == 1]
+    valid = gaze_seg[gaze_seg["BPOGV"] == 1]
     if valid.empty:
         return pd.DataFrame(columns=["FPOGID", "FPOGX", "FPOGY", "FPOGS", "FPOGD"])
 
     fix = (
         valid.groupby("FPOGID", sort=False)
         .agg(
-            FPOGX=("FPOGX", "mean"),
-            FPOGY=("FPOGY", "mean"),
+            FPOGX=("BPOGX", "mean"),
+            FPOGY=("BPOGY", "mean"),
             FPOGS=("FPOGS", "first"),
             FPOGD=("FPOGD", "last"),    # last = fully accumulated duration
         )
@@ -295,6 +348,36 @@ def extract_critical_window(fix_df, audio_onset_s, verb_offset_s, target_onset_s
 
     # Classify AOI
     df["aoi"] = [classify_aoi(x, y) for x, y in zip(df["FPOGX"], df["FPOGY"])]
+    return df
+
+
+def extract_critical_window_raw(gaze_seg, audio_onset_s, verb_offset_s, target_onset_s):
+    """
+    Like extract_critical_window, but keeps every individual raw gaze
+    sample (BPOGX/BPOGY, one row per ~16.7 ms sample at 60 Hz) inside the
+    critical window, rather than collapsing to fixations first.
+
+    Used for raw-gaze-point visualizations (density/scatter of literally
+    where the eye was on every sample), as opposed to the fixation-level
+    plots which show GazePoint's own fixation clusters.
+
+    Returns a DataFrame with columns: TIME, BPOGX, BPOGY, aoi
+    (may be empty if no valid samples fall in the window).
+    """
+    win_start = audio_onset_s + verb_offset_s
+    win_end   = audio_onset_s + target_onset_s
+    if win_end <= win_start:
+        return pd.DataFrame(columns=["TIME", "BPOGX", "BPOGY", "aoi"])
+
+    mask = (
+        (gaze_seg["TIME"] >= win_start) & (gaze_seg["TIME"] < win_end) &
+        (gaze_seg["BPOGV"] == 1)
+    )
+    df = gaze_seg.loc[mask, ["TIME", "BPOGX", "BPOGY"]].copy()
+    if df.empty:
+        return df
+
+    df["aoi"] = [classify_aoi(x, y) for x, y in zip(df["BPOGX"], df["BPOGY"])]
     return df
 
 
@@ -443,6 +526,234 @@ def add_object_names(props_df, stimulus_list_path):
 
 
 # ──────────────────────────────────────────────────────────────
+# VISUALIZATIONS
+# ──────────────────────────────────────────────────────────────
+
+_CONDITION_COLORS = {"restrictive": "#1f77b4", "non-restrictive": "#d62728"}
+_AOI_COLORS = {"pos1": "#1f77b4", "pos2": "#ff7f0e", "pos3": "#2ca02c",
+               "pos4": "#d62728", "subject": "#7f7f7f"}
+
+
+def _condition_color(cond, fallback_cycle=iter(plt.rcParams["axes.prop_cycle"].by_key()["color"])):
+    return _CONDITION_COLORS.get(cond, next(fallback_cycle))
+
+
+def plot_growth_curve(growth_df, out_path):
+    """
+    Classic visual-world-paradigm growth curve: proportion of fixation time
+    on the target vs. the average distractor, over time bins from verb
+    offset to target onset, plotted separately per condition.
+    """
+    if growth_df.empty:
+        print("  [plot] skipped growth curve — no growth-curve data")
+        return
+
+    df = growth_df.copy()
+    df["role"] = np.where(
+        df["aoi"] == "subject", "subject",
+        np.where(df["aoi"] == ("pos" + df["target_pos"].astype(str)), "target", "distractor")
+    )
+
+    agg = (df.groupby(["condition", "bin_start_ms", "role"])["prop_fixating"]
+             .mean().reset_index())
+
+    fig, axes = plt.subplots(1, agg["condition"].nunique(), figsize=(6 * agg["condition"].nunique(), 4.5),
+                              sharey=True, squeeze=False)
+    axes = axes[0]
+
+    role_style = {"target": dict(color="#1f77b4", linestyle="-", linewidth=2.2, label="Target"),
+                  "distractor": dict(color="#d62728", linestyle="--", linewidth=2.2, label="Distractor (mean)"),
+                  "subject": dict(color="#7f7f7f", linestyle=":", linewidth=1.6, label="Subject")}
+
+    for ax, cond in zip(axes, sorted(agg["condition"].unique())):
+        sub = agg[agg["condition"] == cond]
+        for role in ("target", "distractor", "subject"):
+            r = sub[sub["role"] == role].sort_values("bin_start_ms")
+            if r.empty:
+                continue
+            ax.plot(r["bin_start_ms"], r["prop_fixating"], **role_style[role])
+        ax.set_title(cond)
+        ax.set_xlabel("Time from verb offset (ms)")
+        ax.axhline(0.25, color="black", linewidth=0.7, linestyle=":", alpha=0.4)
+        ax.set_ylim(-0.02, 1.02)
+        ax.grid(alpha=0.25)
+
+    axes[0].set_ylabel("Proportion of time fixating")
+    axes[0].legend(loc="upper left", fontsize=9, frameon=False)
+    fig.suptitle("Fixation growth curves: verb offset → target onset", y=1.02, fontsize=12)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def plot_fixation_proportions(props_df, out_path):
+    """
+    Bar chart of mean 4-way AOI fixation proportions (pos1-4) by condition,
+    matching the CONDITION SUMMARY table printed to console.
+    """
+    if props_df.empty:
+        print("  [plot] skipped fixation proportions — no trial data")
+        return
+
+    pos_cols = ["prop_pos1", "prop_pos2", "prop_pos3", "prop_pos4"]
+    summary = props_df.groupby("condition")[pos_cols].mean()
+
+    conditions = summary.index.tolist()
+    n_cond = len(conditions)
+    x = np.arange(len(pos_cols))
+    width = 0.8 / n_cond
+
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    for i, cond in enumerate(conditions):
+        ax.bar(x + i * width - (0.8 - width) / 2, summary.loc[cond, pos_cols].values,
+               width=width, label=cond, color=_condition_color(cond))
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(["pos1\n(top-right)", "pos2\n(top-left)",
+                         "pos3\n(bottom-left)", "pos4\n(bottom-right)"])
+    ax.set_ylabel("Mean proportion of fixation time")
+    ax.set_title("4-way AOI fixation distribution by condition")
+    ax.legend(frameon=False)
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def plot_target_advantage(props_df, out_path):
+    """
+    Box plot (with individual sentence points overlaid) of target_advantage
+    = P(target) - mean(P(distractors)), by condition.
+    """
+    if props_df.empty:
+        print("  [plot] skipped target advantage — no trial data")
+        return
+
+    conditions = sorted(props_df["condition"].unique())
+    data = [props_df.loc[props_df["condition"] == c, "target_advantage"].values for c in conditions]
+
+    fig, ax = plt.subplots(figsize=(5.5, 4.5))
+    try:
+        bp = ax.boxplot(data, tick_labels=conditions, patch_artist=True, showfliers=False, widths=0.5)
+    except TypeError:  # matplotlib < 3.9 doesn't know tick_labels
+        bp = ax.boxplot(data, labels=conditions, patch_artist=True, showfliers=False, widths=0.5)
+    for patch, cond in zip(bp["boxes"], conditions):
+        patch.set_facecolor(_condition_color(cond))
+        patch.set_alpha(0.35)
+
+    rng = np.random.default_rng(0)
+    for i, (cond, vals) in enumerate(zip(conditions, data), start=1):
+        jitter = rng.uniform(-0.08, 0.08, size=len(vals))
+        ax.scatter(np.full(len(vals), i) + jitter, vals, color=_condition_color(cond),
+                   s=22, alpha=0.75, zorder=3, edgecolor="white", linewidth=0.4)
+
+    ax.axhline(0, color="black", linewidth=0.8, alpha=0.5)
+    ax.set_ylabel("Target advantage  (P(target) − mean P(distractor))")
+    ax.set_title("Target advantage by condition")
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def plot_aoi_qc(crit_df, out_path):
+    """
+    Quality-control scatter plot: every raw critical-window fixation
+    (FPOGX, FPOGY in normalized screen space) plotted over the AOI
+    bounding boxes, colored by assigned AOI. Useful for sanity-checking
+    that AOI_NORM boxes actually line up with where people looked.
+    """
+    if crit_df.empty:
+        print("  [plot] skipped AOI QC plot — no critical-window fixations")
+        return
+
+    fig, ax = plt.subplots(figsize=(7.5, 4.3))
+
+    for name, (x1, y1, x2, y2) in AOI_NORM.items():
+        rect = mpatches.Rectangle((x1, y1), x2 - x1, y2 - y1,
+                                   facecolor=_AOI_COLORS.get(name, "#999999"),
+                                   alpha=0.15, edgecolor=_AOI_COLORS.get(name, "#999999"),
+                                   linewidth=1.3)
+        ax.add_patch(rect)
+        ax.text(x1, y1 - 0.015, name, fontsize=8, color=_AOI_COLORS.get(name, "#999999"))
+
+    for aoi, sub in crit_df.groupby("aoi"):
+        ax.scatter(sub["FPOGX"], sub["FPOGY"], s=10, alpha=0.6,
+                   color=_AOI_COLORS.get(aoi, "#000000"), label=aoi, edgecolor="none")
+
+    ax.set_xlim(0, 1)
+    ax.set_ylim(1, 0)   # y=0 at top, matching screen coordinates
+    ax.set_xlabel("FPOGX (normalized screen space)")
+    ax.set_ylabel("FPOGY (normalized screen space)")
+    ax.set_title("QC: critical-window fixations vs. AOI boxes")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.15), ncol=5, frameon=False, fontsize=8)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def plot_raw_gaze_points(raw_df, out_path):
+    """
+    Raw gaze point visualization: every individual valid BPOGX/BPOGY
+    sample captured during the critical window (verb offset -> target
+    onset), across all trials, plotted as a semi-transparent scatter over
+    the AOI boxes. Unlike plot_aoi_qc (which shows GazePoint's fixation
+    clusters, one point per fixation), this shows literally every ~16.7 ms
+    sample, so density/color intensity reflects how much raw dwell time
+    accumulated in each region — closer to a gaze heatmap.
+    """
+    if raw_df.empty:
+        print("  [plot] skipped raw gaze points — no raw samples in critical windows")
+        return
+
+    fig, ax = plt.subplots(figsize=(7.5, 4.3))
+
+    # Density as a 2D histogram (heatmap), AOI boxes drawn on top for reference
+    hb = ax.hexbin(raw_df["BPOGX"], raw_df["BPOGY"], gridsize=60, extent=(0, 1, 0, 1),
+                    cmap="viridis", mincnt=1, bins="log")
+    fig.colorbar(hb, ax=ax, label="Raw sample count (log scale)")
+
+    for name, (x1, y1, x2, y2) in AOI_NORM.items():
+        rect = mpatches.Rectangle((x1, y1), x2 - x1, y2 - y1,
+                                   facecolor="none", edgecolor="white",
+                                   linewidth=1.3, linestyle="--")
+        ax.add_patch(rect)
+        ax.text(x1, y1 - 0.015, name, fontsize=8, color="white")
+
+    ax.set_xlim(0, 1)
+    ax.set_ylim(1, 0)   # y=0 at top, matching screen coordinates
+    ax.set_xlabel("BPOGX (normalized screen space)")
+    ax.set_ylabel("BPOGY (normalized screen space)")
+    ax.set_title("Raw gaze point density: critical window, all trials (BPOG samples)")
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  [plot] saved: {out_path}")
+
+
+def generate_visualizations(props_df, crit_df, growth_df, raw_gaze_df, plots_dir):
+    """Generate and save all plots to plots_dir. Never raises — a failed
+    plot is logged and skipped so it can't take down the rest of the pipeline."""
+    plots_dir.mkdir(parents=True, exist_ok=True)
+    print("\nGenerating visualizations...")
+    for fn, args, filename in [
+        (plot_growth_curve,        (growth_df,),   "growth_curve.png"),
+        (plot_fixation_proportions,(props_df,),    "fixation_proportions.png"),
+        (plot_target_advantage,    (props_df,),    "target_advantage.png"),
+        (plot_aoi_qc,               (crit_df,),    "aoi_fixation_qc.png"),
+        (plot_raw_gaze_points,      (raw_gaze_df,),"raw_gaze_points.png"),
+    ]:
+        try:
+            fn(*args, plots_dir / filename)
+        except Exception as e:
+            print(f"  [plot] FAILED ({filename}): {e}")
+
+
+# ──────────────────────────────────────────────────────────────
 # CLI
 # ──────────────────────────────────────────────────────────────
 
@@ -459,8 +770,13 @@ def parse_args():
                     help=f"Path to OpenSesame trial CSV (default: {DEFAULT_TRIAL_CSV})")
     p.add_argument("--annotation-csv", type=Path, default=DEFAULT_ANNOTATION_CSV,
                     help=f"Path to forced-alignment annotation CSV (default: {DEFAULT_ANNOTATION_CSV})")
+    p.add_argument("--annotation-time-unit", choices=["auto", "seconds", "ms"], default="auto",
+                    help="Unit of the 'start'/'end' columns in the annotation CSV. "
+                         "'auto' (default) detects seconds vs. milliseconds automatically.")
     p.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR,
                     help=f"Directory to write results to (default: {DEFAULT_OUTPUT_DIR})")
+    p.add_argument("--skip-plots", action="store_true",
+                    help="Skip generating PNG visualizations (only write CSV outputs)")
     return p.parse_args()
 
 
@@ -491,7 +807,7 @@ def main():
     print("Loading data...")
     gaze_df  = load_gaze(gaze_tsv)
     trial_df = load_trials(trial_csv)
-    ann_df   = load_annotation(annotation_csv)
+    ann_df   = load_annotation(annotation_csv, time_unit=args.annotation_time_unit)
 
     subject_nr = int(trial_df["subject_nr"].iloc[0])
     print(f"  Subject {subject_nr}  |  {len(trial_df)} trials in CSV")
@@ -521,9 +837,10 @@ def main():
 
     # ── Per-trial processing ──────────────────────────────────
     print("Processing trials...")
-    all_metrics  = []
-    all_crit_fix = []
-    all_growth   = []
+    all_metrics   = []
+    all_crit_fix  = []
+    all_growth    = []
+    all_raw_gaze  = []
 
     for i in range(n_trials):
         seg    = segments[i]
@@ -557,6 +874,16 @@ def main():
         crit = extract_critical_window(
             fix_df, seg["audio_onset_s"], verb_offset_s, target_onset_s
         )
+
+        # Raw (per-sample) gaze in the critical window, for gaze-point plots
+        raw = extract_critical_window_raw(
+            seg["gaze"], seg["audio_onset_s"], verb_offset_s, target_onset_s
+        )
+        if not raw.empty:
+            raw = raw.copy()
+            raw["trial"]     = i
+            raw["condition"] = condition
+            all_raw_gaze.append(raw)
 
         if crit.empty:
             print(f"  [warn] Trial {i} ({condition}, '{target_word}'): "
@@ -596,6 +923,8 @@ def main():
                  if all_crit_fix else pd.DataFrame())
     growth_df = (pd.concat(all_growth, ignore_index=True)
                  if all_growth else pd.DataFrame())
+    raw_gaze_df = (pd.concat(all_raw_gaze, ignore_index=True)
+                   if all_raw_gaze else pd.DataFrame())
 
     # ── Print summary ─────────────────────────────────────────
     # Sort by sentence_id so results are sentence-by-sentence
@@ -637,6 +966,15 @@ def main():
     if not growth_df.empty:
         growth_df.to_csv(growth_path, index=False)
         print(f"Saved: {growth_path}  ({len(growth_df)} time-bin rows)")
+
+    if not raw_gaze_df.empty:
+        raw_gaze_path = out / "raw_gaze_critical_window.csv"
+        raw_gaze_df.to_csv(raw_gaze_path, index=False)
+        print(f"Saved: {raw_gaze_path}  ({len(raw_gaze_df)} raw gaze samples)")
+
+    # ── Plots ─────────────────────────────────────────────────
+    if not args.skip_plots:
+        generate_visualizations(props_df, crit_df, growth_df, raw_gaze_df, out / "plots")
 
     return props_df, crit_df, growth_df
 

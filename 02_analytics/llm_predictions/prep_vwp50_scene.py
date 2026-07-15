@@ -3,9 +3,12 @@ Prepare the 50-item VWP stimulus set (et26_VisualWorldParadigm) for
 scene-based surprisal computation, the same way prep_ak99.py / ak99_table.py
 did for the original 16-item Altmann & Kamide replication.
 
-Source of truth: sentences.csv from the experiment repo. Each item gives a
-restrictive-verb sentence, a non-restrictive-verb sentence, and 2-4 distractor
-objects that (together with the target) make up the 4-object "scene".
+Source of truth: sentences_fromGdoc.csv from the experiment repo -- the
+corrected/current stimulus list (supersedes the older sentences.csv, which
+still had 4-5 objects per scene for ~35 items; sentences_fromGdoc.csv trims
+nearly every item down to exactly 4 objects: target + 3 distractors). Each
+item gives a restrictive-verb sentence, a non-restrictive-verb sentence, and
+a parenthesized distractor list.
 
 For every item x condition x candidate-object combination we build a sentence
 "<subject> will <verb> the <object>" and record how many GPT-2 tokens belong
@@ -24,7 +27,7 @@ from transformers import GPT2TokenizerFast
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 SENTENCES_CSV = os.path.join(
-    REPO_ROOT, "01_experiment", "stimuli", "creatingDataStructure", "sentences.csv"
+    REPO_ROOT, "01_experiment", "stimuli", "creatingDataStructure", "sentences_fromGdoc.csv"
 )
 
 tokenizer = GPT2TokenizerFast.from_pretrained("gpt2")
@@ -46,7 +49,10 @@ def load_items():
         for row in reader:
             item_id = int(row[0])
             sent1, sent2 = row[1], row[2]
-            distractors = [d.strip() for d in row[3:] if d.strip()]
+            # the "objects" field is an unquoted "(a, b, c)" list, so csv.reader
+            # has already split it across row[3:] on the internal commas
+            objects_field = ",".join(row[3:]).strip().strip("()")
+            distractors = [d.strip() for d in objects_field.split(",") if d.strip()]
 
             subject, verb_r, target = parse_sentence(sent1)
             _, verb_n, target_n = parse_sentence(sent2)

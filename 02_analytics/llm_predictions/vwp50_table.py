@@ -13,7 +13,7 @@ set:
     restrictive verb). This is a property of the object (not of the row), so
     it is identical on both the restrictive and non-restrictive rows for that
     object.
-  - The target object of each item is marked with a leading "★".
+  - The target object of each item is flagged in the "Is_Target" column.
 """
 import json, os
 import pandas as pd
@@ -52,7 +52,8 @@ out = pd.DataFrame({
     "Item": df["item_num"],
     "Condition": df["condition"].map(condition_label),
     "Verb": df["verb"],
-    "Object": df.apply(lambda r: ("★ " if r["is_target"] else "  ") + r["object"], axis=1),
+    "Object": df["object"],
+    "Is_Target": df["is_target"],
     "Surprisal (bits)": df["surprisal"].round(3),
     "P_norm": df["P_norm"].round(4),
     "Rank": df["rank"],

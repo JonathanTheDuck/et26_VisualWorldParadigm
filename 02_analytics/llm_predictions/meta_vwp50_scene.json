@@ -1,0 +1,3746 @@
+{
+  "1": {
+    "item_num": 1,
+    "condition": "restrictive",
+    "verb": "eat",
+    "object": "cake",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "2": {
+    "item_num": 1,
+    "condition": "restrictive",
+    "verb": "eat",
+    "object": "toy car",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "3": {
+    "item_num": 1,
+    "condition": "restrictive",
+    "verb": "eat",
+    "object": "ball",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "4": {
+    "item_num": 1,
+    "condition": "restrictive",
+    "verb": "eat",
+    "object": "toy train",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "5": {
+    "item_num": 1,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "cake",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "6": {
+    "item_num": 1,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "toy car",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "7": {
+    "item_num": 1,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "ball",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "8": {
+    "item_num": 1,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "toy train",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "9": {
+    "item_num": 2,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "wine",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "10": {
+    "item_num": 2,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "cheese",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "11": {
+    "item_num": 2,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "lipstick",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "12": {
+    "item_num": 2,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "chair",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "13": {
+    "item_num": 2,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "plant",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "14": {
+    "item_num": 2,
+    "condition": "non-restrictive",
+    "verb": "try",
+    "object": "wine",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "15": {
+    "item_num": 2,
+    "condition": "non-restrictive",
+    "verb": "try",
+    "object": "cheese",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "16": {
+    "item_num": 2,
+    "condition": "non-restrictive",
+    "verb": "try",
+    "object": "lipstick",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "17": {
+    "item_num": 2,
+    "condition": "non-restrictive",
+    "verb": "try",
+    "object": "chair",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "18": {
+    "item_num": 2,
+    "condition": "non-restrictive",
+    "verb": "try",
+    "object": "plant",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "19": {
+    "item_num": 3,
+    "condition": "restrictive",
+    "verb": "arrest",
+    "object": "man",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "20": {
+    "item_num": 3,
+    "condition": "restrictive",
+    "verb": "arrest",
+    "object": "car",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "21": {
+    "item_num": 3,
+    "condition": "restrictive",
+    "verb": "arrest",
+    "object": "dustbin",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "22": {
+    "item_num": 3,
+    "condition": "restrictive",
+    "verb": "arrest",
+    "object": "houses",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "23": {
+    "item_num": 3,
+    "condition": "restrictive",
+    "verb": "arrest",
+    "object": "cat",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "24": {
+    "item_num": 3,
+    "condition": "non-restrictive",
+    "verb": "search",
+    "object": "man",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "25": {
+    "item_num": 3,
+    "condition": "non-restrictive",
+    "verb": "search",
+    "object": "car",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "26": {
+    "item_num": 3,
+    "condition": "non-restrictive",
+    "verb": "search",
+    "object": "dustbin",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "27": {
+    "item_num": 3,
+    "condition": "non-restrictive",
+    "verb": "search",
+    "object": "houses",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "28": {
+    "item_num": 3,
+    "condition": "non-restrictive",
+    "verb": "search",
+    "object": "cat",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "29": {
+    "item_num": 4,
+    "condition": "restrictive",
+    "verb": "bathe",
+    "object": "baby",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "30": {
+    "item_num": 4,
+    "condition": "restrictive",
+    "verb": "bathe",
+    "object": "plant",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "31": {
+    "item_num": 4,
+    "condition": "restrictive",
+    "verb": "bathe",
+    "object": "rocking-horse",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "32": {
+    "item_num": 4,
+    "condition": "restrictive",
+    "verb": "bathe",
+    "object": "stool",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "33": {
+    "item_num": 4,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "baby",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "34": {
+    "item_num": 4,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "plant",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "35": {
+    "item_num": 4,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "rocking-horse",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "36": {
+    "item_num": 4,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "stool",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "37": {
+    "item_num": 5,
+    "condition": "restrictive",
+    "verb": "bounce",
+    "object": "ball",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "38": {
+    "item_num": 5,
+    "condition": "restrictive",
+    "verb": "bounce",
+    "object": "paper plane",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "39": {
+    "item_num": 5,
+    "condition": "restrictive",
+    "verb": "bounce",
+    "object": "shuttle-cock",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "40": {
+    "item_num": 5,
+    "condition": "restrictive",
+    "verb": "bounce",
+    "object": "acorns",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "41": {
+    "item_num": 5,
+    "condition": "restrictive",
+    "verb": "bounce",
+    "object": "bicycle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "42": {
+    "item_num": 5,
+    "condition": "non-restrictive",
+    "verb": "throw",
+    "object": "ball",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "43": {
+    "item_num": 5,
+    "condition": "non-restrictive",
+    "verb": "throw",
+    "object": "paper plane",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "44": {
+    "item_num": 5,
+    "condition": "non-restrictive",
+    "verb": "throw",
+    "object": "shuttle-cock",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "45": {
+    "item_num": 5,
+    "condition": "non-restrictive",
+    "verb": "throw",
+    "object": "acorns",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "46": {
+    "item_num": 5,
+    "condition": "non-restrictive",
+    "verb": "throw",
+    "object": "bicycle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "47": {
+    "item_num": 6,
+    "condition": "restrictive",
+    "verb": "climb",
+    "object": "mountain",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "48": {
+    "item_num": 6,
+    "condition": "restrictive",
+    "verb": "climb",
+    "object": "animal",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "49": {
+    "item_num": 6,
+    "condition": "restrictive",
+    "verb": "climb",
+    "object": "moon",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "50": {
+    "item_num": 6,
+    "condition": "restrictive",
+    "verb": "climb",
+    "object": "cactus",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "51": {
+    "item_num": 6,
+    "condition": "non-restrictive",
+    "verb": "photograph",
+    "object": "mountain",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "52": {
+    "item_num": 6,
+    "condition": "non-restrictive",
+    "verb": "photograph",
+    "object": "animal",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "53": {
+    "item_num": 6,
+    "condition": "non-restrictive",
+    "verb": "photograph",
+    "object": "moon",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "54": {
+    "item_num": 6,
+    "condition": "non-restrictive",
+    "verb": "photograph",
+    "object": "cactus",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "55": {
+    "item_num": 7,
+    "condition": "restrictive",
+    "verb": "fry",
+    "object": "mushrooms",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "56": {
+    "item_num": 7,
+    "condition": "restrictive",
+    "verb": "fry",
+    "object": "knife",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "57": {
+    "item_num": 7,
+    "condition": "restrictive",
+    "verb": "fry",
+    "object": "jug",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "58": {
+    "item_num": 7,
+    "condition": "restrictive",
+    "verb": "fry",
+    "object": "weighing scales",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "59": {
+    "item_num": 7,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "mushrooms",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "60": {
+    "item_num": 7,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "knife",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "61": {
+    "item_num": 7,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "jug",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "62": {
+    "item_num": 7,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "weighing scales",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "63": {
+    "item_num": 8,
+    "condition": "restrictive",
+    "verb": "inject",
+    "object": "child",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "64": {
+    "item_num": 8,
+    "condition": "restrictive",
+    "verb": "inject",
+    "object": "TV monitor",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "65": {
+    "item_num": 8,
+    "condition": "restrictive",
+    "verb": "inject",
+    "object": "microscope",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "66": {
+    "item_num": 8,
+    "condition": "restrictive",
+    "verb": "inject",
+    "object": "books",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "67": {
+    "item_num": 8,
+    "condition": "restrictive",
+    "verb": "inject",
+    "object": "toy bear",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "68": {
+    "item_num": 8,
+    "condition": "non-restrictive",
+    "verb": "check",
+    "object": "child",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "69": {
+    "item_num": 8,
+    "condition": "non-restrictive",
+    "verb": "check",
+    "object": "TV monitor",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "70": {
+    "item_num": 8,
+    "condition": "non-restrictive",
+    "verb": "check",
+    "object": "microscope",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "71": {
+    "item_num": 8,
+    "condition": "non-restrictive",
+    "verb": "check",
+    "object": "books",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "72": {
+    "item_num": 8,
+    "condition": "non-restrictive",
+    "verb": "check",
+    "object": "toy bear",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "73": {
+    "item_num": 9,
+    "condition": "restrictive",
+    "verb": "play",
+    "object": "piano",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "74": {
+    "item_num": 9,
+    "condition": "restrictive",
+    "verb": "play",
+    "object": "table",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "75": {
+    "item_num": 9,
+    "condition": "restrictive",
+    "verb": "play",
+    "object": "television",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "76": {
+    "item_num": 9,
+    "condition": "restrictive",
+    "verb": "play",
+    "object": "telephone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "77": {
+    "item_num": 9,
+    "condition": "non-restrictive",
+    "verb": "dust",
+    "object": "piano",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "78": {
+    "item_num": 9,
+    "condition": "non-restrictive",
+    "verb": "dust",
+    "object": "table",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "79": {
+    "item_num": 9,
+    "condition": "non-restrictive",
+    "verb": "dust",
+    "object": "television",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "80": {
+    "item_num": 9,
+    "condition": "non-restrictive",
+    "verb": "dust",
+    "object": "telephone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "81": {
+    "item_num": 10,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "book",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "82": {
+    "item_num": 10,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "door",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "83": {
+    "item_num": 10,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "bag",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "84": {
+    "item_num": 10,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "jar",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "85": {
+    "item_num": 10,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "cup",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "86": {
+    "item_num": 10,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "book",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "87": {
+    "item_num": 10,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "door",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "88": {
+    "item_num": 10,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "bag",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "89": {
+    "item_num": 10,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "jar",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "90": {
+    "item_num": 10,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "cup",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "91": {
+    "item_num": 11,
+    "condition": "restrictive",
+    "verb": "repair",
+    "object": "washing machine",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "92": {
+    "item_num": 11,
+    "condition": "restrictive",
+    "verb": "repair",
+    "object": "mirror",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "93": {
+    "item_num": 11,
+    "condition": "restrictive",
+    "verb": "repair",
+    "object": "wastebin",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "94": {
+    "item_num": 11,
+    "condition": "restrictive",
+    "verb": "repair",
+    "object": "dog",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "95": {
+    "item_num": 11,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "washing machine",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "96": {
+    "item_num": 11,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "mirror",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "97": {
+    "item_num": 11,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "wastebin",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "98": {
+    "item_num": 11,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "dog",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "99": {
+    "item_num": 12,
+    "condition": "restrictive",
+    "verb": "ring",
+    "object": "bell",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "100": {
+    "item_num": 12,
+    "condition": "restrictive",
+    "verb": "ring",
+    "object": "drum",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "101": {
+    "item_num": 12,
+    "condition": "restrictive",
+    "verb": "ring",
+    "object": "bricks",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "102": {
+    "item_num": 12,
+    "condition": "restrictive",
+    "verb": "ring",
+    "object": "duck",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "103": {
+    "item_num": 12,
+    "condition": "non-restrictive",
+    "verb": "kick",
+    "object": "bell",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "104": {
+    "item_num": 12,
+    "condition": "non-restrictive",
+    "verb": "kick",
+    "object": "drum",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "105": {
+    "item_num": 12,
+    "condition": "non-restrictive",
+    "verb": "kick",
+    "object": "bricks",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "106": {
+    "item_num": 12,
+    "condition": "non-restrictive",
+    "verb": "kick",
+    "object": "duck",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "107": {
+    "item_num": 13,
+    "condition": "restrictive",
+    "verb": "sail",
+    "object": "boat",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "108": {
+    "item_num": 13,
+    "condition": "restrictive",
+    "verb": "sail",
+    "object": "birds",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "109": {
+    "item_num": 13,
+    "condition": "restrictive",
+    "verb": "sail",
+    "object": "car",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "110": {
+    "item_num": 13,
+    "condition": "restrictive",
+    "verb": "sail",
+    "object": "sun",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "111": {
+    "item_num": 13,
+    "condition": "non-restrictive",
+    "verb": "watch",
+    "object": "boat",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "112": {
+    "item_num": 13,
+    "condition": "non-restrictive",
+    "verb": "watch",
+    "object": "birds",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "113": {
+    "item_num": 13,
+    "condition": "non-restrictive",
+    "verb": "watch",
+    "object": "car",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "114": {
+    "item_num": 13,
+    "condition": "non-restrictive",
+    "verb": "watch",
+    "object": "sun",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "115": {
+    "item_num": 14,
+    "condition": "restrictive",
+    "verb": "smoke",
+    "object": "cigarettes",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "116": {
+    "item_num": 14,
+    "condition": "restrictive",
+    "verb": "smoke",
+    "object": "filofax",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "117": {
+    "item_num": 14,
+    "condition": "restrictive",
+    "verb": "smoke",
+    "object": "glasses",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "118": {
+    "item_num": 14,
+    "condition": "restrictive",
+    "verb": "smoke",
+    "object": "briefcase",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "119": {
+    "item_num": 14,
+    "condition": "restrictive",
+    "verb": "smoke",
+    "object": "clock",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "120": {
+    "item_num": 14,
+    "condition": "non-restrictive",
+    "verb": "collect",
+    "object": "cigarettes",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "121": {
+    "item_num": 14,
+    "condition": "non-restrictive",
+    "verb": "collect",
+    "object": "filofax",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "122": {
+    "item_num": 14,
+    "condition": "non-restrictive",
+    "verb": "collect",
+    "object": "glasses",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "123": {
+    "item_num": 14,
+    "condition": "non-restrictive",
+    "verb": "collect",
+    "object": "briefcase",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "124": {
+    "item_num": 14,
+    "condition": "non-restrictive",
+    "verb": "collect",
+    "object": "clock",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "125": {
+    "item_num": 15,
+    "condition": "restrictive",
+    "verb": "walk",
+    "object": "dog",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "126": {
+    "item_num": 15,
+    "condition": "restrictive",
+    "verb": "walk",
+    "object": "bird",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "127": {
+    "item_num": 15,
+    "condition": "restrictive",
+    "verb": "walk",
+    "object": "pig",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "128": {
+    "item_num": 15,
+    "condition": "restrictive",
+    "verb": "walk",
+    "object": "hen",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "129": {
+    "item_num": 15,
+    "condition": "restrictive",
+    "verb": "walk",
+    "object": "ball",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "130": {
+    "item_num": 15,
+    "condition": "non-restrictive",
+    "verb": "feed",
+    "object": "dog",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "131": {
+    "item_num": 15,
+    "condition": "non-restrictive",
+    "verb": "feed",
+    "object": "bird",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "132": {
+    "item_num": 15,
+    "condition": "non-restrictive",
+    "verb": "feed",
+    "object": "pig",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "133": {
+    "item_num": 15,
+    "condition": "non-restrictive",
+    "verb": "feed",
+    "object": "hen",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "134": {
+    "item_num": 15,
+    "condition": "non-restrictive",
+    "verb": "feed",
+    "object": "ball",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "135": {
+    "item_num": 16,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "hat",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "136": {
+    "item_num": 16,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "wallet",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "137": {
+    "item_num": 16,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "folder",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "138": {
+    "item_num": 16,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "magnifying glass",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "139": {
+    "item_num": 16,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "chair",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "140": {
+    "item_num": 16,
+    "condition": "non-restrictive",
+    "verb": "forget",
+    "object": "hat",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "141": {
+    "item_num": 16,
+    "condition": "non-restrictive",
+    "verb": "forget",
+    "object": "wallet",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "142": {
+    "item_num": 16,
+    "condition": "non-restrictive",
+    "verb": "forget",
+    "object": "folder",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "143": {
+    "item_num": 16,
+    "condition": "non-restrictive",
+    "verb": "forget",
+    "object": "magnifying glass",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "144": {
+    "item_num": 16,
+    "condition": "non-restrictive",
+    "verb": "forget",
+    "object": "chair",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "145": {
+    "item_num": 17,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "dress",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "146": {
+    "item_num": 17,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "lantern",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "147": {
+    "item_num": 17,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "ribbon",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "148": {
+    "item_num": 17,
+    "condition": "restrictive",
+    "verb": "wear",
+    "object": "backpack",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "149": {
+    "item_num": 17,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "dress",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "150": {
+    "item_num": 17,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "lantern",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "151": {
+    "item_num": 17,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "ribbon",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "152": {
+    "item_num": 17,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "backpack",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "153": {
+    "item_num": 18,
+    "condition": "restrictive",
+    "verb": "chop",
+    "object": "wood",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "154": {
+    "item_num": 18,
+    "condition": "restrictive",
+    "verb": "chop",
+    "object": "bucket",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "155": {
+    "item_num": 18,
+    "condition": "restrictive",
+    "verb": "chop",
+    "object": "rope",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "156": {
+    "item_num": 18,
+    "condition": "restrictive",
+    "verb": "chop",
+    "object": "stone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "157": {
+    "item_num": 18,
+    "condition": "restrictive",
+    "verb": "chop",
+    "object": "ladder",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "158": {
+    "item_num": 18,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "wood",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "159": {
+    "item_num": 18,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "bucket",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "160": {
+    "item_num": 18,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "rope",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "161": {
+    "item_num": 18,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "stone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "162": {
+    "item_num": 18,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "ladder",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "163": {
+    "item_num": 19,
+    "condition": "restrictive",
+    "verb": "kick",
+    "object": "football",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "164": {
+    "item_num": 19,
+    "condition": "restrictive",
+    "verb": "kick",
+    "object": "stick",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "165": {
+    "item_num": 19,
+    "condition": "restrictive",
+    "verb": "kick",
+    "object": "leaf",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "166": {
+    "item_num": 19,
+    "condition": "restrictive",
+    "verb": "kick",
+    "object": "feather",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "167": {
+    "item_num": 19,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "football",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "168": {
+    "item_num": 19,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "stick",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "169": {
+    "item_num": 19,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "leaf",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "170": {
+    "item_num": 19,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "feather",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "171": {
+    "item_num": 20,
+    "condition": "restrictive",
+    "verb": "slice",
+    "object": "bread",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "172": {
+    "item_num": 20,
+    "condition": "restrictive",
+    "verb": "slice",
+    "object": "spoon",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "173": {
+    "item_num": 20,
+    "condition": "restrictive",
+    "verb": "slice",
+    "object": "bowl",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "174": {
+    "item_num": 20,
+    "condition": "restrictive",
+    "verb": "slice",
+    "object": "spatula",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "175": {
+    "item_num": 20,
+    "condition": "restrictive",
+    "verb": "slice",
+    "object": "tray",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "176": {
+    "item_num": 20,
+    "condition": "non-restrictive",
+    "verb": "clean",
+    "object": "bread",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "177": {
+    "item_num": 20,
+    "condition": "non-restrictive",
+    "verb": "clean",
+    "object": "spoon",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "178": {
+    "item_num": 20,
+    "condition": "non-restrictive",
+    "verb": "clean",
+    "object": "bowl",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "179": {
+    "item_num": 20,
+    "condition": "non-restrictive",
+    "verb": "clean",
+    "object": "spatula",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "180": {
+    "item_num": 20,
+    "condition": "non-restrictive",
+    "verb": "clean",
+    "object": "tray",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "181": {
+    "item_num": 21,
+    "condition": "restrictive",
+    "verb": "hug",
+    "object": "kitten",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "182": {
+    "item_num": 21,
+    "condition": "restrictive",
+    "verb": "hug",
+    "object": "block",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "183": {
+    "item_num": 21,
+    "condition": "restrictive",
+    "verb": "hug",
+    "object": "cup",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "184": {
+    "item_num": 21,
+    "condition": "restrictive",
+    "verb": "hug",
+    "object": "crayon",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "185": {
+    "item_num": 21,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "kitten",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "186": {
+    "item_num": 21,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "block",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "187": {
+    "item_num": 21,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "cup",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "188": {
+    "item_num": 21,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "crayon",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "189": {
+    "item_num": 22,
+    "condition": "restrictive",
+    "verb": "water",
+    "object": "flower",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "190": {
+    "item_num": 22,
+    "condition": "restrictive",
+    "verb": "water",
+    "object": "magazine",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "191": {
+    "item_num": 22,
+    "condition": "restrictive",
+    "verb": "water",
+    "object": "pen",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "192": {
+    "item_num": 22,
+    "condition": "restrictive",
+    "verb": "water",
+    "object": "cushion",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "193": {
+    "item_num": 22,
+    "condition": "restrictive",
+    "verb": "water",
+    "object": "vase",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "194": {
+    "item_num": 22,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "flower",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "195": {
+    "item_num": 22,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "magazine",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "196": {
+    "item_num": 22,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "pen",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "197": {
+    "item_num": 22,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "cushion",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "198": {
+    "item_num": 22,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "vase",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "199": {
+    "item_num": 23,
+    "condition": "restrictive",
+    "verb": "zip",
+    "object": "coat",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "200": {
+    "item_num": 23,
+    "condition": "restrictive",
+    "verb": "zip",
+    "object": "hook",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "201": {
+    "item_num": 23,
+    "condition": "restrictive",
+    "verb": "zip",
+    "object": "umbrella",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "202": {
+    "item_num": 23,
+    "condition": "restrictive",
+    "verb": "zip",
+    "object": "towel",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "203": {
+    "item_num": 23,
+    "condition": "restrictive",
+    "verb": "zip",
+    "object": "poster",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "204": {
+    "item_num": 23,
+    "condition": "non-restrictive",
+    "verb": "hang",
+    "object": "coat",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "205": {
+    "item_num": 23,
+    "condition": "non-restrictive",
+    "verb": "hang",
+    "object": "hook",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "206": {
+    "item_num": 23,
+    "condition": "non-restrictive",
+    "verb": "hang",
+    "object": "umbrella",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "207": {
+    "item_num": 23,
+    "condition": "non-restrictive",
+    "verb": "hang",
+    "object": "towel",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "208": {
+    "item_num": 23,
+    "condition": "non-restrictive",
+    "verb": "hang",
+    "object": "poster",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "209": {
+    "item_num": 24,
+    "condition": "restrictive",
+    "verb": "knit",
+    "object": "scarf",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "210": {
+    "item_num": 24,
+    "condition": "restrictive",
+    "verb": "knit",
+    "object": "pencil",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "211": {
+    "item_num": 24,
+    "condition": "restrictive",
+    "verb": "knit",
+    "object": "card",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "212": {
+    "item_num": 24,
+    "condition": "restrictive",
+    "verb": "knit",
+    "object": "needle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "213": {
+    "item_num": 24,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "scarf",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "214": {
+    "item_num": 24,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "pencil",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "215": {
+    "item_num": 24,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "card",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "216": {
+    "item_num": 24,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "needle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "217": {
+    "item_num": 25,
+    "condition": "restrictive",
+    "verb": "groom",
+    "object": "rabbit",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "218": {
+    "item_num": 25,
+    "condition": "restrictive",
+    "verb": "groom",
+    "object": "flowers",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "219": {
+    "item_num": 25,
+    "condition": "restrictive",
+    "verb": "groom",
+    "object": "plate",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "220": {
+    "item_num": 25,
+    "condition": "restrictive",
+    "verb": "groom",
+    "object": "glass",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "221": {
+    "item_num": 25,
+    "condition": "restrictive",
+    "verb": "groom",
+    "object": "potato",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "222": {
+    "item_num": 25,
+    "condition": "non-restrictive",
+    "verb": "lift",
+    "object": "rabbit",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "223": {
+    "item_num": 25,
+    "condition": "non-restrictive",
+    "verb": "lift",
+    "object": "flowers",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "224": {
+    "item_num": 25,
+    "condition": "non-restrictive",
+    "verb": "lift",
+    "object": "plate",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "225": {
+    "item_num": 25,
+    "condition": "non-restrictive",
+    "verb": "lift",
+    "object": "glass",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "226": {
+    "item_num": 25,
+    "condition": "non-restrictive",
+    "verb": "lift",
+    "object": "potato",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "227": {
+    "item_num": 26,
+    "condition": "restrictive",
+    "verb": "paint",
+    "object": "canvas",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "228": {
+    "item_num": 26,
+    "condition": "restrictive",
+    "verb": "paint",
+    "object": "keyboard",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "229": {
+    "item_num": 26,
+    "condition": "restrictive",
+    "verb": "paint",
+    "object": "jar",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "230": {
+    "item_num": 26,
+    "condition": "restrictive",
+    "verb": "paint",
+    "object": "rope",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "231": {
+    "item_num": 26,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "canvas",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "232": {
+    "item_num": 26,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "keyboard",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "233": {
+    "item_num": 26,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "jar",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "234": {
+    "item_num": 26,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "rope",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "235": {
+    "item_num": 27,
+    "condition": "restrictive",
+    "verb": "blow out",
+    "object": "candle",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "236": {
+    "item_num": 27,
+    "condition": "restrictive",
+    "verb": "blow out",
+    "object": "package",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "237": {
+    "item_num": 27,
+    "condition": "restrictive",
+    "verb": "blow out",
+    "object": "coaster",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "238": {
+    "item_num": 27,
+    "condition": "restrictive",
+    "verb": "blow out",
+    "object": "coin",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "239": {
+    "item_num": 27,
+    "condition": "restrictive",
+    "verb": "blow out",
+    "object": "string",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "240": {
+    "item_num": 27,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "candle",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "241": {
+    "item_num": 27,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "package",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "242": {
+    "item_num": 27,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "coaster",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "243": {
+    "item_num": 27,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "coin",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "244": {
+    "item_num": 27,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "string",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "245": {
+    "item_num": 28,
+    "condition": "restrictive",
+    "verb": "dim",
+    "object": "lamp",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "246": {
+    "item_num": 28,
+    "condition": "restrictive",
+    "verb": "dim",
+    "object": "remote control",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "247": {
+    "item_num": 28,
+    "condition": "restrictive",
+    "verb": "dim",
+    "object": "switch",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "248": {
+    "item_num": 28,
+    "condition": "restrictive",
+    "verb": "dim",
+    "object": "picture",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "249": {
+    "item_num": 28,
+    "condition": "restrictive",
+    "verb": "dim",
+    "object": "frame",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "250": {
+    "item_num": 28,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "lamp",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "251": {
+    "item_num": 28,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "remote control",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "252": {
+    "item_num": 28,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "switch",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "253": {
+    "item_num": 28,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "picture",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "254": {
+    "item_num": 28,
+    "condition": "non-restrictive",
+    "verb": "touch",
+    "object": "frame",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "255": {
+    "item_num": 29,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "milk",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "256": {
+    "item_num": 29,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "glove",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "257": {
+    "item_num": 29,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "sock",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "258": {
+    "item_num": 29,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "nut",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "259": {
+    "item_num": 29,
+    "condition": "restrictive",
+    "verb": "drink",
+    "object": "pinecone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "260": {
+    "item_num": 29,
+    "condition": "non-restrictive",
+    "verb": "push",
+    "object": "milk",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "261": {
+    "item_num": 29,
+    "condition": "non-restrictive",
+    "verb": "push",
+    "object": "glove",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "262": {
+    "item_num": 29,
+    "condition": "non-restrictive",
+    "verb": "push",
+    "object": "sock",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "263": {
+    "item_num": 29,
+    "condition": "non-restrictive",
+    "verb": "push",
+    "object": "nut",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "264": {
+    "item_num": 29,
+    "condition": "non-restrictive",
+    "verb": "push",
+    "object": "pinecone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "265": {
+    "item_num": 30,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "newspaper",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "266": {
+    "item_num": 30,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "comb",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "267": {
+    "item_num": 30,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "tissue",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "268": {
+    "item_num": 30,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "eraser",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "269": {
+    "item_num": 30,
+    "condition": "restrictive",
+    "verb": "read",
+    "object": "sandal",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "270": {
+    "item_num": 30,
+    "condition": "non-restrictive",
+    "verb": "turn",
+    "object": "newspaper",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "271": {
+    "item_num": 30,
+    "condition": "non-restrictive",
+    "verb": "turn",
+    "object": "comb",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "272": {
+    "item_num": 30,
+    "condition": "non-restrictive",
+    "verb": "turn",
+    "object": "tissue",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "273": {
+    "item_num": 30,
+    "condition": "non-restrictive",
+    "verb": "turn",
+    "object": "eraser",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "274": {
+    "item_num": 30,
+    "condition": "non-restrictive",
+    "verb": "turn",
+    "object": "sandal",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "275": {
+    "item_num": 31,
+    "condition": "restrictive",
+    "verb": "roll",
+    "object": "dice",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "276": {
+    "item_num": 31,
+    "condition": "restrictive",
+    "verb": "roll",
+    "object": "cap",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "277": {
+    "item_num": 31,
+    "condition": "restrictive",
+    "verb": "roll",
+    "object": "headphones",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "278": {
+    "item_num": 31,
+    "condition": "restrictive",
+    "verb": "roll",
+    "object": "watch",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "279": {
+    "item_num": 31,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "dice",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "280": {
+    "item_num": 31,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "cap",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "281": {
+    "item_num": 31,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "headphones",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "282": {
+    "item_num": 31,
+    "condition": "non-restrictive",
+    "verb": "grab",
+    "object": "watch",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "283": {
+    "item_num": 32,
+    "condition": "restrictive",
+    "verb": "open",
+    "object": "bottle",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "284": {
+    "item_num": 32,
+    "condition": "restrictive",
+    "verb": "open",
+    "object": "lemon",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "285": {
+    "item_num": 32,
+    "condition": "restrictive",
+    "verb": "open",
+    "object": "seed",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "286": {
+    "item_num": 32,
+    "condition": "restrictive",
+    "verb": "open",
+    "object": "sponge",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "287": {
+    "item_num": 32,
+    "condition": "restrictive",
+    "verb": "open",
+    "object": "seat",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "288": {
+    "item_num": 32,
+    "condition": "non-restrictive",
+    "verb": "examine",
+    "object": "bottle",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "289": {
+    "item_num": 32,
+    "condition": "non-restrictive",
+    "verb": "examine",
+    "object": "lemon",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "290": {
+    "item_num": 32,
+    "condition": "non-restrictive",
+    "verb": "examine",
+    "object": "seed",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "291": {
+    "item_num": 32,
+    "condition": "non-restrictive",
+    "verb": "examine",
+    "object": "sponge",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "292": {
+    "item_num": 32,
+    "condition": "non-restrictive",
+    "verb": "examine",
+    "object": "seat",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "293": {
+    "item_num": 33,
+    "condition": "restrictive",
+    "verb": "brew",
+    "object": "beer",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "294": {
+    "item_num": 33,
+    "condition": "restrictive",
+    "verb": "brew",
+    "object": "mug",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "295": {
+    "item_num": 33,
+    "condition": "restrictive",
+    "verb": "brew",
+    "object": "sugar",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "296": {
+    "item_num": 33,
+    "condition": "restrictive",
+    "verb": "brew",
+    "object": "kettle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "297": {
+    "item_num": 33,
+    "condition": "restrictive",
+    "verb": "brew",
+    "object": "biscuit",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "298": {
+    "item_num": 33,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "beer",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "299": {
+    "item_num": 33,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "mug",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "300": {
+    "item_num": 33,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "sugar",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "301": {
+    "item_num": 33,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "kettle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "302": {
+    "item_num": 33,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "biscuit",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "303": {
+    "item_num": 34,
+    "condition": "restrictive",
+    "verb": "unzip",
+    "object": "suitcase",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "304": {
+    "item_num": 34,
+    "condition": "restrictive",
+    "verb": "unzip",
+    "object": "envelope",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "305": {
+    "item_num": 34,
+    "condition": "restrictive",
+    "verb": "unzip",
+    "object": "gift",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "306": {
+    "item_num": 34,
+    "condition": "restrictive",
+    "verb": "unzip",
+    "object": "box",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "307": {
+    "item_num": 34,
+    "condition": "restrictive",
+    "verb": "unzip",
+    "object": "trunk",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "308": {
+    "item_num": 34,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "suitcase",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "309": {
+    "item_num": 34,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "envelope",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "310": {
+    "item_num": 34,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "gift",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "311": {
+    "item_num": 34,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "box",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "312": {
+    "item_num": 34,
+    "condition": "non-restrictive",
+    "verb": "open",
+    "object": "trunk",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "313": {
+    "item_num": 35,
+    "condition": "restrictive",
+    "verb": "switch on",
+    "object": "radio",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "314": {
+    "item_num": 35,
+    "condition": "restrictive",
+    "verb": "switch on",
+    "object": "puzzle",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "315": {
+    "item_num": 35,
+    "condition": "restrictive",
+    "verb": "switch on",
+    "object": "toy",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "316": {
+    "item_num": 35,
+    "condition": "restrictive",
+    "verb": "switch on",
+    "object": "pillow",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "317": {
+    "item_num": 35,
+    "condition": "restrictive",
+    "verb": "switch on",
+    "object": "notebook",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "318": {
+    "item_num": 35,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "radio",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "319": {
+    "item_num": 35,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "puzzle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "320": {
+    "item_num": 35,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "toy",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "321": {
+    "item_num": 35,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "pillow",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "322": {
+    "item_num": 35,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "notebook",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "323": {
+    "item_num": 36,
+    "condition": "restrictive",
+    "verb": "apply",
+    "object": "mascara",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "324": {
+    "item_num": 36,
+    "condition": "restrictive",
+    "verb": "apply",
+    "object": "brush",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "325": {
+    "item_num": 36,
+    "condition": "restrictive",
+    "verb": "apply",
+    "object": "pot",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "326": {
+    "item_num": 36,
+    "condition": "restrictive",
+    "verb": "apply",
+    "object": "mirror",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "327": {
+    "item_num": 36,
+    "condition": "restrictive",
+    "verb": "apply",
+    "object": "clip",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "328": {
+    "item_num": 36,
+    "condition": "non-restrictive",
+    "verb": "squeeze",
+    "object": "mascara",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "329": {
+    "item_num": 36,
+    "condition": "non-restrictive",
+    "verb": "squeeze",
+    "object": "brush",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "330": {
+    "item_num": 36,
+    "condition": "non-restrictive",
+    "verb": "squeeze",
+    "object": "pot",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "331": {
+    "item_num": 36,
+    "condition": "non-restrictive",
+    "verb": "squeeze",
+    "object": "mirror",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "332": {
+    "item_num": 36,
+    "condition": "non-restrictive",
+    "verb": "squeeze",
+    "object": "clip",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "333": {
+    "item_num": 37,
+    "condition": "restrictive",
+    "verb": "build",
+    "object": "lego",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "334": {
+    "item_num": 37,
+    "condition": "restrictive",
+    "verb": "build",
+    "object": "papers",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "335": {
+    "item_num": 37,
+    "condition": "restrictive",
+    "verb": "build",
+    "object": "boxes",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "336": {
+    "item_num": 37,
+    "condition": "restrictive",
+    "verb": "build",
+    "object": "tape",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "337": {
+    "item_num": 37,
+    "condition": "restrictive",
+    "verb": "build",
+    "object": "clips",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "338": {
+    "item_num": 37,
+    "condition": "non-restrictive",
+    "verb": "stack",
+    "object": "lego",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "339": {
+    "item_num": 37,
+    "condition": "non-restrictive",
+    "verb": "stack",
+    "object": "papers",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "340": {
+    "item_num": 37,
+    "condition": "non-restrictive",
+    "verb": "stack",
+    "object": "boxes",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "341": {
+    "item_num": 37,
+    "condition": "non-restrictive",
+    "verb": "stack",
+    "object": "tape",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "342": {
+    "item_num": 37,
+    "condition": "non-restrictive",
+    "verb": "stack",
+    "object": "clips",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "343": {
+    "item_num": 38,
+    "condition": "restrictive",
+    "verb": "peel",
+    "object": "banana",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "344": {
+    "item_num": 38,
+    "condition": "restrictive",
+    "verb": "peel",
+    "object": "mitten",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "345": {
+    "item_num": 38,
+    "condition": "restrictive",
+    "verb": "peel",
+    "object": "key",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "346": {
+    "item_num": 38,
+    "condition": "restrictive",
+    "verb": "peel",
+    "object": "marker",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "347": {
+    "item_num": 38,
+    "condition": "restrictive",
+    "verb": "peel",
+    "object": "pebble",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "348": {
+    "item_num": 38,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "banana",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "349": {
+    "item_num": 38,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "mitten",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "350": {
+    "item_num": 38,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "key",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "351": {
+    "item_num": 38,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "marker",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "352": {
+    "item_num": 38,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "pebble",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "353": {
+    "item_num": 39,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "apron",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "354": {
+    "item_num": 39,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "mop",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "355": {
+    "item_num": 39,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "cloth",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "356": {
+    "item_num": 39,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "broom",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "357": {
+    "item_num": 39,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "pail",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "358": {
+    "item_num": 39,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "apron",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "359": {
+    "item_num": 39,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "mop",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "360": {
+    "item_num": 39,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "cloth",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "361": {
+    "item_num": 39,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "broom",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "362": {
+    "item_num": 39,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "pail",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "363": {
+    "item_num": 40,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "shoelace",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "364": {
+    "item_num": 40,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "shampoo",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "365": {
+    "item_num": 40,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "buckle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "366": {
+    "item_num": 40,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "mat",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "367": {
+    "item_num": 40,
+    "condition": "restrictive",
+    "verb": "tie",
+    "object": "rag",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "368": {
+    "item_num": 40,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "shoelace",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "369": {
+    "item_num": 40,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "shampoo",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "370": {
+    "item_num": 40,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "buckle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "371": {
+    "item_num": 40,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "mat",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "372": {
+    "item_num": 40,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "rag",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "373": {
+    "item_num": 41,
+    "condition": "restrictive",
+    "verb": "button",
+    "object": "blouse",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "374": {
+    "item_num": 41,
+    "condition": "restrictive",
+    "verb": "button",
+    "object": "thread",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "375": {
+    "item_num": 41,
+    "condition": "restrictive",
+    "verb": "button",
+    "object": "pin",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "376": {
+    "item_num": 41,
+    "condition": "restrictive",
+    "verb": "button",
+    "object": "iron",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "377": {
+    "item_num": 41,
+    "condition": "restrictive",
+    "verb": "button",
+    "object": "toothbrush",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "378": {
+    "item_num": 41,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "blouse",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "379": {
+    "item_num": 41,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "thread",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "380": {
+    "item_num": 41,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "pin",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "381": {
+    "item_num": 41,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "iron",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "382": {
+    "item_num": 41,
+    "condition": "non-restrictive",
+    "verb": "hold",
+    "object": "toothbrush",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "383": {
+    "item_num": 42,
+    "condition": "restrictive",
+    "verb": "squeeze",
+    "object": "orange",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "384": {
+    "item_num": 42,
+    "condition": "restrictive",
+    "verb": "squeeze",
+    "object": "stone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "385": {
+    "item_num": 42,
+    "condition": "restrictive",
+    "verb": "squeeze",
+    "object": "pod",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "386": {
+    "item_num": 42,
+    "condition": "restrictive",
+    "verb": "squeeze",
+    "object": "shell",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "387": {
+    "item_num": 42,
+    "condition": "restrictive",
+    "verb": "squeeze",
+    "object": "cone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "388": {
+    "item_num": 42,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "orange",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "389": {
+    "item_num": 42,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "stone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "390": {
+    "item_num": 42,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "pod",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "391": {
+    "item_num": 42,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "shell",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "392": {
+    "item_num": 42,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "cone",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "393": {
+    "item_num": 43,
+    "condition": "restrictive",
+    "verb": "sew",
+    "object": "shirt",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "394": {
+    "item_num": 43,
+    "condition": "restrictive",
+    "verb": "sew",
+    "object": "apple",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "395": {
+    "item_num": 43,
+    "condition": "restrictive",
+    "verb": "sew",
+    "object": "ruler",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "396": {
+    "item_num": 43,
+    "condition": "restrictive",
+    "verb": "sew",
+    "object": "chalk",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "397": {
+    "item_num": 43,
+    "condition": "restrictive",
+    "verb": "sew",
+    "object": "foam",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "398": {
+    "item_num": 43,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "shirt",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "399": {
+    "item_num": 43,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "apple",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "400": {
+    "item_num": 43,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "ruler",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "401": {
+    "item_num": 43,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "chalk",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "402": {
+    "item_num": 43,
+    "condition": "non-restrictive",
+    "verb": "wash",
+    "object": "foam",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "403": {
+    "item_num": 44,
+    "condition": "restrictive",
+    "verb": "lock",
+    "object": "safe",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "404": {
+    "item_num": 44,
+    "condition": "restrictive",
+    "verb": "lock",
+    "object": "pan",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "405": {
+    "item_num": 44,
+    "condition": "restrictive",
+    "verb": "lock",
+    "object": "handle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "406": {
+    "item_num": 44,
+    "condition": "restrictive",
+    "verb": "lock",
+    "object": "bolt",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "407": {
+    "item_num": 44,
+    "condition": "restrictive",
+    "verb": "lock",
+    "object": "latch",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "408": {
+    "item_num": 44,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "safe",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "409": {
+    "item_num": 44,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "pan",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "410": {
+    "item_num": 44,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "handle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "411": {
+    "item_num": 44,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "bolt",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "412": {
+    "item_num": 44,
+    "condition": "non-restrictive",
+    "verb": "wipe",
+    "object": "latch",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "413": {
+    "item_num": 45,
+    "condition": "restrictive",
+    "verb": "knead",
+    "object": "dough",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "414": {
+    "item_num": 45,
+    "condition": "restrictive",
+    "verb": "knead",
+    "object": "glass",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "415": {
+    "item_num": 45,
+    "condition": "restrictive",
+    "verb": "knead",
+    "object": "hammer",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "416": {
+    "item_num": 45,
+    "condition": "restrictive",
+    "verb": "knead",
+    "object": "ladle",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "417": {
+    "item_num": 45,
+    "condition": "non-restrictive",
+    "verb": "inspect",
+    "object": "dough",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "418": {
+    "item_num": 45,
+    "condition": "non-restrictive",
+    "verb": "inspect",
+    "object": "glass",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "419": {
+    "item_num": 45,
+    "condition": "non-restrictive",
+    "verb": "inspect",
+    "object": "hammer",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "420": {
+    "item_num": 45,
+    "condition": "non-restrictive",
+    "verb": "inspect",
+    "object": "ladle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "421": {
+    "item_num": 46,
+    "condition": "restrictive",
+    "verb": "grate",
+    "object": "carrot",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "422": {
+    "item_num": 46,
+    "condition": "restrictive",
+    "verb": "grate",
+    "object": "ladle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "423": {
+    "item_num": 46,
+    "condition": "restrictive",
+    "verb": "grate",
+    "object": "pot",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "424": {
+    "item_num": 46,
+    "condition": "restrictive",
+    "verb": "grate",
+    "object": "board",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "425": {
+    "item_num": 46,
+    "condition": "restrictive",
+    "verb": "grate",
+    "object": "peeler",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "426": {
+    "item_num": 46,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "carrot",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "427": {
+    "item_num": 46,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "ladle",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "428": {
+    "item_num": 46,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "pot",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "429": {
+    "item_num": 46,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "board",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "430": {
+    "item_num": 46,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "peeler",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "431": {
+    "item_num": 47,
+    "condition": "restrictive",
+    "verb": "tune",
+    "object": "violin",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "432": {
+    "item_num": 47,
+    "condition": "restrictive",
+    "verb": "tune",
+    "object": "bow",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "433": {
+    "item_num": 47,
+    "condition": "restrictive",
+    "verb": "tune",
+    "object": "stand",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "434": {
+    "item_num": 47,
+    "condition": "restrictive",
+    "verb": "tune",
+    "object": "sheet music",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "435": {
+    "item_num": 47,
+    "condition": "restrictive",
+    "verb": "tune",
+    "object": "gum",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "436": {
+    "item_num": 47,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "violin",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "437": {
+    "item_num": 47,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "bow",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "438": {
+    "item_num": 47,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "stand",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "439": {
+    "item_num": 47,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "sheet music",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "440": {
+    "item_num": 47,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "gum",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "441": {
+    "item_num": 48,
+    "condition": "restrictive",
+    "verb": "vacuum",
+    "object": "carpet",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "442": {
+    "item_num": 48,
+    "condition": "restrictive",
+    "verb": "vacuum",
+    "object": "dustpan",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "443": {
+    "item_num": 48,
+    "condition": "restrictive",
+    "verb": "vacuum",
+    "object": "footstool",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "444": {
+    "item_num": 48,
+    "condition": "restrictive",
+    "verb": "vacuum",
+    "object": "roller",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "445": {
+    "item_num": 48,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "carpet",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "446": {
+    "item_num": 48,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "dustpan",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "447": {
+    "item_num": 48,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "footstool",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "448": {
+    "item_num": 48,
+    "condition": "non-restrictive",
+    "verb": "move",
+    "object": "roller",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "449": {
+    "item_num": 49,
+    "condition": "restrictive",
+    "verb": "inflate",
+    "object": "balloon",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "450": {
+    "item_num": 49,
+    "condition": "restrictive",
+    "verb": "inflate",
+    "object": "pump",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "451": {
+    "item_num": 49,
+    "condition": "restrictive",
+    "verb": "inflate",
+    "object": "bead",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "452": {
+    "item_num": 49,
+    "condition": "restrictive",
+    "verb": "inflate",
+    "object": "pouch",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "453": {
+    "item_num": 49,
+    "condition": "restrictive",
+    "verb": "inflate",
+    "object": "flag",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "454": {
+    "item_num": 49,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "balloon",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "455": {
+    "item_num": 49,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "pump",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "456": {
+    "item_num": 49,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "bead",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "457": {
+    "item_num": 49,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "pouch",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "458": {
+    "item_num": 49,
+    "condition": "non-restrictive",
+    "verb": "carry",
+    "object": "flag",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "459": {
+    "item_num": 50,
+    "condition": "restrictive",
+    "verb": "lick",
+    "object": "stamp",
+    "is_target": true,
+    "prefix_len": 5
+  },
+  "460": {
+    "item_num": 50,
+    "condition": "restrictive",
+    "verb": "lick",
+    "object": "envelope",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "461": {
+    "item_num": 50,
+    "condition": "restrictive",
+    "verb": "lick",
+    "object": "scissors",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "462": {
+    "item_num": 50,
+    "condition": "restrictive",
+    "verb": "lick",
+    "object": "sticker",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "463": {
+    "item_num": 50,
+    "condition": "restrictive",
+    "verb": "lick",
+    "object": "rubber band",
+    "is_target": false,
+    "prefix_len": 5
+  },
+  "464": {
+    "item_num": 50,
+    "condition": "non-restrictive",
+    "verb": "pick up",
+    "object": "stamp",
+    "is_target": true,
+    "prefix_len": 6
+  },
+  "465": {
+    "item_num": 50,
+    "condition": "non-restrictive",
+    "verb": "pick up",
+    "object": "envelope",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "466": {
+    "item_num": 50,
+    "condition": "non-restrictive",
+    "verb": "pick up",
+    "object": "scissors",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "467": {
+    "item_num": 50,
+    "condition": "non-restrictive",
+    "verb": "pick up",
+    "object": "sticker",
+    "is_target": false,
+    "prefix_len": 6
+  },
+  "468": {
+    "item_num": 50,
+    "condition": "non-restrictive",
+    "verb": "pick up",
+    "object": "rubber band",
+    "is_target": false,
+    "prefix_len": 6
+  }
+}

@@ -222,7 +222,8 @@ for participantNumber in range(1,6):
 
         for  i,pos in enumerate(["pos1","pos2","pos3","pos4"]):
             print(i)
-            out_stimuliId.append(stimuliID)
+            #in the further pipeline we use stimuli ids starting at 1 !!
+            out_stimuliId.append(stimuliID+1)
             out_obj.append(trial_info["position"+str(i+1)].values[0])
             outP = 0.0 if pd.isna(percentages_trial[pos]) else percentages_trial[pos]
             out_percent.append(outP)

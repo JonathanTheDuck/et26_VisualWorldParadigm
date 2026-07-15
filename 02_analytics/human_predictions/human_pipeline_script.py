@@ -1,13 +1,14 @@
 import pandas as pd
 #importing all relevant files :)
 #pls run this script from within the dir human-predictions ^^
+partID=[]
+out_stimuliNR=[]
+out_obj=[]
+out_percent=[]
 for participantNumber in range(1,6):
 
     #collect everything in one dataframe for ease of use with llm based percentages and aggregation
-    partID=[]
-    out_stimuliNR=[]
-    out_obj=[]
-    out_percent=[]
+    
 
     subjectnr=participantNumber
     groupNr=subjectnr %8+1
@@ -227,13 +228,13 @@ for participantNumber in range(1,6):
             partID.append(participantNumber)
 
 
-    out_df = pd.DataFrame({
-        "stimuliNR": out_stimuliNR,
-        "partID": out_percent,
-        "obj": out_obj,
-        "percent": out_percent
-        
-    })                               
+out_df = pd.DataFrame({
+    "stimuliNR": out_stimuliNR,
+    "partID": partID,
+    "obj": out_obj,
+    "percent": out_percent
+    
+})                               
 
-    out_df.to_csv("output_all.csv", index=False)
-    trial_info
+out_df.to_csv("output_all.csv", index=False)
+trial_info

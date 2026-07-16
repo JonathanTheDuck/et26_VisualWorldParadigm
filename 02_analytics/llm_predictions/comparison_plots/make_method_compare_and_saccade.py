@@ -51,7 +51,7 @@ print("saved 9_aoi_method_comparison.png")
 # =========================================================
 # Part B: First-saccade direction analysis
 # =========================================================
-CANVAS_W, CANVAS_H = 2400, 1400
+CANVAS_W, CANVAS_H = 2560, 1440
 SCALE = 0.8; SCREEN_W, SCREEN_H = 2560, 1440
 X_OFF = (SCREEN_W - CANVAS_W*SCALE)/2; Y_OFF = (SCREEN_H - CANVAS_H*SCALE)/2
 def to_img_px(bx, by):

@@ -61,7 +61,7 @@ for participantNumber in range(1,6):
         "pos4": (217, 378),
     }
     #________________________________________
-    #we have to use scaled positions though as we displayed a 2400x1400 image on 1920x1080 screen.
+    #we have to use scaled positions though as we displayed a 2560x1440 image on 1920x1080 screen.
     positions = {
         "pos1": (1745.6, 462.4),
         "pos2": (1393.6, 820.0),
@@ -90,7 +90,7 @@ for participantNumber in range(1,6):
     #SCREEN_W, SCREEN_H = 1920, 1080
     IMG_PATH = "../../01_experiment/stimuli/img_composition/1_pos1_nosub.png"   # the actual displayed canvas image
     SCREEN_W, SCREEN_H = 2560, 1440  # OpenSesame virtual canvas
-    IMG_W, IMG_H = 2400, 1400        # from your image
+    IMG_W, IMG_H = 2560, 1440        # from your image
 
     SCALE = 0.8  # explicitly set in OpenSesame sketchpad
 

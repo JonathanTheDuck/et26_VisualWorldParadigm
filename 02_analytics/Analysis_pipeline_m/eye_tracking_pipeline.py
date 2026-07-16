@@ -26,7 +26,7 @@ Design notes
 * GazePoint's own fixation detection (FPOGID / FPOGS / FPOGD) is used.
 * The critical window per trial is [verb_offset, target_onset] relative to
   audio onset, both sourced from the forced-alignment annotation.
-* AOI bounding boxes were measured from 1_pos1_sub.png (2400×1400 px) and
+* AOI bounding boxes were measured from 1_pos1_sub.png (2560×1440 px) and
   converted to the GazePoint normalized (0-1) coordinate space assuming
   OpenSesame "scale to fit, preserve aspect ratio" display mode on 1920×1080.
 
@@ -90,7 +90,7 @@ GROWTH_CURVE_BIN_MS = 50   # time-bin width for growth curves
 # AOI GEOMETRY
 # ──────────────────────────────────────────────────────────────
 SCREEN_W, SCREEN_H = 1920, 1080
-IMG_W,    IMG_H    = 2400, 1400
+IMG_W,    IMG_H    = 2560, 1440
 
 # Scale-to-fit: height-constrained, pillar-boxed (black bars on left/right)
 _SCALE    = SCREEN_H / IMG_H                       # 0.77143

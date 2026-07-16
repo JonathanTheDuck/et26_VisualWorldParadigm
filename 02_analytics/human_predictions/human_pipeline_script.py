@@ -2,9 +2,10 @@ import pandas as pd
 #importing all relevant files :)
 #pls run this script from within the dir human-predictions ^^
 partID=[]
-out_stimuliNR=[]
+out_stimuliId=[]
 out_obj=[]
 out_percent=[]
+condition=[]
 for participantNumber in range(1,6):
 
     #collect everything in one dataframe for ease of use with llm based percentages and aggregation
@@ -169,7 +170,7 @@ for participantNumber in range(1,6):
         #print(trialNr)
         trial_info=part_df[part_df["trialID"]==trialNr]
         stimuliID=trial_info["stimuliID"].values[0]
-        condition=trial_info["condition"].values[0]
+        condition_trial=trial_info["condition"].values[0]
         
         audioStart_trial=onsetsetsAudioFiles[onsetsetsAudioFiles["trialId"]==str(trialNr)]["audio_onset_time"].values[0]
 
@@ -177,7 +178,7 @@ for participantNumber in range(1,6):
 
         #start and ending time:
         trial_annotation_df=annotation_df[annotation_df["stimuliID"]==stimuliID]
-        trial_annotation_df=trial_annotation_df[trial_annotation_df["condition"]==condition]
+        trial_annotation_df=trial_annotation_df[trial_annotation_df["condition"]==condition_trial]
         #verb
         verbOnset=trial_annotation_df[trial_annotation_df["WordRole"]=="ROOT"]["start"].values[0]
         #object
@@ -221,16 +222,19 @@ for participantNumber in range(1,6):
 
         for  i,pos in enumerate(["pos1","pos2","pos3","pos4"]):
             print(i)
-            out_stimuliNR.append(stimuliID)
+            #in the further pipeline we use stimuli ids starting at 1 !!
+            out_stimuliId.append(stimuliID+1)
             out_obj.append(trial_info["position"+str(i+1)].values[0])
             outP = 0.0 if pd.isna(percentages_trial[pos]) else percentages_trial[pos]
             out_percent.append(outP)
             partID.append(participantNumber)
+            condition.append(condition_trial)
 
 
 out_df = pd.DataFrame({
-    "stimuliNR": out_stimuliNR,
+    "stimuliId": out_stimuliId,
     "partID": partID,
+    "condition":condition,
     "obj": out_obj,
     "percent": out_percent
     

@@ -61,7 +61,7 @@ WHAT CHANGED FROM v1  (see accompanying CHANGES.md for the long version)
 Design notes carried over from v1
 ----------------------------------
 * All timing stays on the GazePoint clock (seconds) throughout.
-* AOI bounding boxes were measured from 1_pos1_sub.png (2400x1400 px) and
+* AOI bounding boxes were measured from 1_pos1_sub.png (2560x1440 px) and
   converted to the GazePoint normalized (0-1) coordinate space assuming
   OpenSesame "scale to fit, preserve aspect ratio" display mode on 1920x1080.
 
@@ -91,7 +91,7 @@ GROWTH_CURVE_BIN_MS = 50   # time-bin width for growth curves
 # AOI GEOMETRY  (unchanged from v1)
 # ──────────────────────────────────────────────────────────────
 SCREEN_W, SCREEN_H = 1920, 1080
-IMG_W,    IMG_H    = 2400, 1400
+IMG_W,    IMG_H    = 2560, 1440
 
 _SCALE    = SCREEN_H / IMG_H
 _DISP_W   = IMG_W * _SCALE

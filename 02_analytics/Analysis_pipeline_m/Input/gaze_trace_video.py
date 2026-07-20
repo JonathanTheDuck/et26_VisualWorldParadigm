@@ -19,14 +19,14 @@ Renders an MP4 for one trial showing:
 Coordinate geometry (confirmed against the actual OpenSesame item)
 --------------------------------------------------------------------
     draw image center=1 file="[image_sub]" scale=0.8 x=0 y=0 z_index=0
-  - stimulus image file is 2400x1400 px
+  - stimulus image file is 2560x1440 px
   - OpenSesame canvas / experiment display is 2560x1440 px (NOT the
     1920x1080 that pygaze's init log declares — that number is very likely
     a stale/default config value, the same way the log's "60 Hz" samplerate
     turned out to be stale vs. the ~146 Hz actually recorded. 2560x1440 is
     what you confirmed as the actual monitor/experiment resolution.)
   - scale=0.8 is an EXPLICIT flat scale (not auto-fit-to-screen): the image
-    is drawn at exactly 2400*0.8 x 1400*0.8 = 1920x1120 px
+    is drawn at exactly 2560*0.8 x 1440*0.8 = 1920x1120 px
   - center=1, x=0, y=0 means it's centered on the canvas center (1280,720)
   => offset_x = (2560-1920)/2 = 320,  offset_y = (1440-1120)/2 = 160
   => screen_px = image_px * 0.8 + offset,  normalized = screen_px / (2560,1440)
@@ -72,7 +72,7 @@ FRAMES_DIR = HERE / "video_frames"
 # ──────────────────────────────────────────────────────────────
 # GEOMETRY — from the actual OpenSesame `draw image` item
 # ──────────────────────────────────────────────────────────────
-IMG_W, IMG_H = 2400, 1400
+IMG_W, IMG_H = 2560, 1440
 SCALE = 0.8                        # explicit OpenSesame scale=0.8 (NOT auto-fit)
 SCREEN_W, SCREEN_H = 2560, 1440    # actual OpenSesame/monitor canvas
 _DISP_W, _DISP_H = IMG_W * SCALE, IMG_H * SCALE

@@ -1,6 +1,4 @@
 subject_id,pct_valid_overall,pct_valid_min_trial,pct_valid_median_trial
-subject-1,50.18,16.12,48.85
-subject-2,87.92,70.97,88.88
-subject-3,93.51,54.51,95.27
-subject-4,91.44,81.58,91.84
-subject-5,93.05,80.65,94.06
+subject-1,96.18,91.24,96.53
+subject-7,95.88,85.02,96.87
+subject-8,92.05,81.13,92.92

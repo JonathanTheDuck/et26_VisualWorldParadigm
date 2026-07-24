@@ -127,7 +127,7 @@ GROWTH_CURVE_BIN_MS = 50   # time-bin width for growth curves
 # 1_pos1_sub.png against 1_pos1_nosub.png (pixel-difference bounding box),
 # then passed through the same image->screen scale-to-fit transform.
 SCREEN_W, SCREEN_H = 2560, 1440
-IMG_W,    IMG_H    = 1920, 1080
+IMG_W,    IMG_H    = 2560, 1440
 
 _TEAMMATE_POS_PX = {   # top-left corner, screen pixel space (1920x1080)
     "pos1": (1426, 292),

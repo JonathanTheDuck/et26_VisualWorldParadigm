@@ -309,7 +309,7 @@ Aggregates QC across EVERY subject found in the Input folder, covering:
   2. AOI geometry — computed deterministically from the stimulus-generation
      script's own placement constants (ellipse slot positions around the
      subject), combined with the confirmed OpenSesame display parameters:
-     scale=0.8, 2560x1440 canvas, 2400x1400 source images, centered
+     scale=0.8, 2560x1440 canvas, 2560x1440 source images, centered
      placement. Identical for every trial; no per-image measurement needed.
   3. Valid-sample rate (BPOGV==1), overall and per trial, per subject
   4. Time-unit cross-check: TSV clock vs. annotation clock, and the
@@ -471,22 +471,28 @@ def find_group_csv_for_subject(subject_id):
 # across every trial, and doesn't require any image file to be present.
 #
 # Then: OpenSesame scale=0.8 explicit flat scale, 2560x1440 canvas,
-# 2400x1400 source images, centered placement (confirmed from the actual
+# 2560x1440 source images, centered placement (confirmed from the actual
 # `draw image ... scale=0.8` OpenSesame item).
 # ──────────────────────────────────────────────────────────────
 import math
  
 # compose_trial() constants (split_and_compose.py)
 _COMPOSE_SCALE = 2
-CANVAS_W, CANVAS_H = 1200 * _COMPOSE_SCALE, 700 * _COMPOSE_SCALE   # = 2400, 1400
+CANVAS_W, CANVAS_H = 1200 * _COMPOSE_SCALE, 700 * _COMPOSE_SCALE   # = 2560, 1440
 _SUBJECT_SIZE = (420 * _COMPOSE_SCALE, 300 * _COMPOSE_SCALE)
 _SUBJECT_Y = 50 * _COMPOSE_SCALE
 _OPTION_SIZE = (200 * _COMPOSE_SCALE, 200 * _COMPOSE_SCALE)
 _SEMICIRCLE_GAP = 95 * _COMPOSE_SCALE
 _SEMICIRCLE_ANGLES = [15, 65, 115, 165]   # degrees; slot0..slot3 = position1..position4
+#<<<<<<< HEAD
  
 IMG_W, IMG_H = CANVAS_W, CANVAS_H   # 2400, 1400 — the composed image IS this canvas
  
+#=======
+
+IMG_W, IMG_H = CANVAS_W, CANVAS_H   # 2560, 1440 — the composed image IS this canvas
+
+#>>>>>>> 0cb05f075260a3e5fab74ab3f71d98e7f6c6c8ff
 # OpenSesame display transform (confirmed from the actual `draw image` item)
 SCALE = 0.8
 SCREEN_W, SCREEN_H = 2560, 1440
@@ -507,7 +513,7 @@ def _img_box_to_norm(x1, y1, x2, y2):
  
 def compute_aoi_boxes_img_px():
     """
-    The 5 AOI boxes (pos1-4 + subject) in IMAGE-PIXEL space (2400x1400
+    The 5 AOI boxes (pos1-4 + subject) in IMAGE-PIXEL space (2560x1440
     canvas), computed directly from compose_trial()'s own placement
     constants. Identical for every item/rotation/subject-variant.
     """

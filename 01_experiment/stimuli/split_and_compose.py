@@ -18,7 +18,7 @@ Filename convention
   Multi-word objects use hyphens, NOT underscores (e.g. magnifying-glass).
   This keeps the underscore separator unambiguous.
 
-Trial canvas layout  (1200 × 700 px, white background)
+Trial canvas layout  (2560 × 1440 px, white background)
 ───────────────────
   ┌─────────────────────────────────────────────┐
   │             [subject image]                  │  ← per-item, top-centre
@@ -140,10 +140,10 @@ PARTICIPANT_CSV_DIR = STIMULI_DIR / "creatingDataStructure"
 
 SCALE = 2
 
-CANVAS_W, CANVAS_H = 1200 * SCALE, 700 * SCALE
-SUBJECT_SIZE        = (420 * SCALE, 300 * SCALE)
-SUBJECT_Y           = 50 * SCALE
-OPTION_SIZE         = (200 * SCALE, 200 * SCALE)
+CANVAS_W, CANVAS_H = 1280 * SCALE, 720 * SCALE  # 2560 × 1440 (lab monitor QHD resolution)
+SUBJECT_SIZE        = (900, 680)  # subject smaller, objects more prominent
+SUBJECT_Y           = 115  # higher position
+OPTION_SIZE         = (440, 440)  # objects larger
 ROLE_ORDER          = ["TL", "TR", "BR", "BL"]   # TL = target, others = distractors
 
 # Options sit on an ellipse around the subject (semicircle layout) instead of

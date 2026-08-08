@@ -35,7 +35,7 @@ id,sentence_restrictive,sentence_nonrestrictive,objects
 33,The boy will unzip the suitcase,The boy will open the suitcase,(envelope, gift, box)
 34,The boy will switch on the radio,The boy will move the radio,(puzzle, pillow, notebook)
 35,The girl will apply the mascara,The girl will squeeze the mascara,(brush, pot, mirror)
-36,The kid will build the lego,The kid will stack the lego,(papers, clips, cards, boxes)
+36,The kid will build the lego,The kid will stack the lego,(papers, clips, boxes)
 37,The boy will peel the banana,The boy will move the banana,(mitten, key, marker)
 38,The woman will tie the apron,The woman will carry the apron,(mop, cloth, broom)
 39,The boy will tie the shoelace,The boy will move the shoelace,(shampoo, buckle, mat)

@@ -1,6 +1,0 @@
-subject_id,logged_hz,measured_hz,samplerate_mismatch,measured_audio_dur_mean,annotation_dur_mean,duration_diff_pct
-subject-1,60.0,151.5,True,2.749,2.827,2.8
-subject-2,60.0,146.2,True,2.747,2.827,2.8
-subject-3,60.0,149.0,True,2.748,2.827,2.8
-subject-4,60.0,149.0,True,2.746,2.827,2.9
-subject-5,60.0,151.5,True,2.747,2.827,2.8

@@ -1,0 +1,1388 @@
+item	condition	subject_id	chosen_object	first_saccade_landing_aoi
+7	non-restrictive	subject-1		subject
+16	restrictive	subject-1		
+40	restrictive	subject-1		
+22	restrictive	subject-1		subject
+39	non-restrictive	subject-1		elsewhere
+5	non-restrictive	subject-1	ball	pos1
+30	restrictive	subject-1	newspaper	pos2
+24	restrictive	subject-1		subject
+20	restrictive	subject-1	bread	pos4
+23	non-restrictive	subject-1		elsewhere
+8	restrictive	subject-1		subject
+44	restrictive	subject-1		
+9	non-restrictive	subject-1	piano	pos1
+31	non-restrictive	subject-1		subject
+37	non-restrictive	subject-1		
+21	non-restrictive	subject-1	kitten	pos1
+6	restrictive	subject-1	mountain	pos2
+2	restrictive	subject-1	lipstick	pos1
+33	non-restrictive	subject-1		elsewhere
+4	restrictive	subject-1	baby	pos4
+3	non-restrictive	subject-1		
+47	non-restrictive	subject-1		
+17	non-restrictive	subject-1	ribbon	pos4
+19	non-restrictive	subject-1	football	pos3
+28	restrictive	subject-1	lamp	pos4
+14	restrictive	subject-1		elsewhere
+25	non-restrictive	subject-1	rabbit	pos1
+43	non-restrictive	subject-1		elsewhere
+13	non-restrictive	subject-1	sun	pos3
+49	non-restrictive	subject-1		
+50	restrictive	subject-1		subject
+11	non-restrictive	subject-1		elsewhere
+10	restrictive	subject-1		
+38	restrictive	subject-1		
+32	restrictive	subject-1	seed	pos3
+29	non-restrictive	subject-1	sock	pos4
+34	restrictive	subject-1		subject
+26	restrictive	subject-1	peach	pos4
+18	restrictive	subject-1		
+15	non-restrictive	subject-1	ball	pos1
+36	restrictive	subject-1		elsewhere
+45	non-restrictive	subject-1	dough	pos1
+12	restrictive	subject-1		
+35	non-restrictive	subject-1	radio	pos3
+48	restrictive	subject-1	roller	pos2
+46	restrictive	subject-1		
+27	non-restrictive	subject-1		elsewhere
+42	restrictive	subject-1		
+1	non-restrictive	subject-1		elsewhere
+41	non-restrictive	subject-1	iron	pos4
+7	non-restrictive	subject-1		subject
+16	restrictive	subject-1		
+40	restrictive	subject-1		
+22	restrictive	subject-1		subject
+39	non-restrictive	subject-1		elsewhere
+5	non-restrictive	subject-1	ball	pos1
+30	restrictive	subject-1	newspaper	pos2
+24	restrictive	subject-1		subject
+20	restrictive	subject-1	bread	pos4
+23	non-restrictive	subject-1		elsewhere
+8	restrictive	subject-1		subject
+44	restrictive	subject-1		
+9	non-restrictive	subject-1	piano	pos1
+31	non-restrictive	subject-1		subject
+37	non-restrictive	subject-1		
+21	non-restrictive	subject-1	kitten	pos1
+6	restrictive	subject-1	mountain	pos2
+2	restrictive	subject-1	lipstick	pos1
+33	non-restrictive	subject-1		elsewhere
+4	restrictive	subject-1	baby	pos4
+3	non-restrictive	subject-1		
+47	non-restrictive	subject-1		
+17	non-restrictive	subject-1	ribbon	pos4
+19	non-restrictive	subject-1	football	pos3
+28	restrictive	subject-1	lamp	pos4
+14	restrictive	subject-1		elsewhere
+25	non-restrictive	subject-1	rabbit	pos1
+43	non-restrictive	subject-1		elsewhere
+13	non-restrictive	subject-1	sun	pos3
+49	non-restrictive	subject-1		
+50	restrictive	subject-1		subject
+11	non-restrictive	subject-1		elsewhere
+10	restrictive	subject-1		
+38	restrictive	subject-1		
+32	restrictive	subject-1	seed	pos3
+29	non-restrictive	subject-1	sock	pos4
+34	restrictive	subject-1		subject
+26	restrictive	subject-1	peach	pos4
+18	restrictive	subject-1		
+15	non-restrictive	subject-1	ball	pos1
+36	restrictive	subject-1		elsewhere
+45	non-restrictive	subject-1	dough	pos1
+12	restrictive	subject-1		
+35	non-restrictive	subject-1	radio	pos3
+48	restrictive	subject-1	roller	pos2
+46	restrictive	subject-1		
+27	non-restrictive	subject-1		elsewhere
+42	restrictive	subject-1		
+1	non-restrictive	subject-1		elsewhere
+41	non-restrictive	subject-1	iron	pos4
+38	non-restrictive	subject-10		
+46	non-restrictive	subject-10	carrot	pos3
+48	non-restrictive	subject-10		
+13	restrictive	subject-10		elsewhere
+6	non-restrictive	subject-10		
+40	non-restrictive	subject-10		elsewhere
+21	restrictive	subject-10		
+25	restrictive	subject-10		
+2	non-restrictive	subject-10		
+44	non-restrictive	subject-10		
+27	restrictive	subject-10		
+9	restrictive	subject-10		
+33	restrictive	subject-10		elsewhere
+17	restrictive	subject-10		
+49	restrictive	subject-10		subject
+10	non-restrictive	subject-10		
+45	restrictive	subject-10		
+19	restrictive	subject-10		
+47	restrictive	subject-10		
+23	restrictive	subject-10		subject
+11	restrictive	subject-10		elsewhere
+50	non-restrictive	subject-10		
+41	restrictive	subject-10		
+32	non-restrictive	subject-10		
+24	non-restrictive	subject-10		
+42	non-restrictive	subject-10		
+37	restrictive	subject-10		
+28	non-restrictive	subject-10		
+7	restrictive	subject-10		
+5	restrictive	subject-10		
+20	non-restrictive	subject-10		
+1	restrictive	subject-10		
+39	restrictive	subject-10		
+15	restrictive	subject-10		
+30	non-restrictive	subject-10		
+43	restrictive	subject-10		
+29	restrictive	subject-10		
+4	non-restrictive	subject-10		elsewhere
+26	non-restrictive	subject-10		
+18	non-restrictive	subject-10		
+14	non-restrictive	subject-10		
+8	non-restrictive	subject-10		
+34	non-restrictive	subject-10		
+22	non-restrictive	subject-10		subject
+16	non-restrictive	subject-10		
+12	non-restrictive	subject-10		
+3	restrictive	subject-10		
+31	restrictive	subject-10		
+36	non-restrictive	subject-10		elsewhere
+11	non-restrictive	subject-11	wastebin	pos3
+33	non-restrictive	subject-11	kettle	pos1
+15	non-restrictive	subject-11		
+44	restrictive	subject-11		elsewhere
+20	restrictive	subject-11		
+31	non-restrictive	subject-11		
+2	restrictive	subject-11		
+23	non-restrictive	subject-11		
+6	restrictive	subject-11		elsewhere
+30	restrictive	subject-11	eraser	pos1
+38	restrictive	subject-11		
+24	restrictive	subject-11		subject
+42	restrictive	subject-11		elsewhere
+3	non-restrictive	subject-11		elsewhere
+41	non-restrictive	subject-11		subject
+17	non-restrictive	subject-11	lantern	pos3
+10	restrictive	subject-11	bag	pos2
+4	restrictive	subject-11		
+7	non-restrictive	subject-11		subject
+22	restrictive	subject-11		elsewhere
+28	restrictive	subject-11		elsewhere
+27	non-restrictive	subject-11		subject
+45	non-restrictive	subject-11		
+25	non-restrictive	subject-11	potato	pos4
+21	non-restrictive	subject-11		
+18	restrictive	subject-11		
+9	non-restrictive	subject-11	piano	pos2
+43	non-restrictive	subject-11		
+19	non-restrictive	subject-11		
+5	non-restrictive	subject-11		
+8	restrictive	subject-11		
+47	non-restrictive	subject-11		
+49	non-restrictive	subject-11		elsewhere
+37	non-restrictive	subject-11		
+32	restrictive	subject-11		
+16	restrictive	subject-11		
+1	non-restrictive	subject-11		
+12	restrictive	subject-11		
+36	restrictive	subject-11		
+34	restrictive	subject-11		elsewhere
+40	restrictive	subject-11		
+39	non-restrictive	subject-11		
+35	non-restrictive	subject-11		
+13	non-restrictive	subject-11		subject
+46	restrictive	subject-11		
+50	restrictive	subject-11		elsewhere
+26	restrictive	subject-11		
+48	restrictive	subject-11		subject
+14	restrictive	subject-11		
+29	non-restrictive	subject-11		
+4	non-restrictive	subject-12		
+32	non-restrictive	subject-12		elsewhere
+23	restrictive	subject-12		
+24	non-restrictive	subject-12		
+28	non-restrictive	subject-12		
+29	restrictive	subject-12		
+47	restrictive	subject-12		elsewhere
+8	non-restrictive	subject-12		
+45	restrictive	subject-12		subject
+19	restrictive	subject-12		
+25	restrictive	subject-12		
+37	restrictive	subject-12		
+41	restrictive	subject-12		
+22	non-restrictive	subject-12		subject
+38	non-restrictive	subject-12		subject
+26	non-restrictive	subject-12		subject
+48	non-restrictive	subject-12		subject
+40	non-restrictive	subject-12		
+13	restrictive	subject-12		
+5	restrictive	subject-12		elsewhere
+31	restrictive	subject-12		subject
+20	non-restrictive	subject-12		subject
+33	restrictive	subject-12		subject
+7	restrictive	subject-12		subject
+36	non-restrictive	subject-12		
+16	non-restrictive	subject-12		
+34	non-restrictive	subject-12		
+50	non-restrictive	subject-12		
+12	non-restrictive	subject-12		elsewhere
+3	restrictive	subject-12		subject
+11	restrictive	subject-12		elsewhere
+1	restrictive	subject-12		
+14	non-restrictive	subject-12		
+43	restrictive	subject-12		subject
+27	restrictive	subject-12		
+15	restrictive	subject-12	ball	pos3
+2	non-restrictive	subject-12		
+49	restrictive	subject-12		subject
+30	non-restrictive	subject-12		
+10	non-restrictive	subject-12		elsewhere
+46	non-restrictive	subject-12		
+18	non-restrictive	subject-12		
+39	restrictive	subject-12		subject
+17	restrictive	subject-12		
+21	restrictive	subject-12		
+44	non-restrictive	subject-12		elsewhere
+6	non-restrictive	subject-12		subject
+42	non-restrictive	subject-12		
+9	restrictive	subject-12		
+12	restrictive	subject-13		
+3	non-restrictive	subject-13		
+34	restrictive	subject-13		
+31	non-restrictive	subject-13		
+16	restrictive	subject-13		
+39	non-restrictive	subject-13	apron	pos1
+40	restrictive	subject-13		
+24	restrictive	subject-13		
+42	restrictive	subject-13	shell	pos3
+9	non-restrictive	subject-13		
+14	restrictive	subject-13	cigarettes	pos4
+36	restrictive	subject-13		
+43	non-restrictive	subject-13	apple	pos2
+25	non-restrictive	subject-13		
+10	restrictive	subject-13	bag	pos3
+1	non-restrictive	subject-13		
+44	restrictive	subject-13	pan	pos3
+7	non-restrictive	subject-13		
+38	restrictive	subject-13		elsewhere
+18	restrictive	subject-13		
+32	restrictive	subject-13	lemon	pos3
+47	non-restrictive	subject-13	violin	pos1
+17	non-restrictive	subject-13		
+13	non-restrictive	subject-13	boat	pos3
+8	restrictive	subject-13	toy bear	pos4
+48	restrictive	subject-13		elsewhere
+45	non-restrictive	subject-13		
+29	non-restrictive	subject-13		
+15	non-restrictive	subject-13		elsewhere
+23	non-restrictive	subject-13	hook	pos2
+19	non-restrictive	subject-13	stick	pos2
+11	non-restrictive	subject-13	wastebin	pos4
+20	restrictive	subject-13		elsewhere
+26	restrictive	subject-13		elsewhere
+2	restrictive	subject-13	lipstick	pos3
+46	restrictive	subject-13		elsewhere
+27	non-restrictive	subject-13		
+30	restrictive	subject-13		
+5	non-restrictive	subject-13	shuttle cock	pos2
+33	non-restrictive	subject-13	kettle	pos2
+41	non-restrictive	subject-13	blouse	pos3
+49	non-restrictive	subject-13		
+4	restrictive	subject-13	baby	pos2
+37	non-restrictive	subject-13		elsewhere
+35	non-restrictive	subject-13		subject
+50	restrictive	subject-13	stamp	pos4
+6	restrictive	subject-13		
+28	restrictive	subject-13		
+21	non-restrictive	subject-13		
+22	restrictive	subject-13	vase	pos2
+34	non-restrictive	subject-14		
+46	non-restrictive	subject-14		elsewhere
+3	restrictive	subject-14		elsewhere
+37	restrictive	subject-14		elsewhere
+14	non-restrictive	subject-14		
+47	restrictive	subject-14	bow	pos3
+29	restrictive	subject-14		elsewhere
+11	restrictive	subject-14	washing machine	pos2
+33	restrictive	subject-14		
+32	non-restrictive	subject-14		elsewhere
+26	non-restrictive	subject-14		
+48	non-restrictive	subject-14	footstool	pos2
+4	non-restrictive	subject-14	stool	pos1
+49	restrictive	subject-14		subject
+7	restrictive	subject-14	jug	pos1
+5	restrictive	subject-14		
+22	non-restrictive	subject-14		
+1	restrictive	subject-14		
+40	non-restrictive	subject-14		
+38	non-restrictive	subject-14		
+17	restrictive	subject-14		elsewhere
+9	restrictive	subject-14	table	pos1
+19	restrictive	subject-14		
+8	non-restrictive	subject-14		
+25	restrictive	subject-14	rabbit	pos4
+13	restrictive	subject-14		
+20	non-restrictive	subject-14		
+12	non-restrictive	subject-14		
+21	restrictive	subject-14	cup	pos3
+31	restrictive	subject-14		
+15	restrictive	subject-14		
+23	restrictive	subject-14		
+6	non-restrictive	subject-14		
+36	non-restrictive	subject-14	brush	pos4
+30	non-restrictive	subject-14	tissue	pos4
+18	non-restrictive	subject-14		
+28	non-restrictive	subject-14		
+41	restrictive	subject-14		
+45	restrictive	subject-14		
+50	non-restrictive	subject-14		
+24	non-restrictive	subject-14	needle	pos1
+10	non-restrictive	subject-14		subject
+2	non-restrictive	subject-14		
+39	restrictive	subject-14		elsewhere
+27	restrictive	subject-14	package	pos3
+44	non-restrictive	subject-14		
+42	non-restrictive	subject-14		subject
+43	restrictive	subject-14	apple	pos3
+16	non-restrictive	subject-14	folder	pos2
+1	non-restrictive	subject-15		subject
+30	restrictive	subject-15		
+37	non-restrictive	subject-15		
+44	restrictive	subject-15		
+12	restrictive	subject-15		
+35	non-restrictive	subject-15		
+43	non-restrictive	subject-15		
+45	non-restrictive	subject-15		
+15	non-restrictive	subject-15		
+49	non-restrictive	subject-15		
+46	restrictive	subject-15		
+48	restrictive	subject-15		
+40	restrictive	subject-15		
+8	restrictive	subject-15		
+39	non-restrictive	subject-15		
+26	restrictive	subject-15		
+13	non-restrictive	subject-15		
+7	non-restrictive	subject-15		
+42	restrictive	subject-15		
+11	non-restrictive	subject-15		elsewhere
+38	restrictive	subject-15		
+6	restrictive	subject-15		
+10	restrictive	subject-15	door	pos2
+14	restrictive	subject-15		
+2	restrictive	subject-15		
+27	non-restrictive	subject-15		
+34	restrictive	subject-15		
+29	non-restrictive	subject-15		
+36	restrictive	subject-15		
+28	restrictive	subject-15		
+47	non-restrictive	subject-15		
+41	non-restrictive	subject-15		
+33	non-restrictive	subject-15		
+9	non-restrictive	subject-15		
+5	non-restrictive	subject-15		
+17	non-restrictive	subject-15		
+18	restrictive	subject-15		
+32	restrictive	subject-15		
+20	restrictive	subject-15		
+25	non-restrictive	subject-15	plate	pos1
+31	non-restrictive	subject-15		
+3	non-restrictive	subject-15		
+24	restrictive	subject-15		
+50	restrictive	subject-15		
+23	non-restrictive	subject-15		
+4	restrictive	subject-15		
+22	restrictive	subject-15		
+16	restrictive	subject-15		
+21	non-restrictive	subject-15		
+19	non-restrictive	subject-15		
+15	restrictive	subject-16		
+28	non-restrictive	subject-16	picture	pos3
+21	restrictive	subject-16		
+45	restrictive	subject-16	dough	pos1
+8	non-restrictive	subject-16		
+6	non-restrictive	subject-16	mountain	pos2
+7	restrictive	subject-16		
+37	restrictive	subject-16		
+50	non-restrictive	subject-16	stamp	pos2
+12	non-restrictive	subject-16		
+38	non-restrictive	subject-16		
+34	non-restrictive	subject-16		
+19	restrictive	subject-16		elsewhere
+47	restrictive	subject-16		
+32	non-restrictive	subject-16		
+30	non-restrictive	subject-16		
+25	restrictive	subject-16		
+36	non-restrictive	subject-16		
+9	restrictive	subject-16		
+3	restrictive	subject-16		
+44	non-restrictive	subject-16		
+22	non-restrictive	subject-16		
+18	non-restrictive	subject-16		
+20	non-restrictive	subject-16		
+1	restrictive	subject-16		
+41	restrictive	subject-16		
+10	non-restrictive	subject-16		
+16	non-restrictive	subject-16		
+33	restrictive	subject-16		
+49	restrictive	subject-16		
+29	restrictive	subject-16	milk	pos1
+24	non-restrictive	subject-16		
+17	restrictive	subject-16		
+14	non-restrictive	subject-16		
+2	non-restrictive	subject-16		
+46	non-restrictive	subject-16	carrot	pos2
+13	restrictive	subject-16		
+26	non-restrictive	subject-16		
+4	non-restrictive	subject-16		
+39	restrictive	subject-16		
+27	restrictive	subject-16		
+31	restrictive	subject-16		
+5	restrictive	subject-16	shuttle cock	pos4
+43	restrictive	subject-16		
+11	restrictive	subject-16		
+40	non-restrictive	subject-16		
+42	non-restrictive	subject-16		
+48	non-restrictive	subject-16		
+23	restrictive	subject-16		
+37	non-restrictive	subject-17		subject
+4	restrictive	subject-17		subject
+12	restrictive	subject-17		subject
+49	non-restrictive	subject-17		
+10	restrictive	subject-17		subject
+42	restrictive	subject-17		
+35	non-restrictive	subject-17		elsewhere
+32	restrictive	subject-17		
+31	non-restrictive	subject-17		
+45	non-restrictive	subject-17		subject
+38	restrictive	subject-17	marker	pos4
+16	restrictive	subject-17		
+25	non-restrictive	subject-17		
+28	restrictive	subject-17		subject
+21	non-restrictive	subject-17		subject
+41	non-restrictive	subject-17		elsewhere
+15	non-restrictive	subject-17		
+34	restrictive	subject-17		elsewhere
+11	non-restrictive	subject-17		elsewhere
+50	restrictive	subject-17		
+39	non-restrictive	subject-17		subject
+20	restrictive	subject-17		
+30	restrictive	subject-17		elsewhere
+33	non-restrictive	subject-17	biscuit	pos3
+6	restrictive	subject-17	mountain	pos2
+9	non-restrictive	subject-17		
+5	non-restrictive	subject-17		elsewhere
+46	restrictive	subject-17		elsewhere
+43	non-restrictive	subject-17		elsewhere
+47	non-restrictive	subject-17		
+26	restrictive	subject-17		subject
+18	restrictive	subject-17	wood	pos2
+36	restrictive	subject-17		subject
+7	non-restrictive	subject-17		subject
+48	restrictive	subject-17		subject
+13	non-restrictive	subject-17		
+29	non-restrictive	subject-17		elsewhere
+24	restrictive	subject-17		
+22	restrictive	subject-17		subject
+23	non-restrictive	subject-17		
+2	restrictive	subject-17		
+14	restrictive	subject-17	cigarettes	pos2
+3	non-restrictive	subject-17		
+8	restrictive	subject-17		
+40	restrictive	subject-17		
+1	non-restrictive	subject-17	toy car	pos2
+27	non-restrictive	subject-17		elsewhere
+44	restrictive	subject-17	bolt	pos2
+19	non-restrictive	subject-17		elsewhere
+17	non-restrictive	subject-17	ribbon	pos4
+15	restrictive	subject-18		
+23	restrictive	subject-18		
+5	restrictive	subject-18		
+40	non-restrictive	subject-18		
+20	non-restrictive	subject-18		
+13	restrictive	subject-18		
+33	restrictive	subject-18		
+29	restrictive	subject-18		elsewhere
+46	non-restrictive	subject-18		
+16	non-restrictive	subject-18		subject
+42	non-restrictive	subject-18		
+26	non-restrictive	subject-18		
+45	restrictive	subject-18		
+50	non-restrictive	subject-18	stamp	pos3
+2	non-restrictive	subject-18		
+47	restrictive	subject-18		
+22	non-restrictive	subject-18		
+11	restrictive	subject-18		subject
+9	restrictive	subject-18		
+27	restrictive	subject-18		
+28	non-restrictive	subject-18		
+6	non-restrictive	subject-18		
+18	non-restrictive	subject-18		
+1	restrictive	subject-18		
+43	restrictive	subject-18		
+30	non-restrictive	subject-18		elsewhere
+41	restrictive	subject-18		
+19	restrictive	subject-18		
+37	restrictive	subject-18		
+12	non-restrictive	subject-18		
+34	non-restrictive	subject-18		
+31	restrictive	subject-18		
+48	non-restrictive	subject-18		
+38	non-restrictive	subject-18		
+4	non-restrictive	subject-18		
+7	restrictive	subject-18		
+39	restrictive	subject-18		subject
+44	non-restrictive	subject-18		
+10	non-restrictive	subject-18		
+3	restrictive	subject-18		
+14	non-restrictive	subject-18		subject
+8	non-restrictive	subject-18		
+17	restrictive	subject-18		
+49	restrictive	subject-18		
+24	non-restrictive	subject-18		subject
+25	restrictive	subject-18		
+36	non-restrictive	subject-18		subject
+32	non-restrictive	subject-18		
+21	restrictive	subject-18		
+49	non-restrictive	subject-19		
+32	restrictive	subject-19		
+24	restrictive	subject-19		
+41	non-restrictive	subject-19		
+37	non-restrictive	subject-19		subject
+36	restrictive	subject-19		subject
+34	restrictive	subject-19		elsewhere
+38	restrictive	subject-19		
+45	non-restrictive	subject-19	dough	pos2
+6	restrictive	subject-19	mountain	pos3
+28	restrictive	subject-19		
+30	restrictive	subject-19		
+18	restrictive	subject-19		
+7	non-restrictive	subject-19		
+12	restrictive	subject-19		
+21	non-restrictive	subject-19		
+43	non-restrictive	subject-19		subject
+47	non-restrictive	subject-19	bow	pos1
+17	non-restrictive	subject-19		
+20	restrictive	subject-19		
+19	non-restrictive	subject-19		
+42	restrictive	subject-19		subject
+40	restrictive	subject-19		
+5	non-restrictive	subject-19		
+23	non-restrictive	subject-19		
+16	restrictive	subject-19		
+14	restrictive	subject-19	cigarettes	pos3
+13	non-restrictive	subject-19		subject
+46	restrictive	subject-19		subject
+27	non-restrictive	subject-19		subject
+26	restrictive	subject-19		
+39	non-restrictive	subject-19	apron	pos4
+4	restrictive	subject-19		
+3	non-restrictive	subject-19		
+35	non-restrictive	subject-19		
+48	restrictive	subject-19		subject
+11	non-restrictive	subject-19		
+2	restrictive	subject-19		subject
+22	restrictive	subject-19		
+31	non-restrictive	subject-19		subject
+29	non-restrictive	subject-19		
+33	non-restrictive	subject-19		elsewhere
+25	non-restrictive	subject-19		
+10	restrictive	subject-19		
+9	non-restrictive	subject-19		
+50	restrictive	subject-19		
+15	non-restrictive	subject-19		subject
+1	non-restrictive	subject-19		subject
+8	restrictive	subject-19		
+44	restrictive	subject-19		
+49	non-restrictive	subject-19		
+32	restrictive	subject-19		
+24	restrictive	subject-19		
+41	non-restrictive	subject-19		
+37	non-restrictive	subject-19		subject
+36	restrictive	subject-19		subject
+34	restrictive	subject-19		elsewhere
+38	restrictive	subject-19		
+45	non-restrictive	subject-19	dough	pos2
+6	restrictive	subject-19	mountain	pos3
+28	restrictive	subject-19		
+30	restrictive	subject-19		
+18	restrictive	subject-19		
+7	non-restrictive	subject-19		
+12	restrictive	subject-19		
+21	non-restrictive	subject-19		
+43	non-restrictive	subject-19		subject
+47	non-restrictive	subject-19	bow	pos1
+17	non-restrictive	subject-19		
+20	restrictive	subject-19		
+19	non-restrictive	subject-19		
+42	restrictive	subject-19		subject
+40	restrictive	subject-19		
+5	non-restrictive	subject-19		
+23	non-restrictive	subject-19		
+16	restrictive	subject-19		
+14	restrictive	subject-19	cigarettes	pos3
+13	non-restrictive	subject-19		subject
+46	restrictive	subject-19		subject
+27	non-restrictive	subject-19		subject
+26	restrictive	subject-19		
+39	non-restrictive	subject-19	apron	pos4
+4	restrictive	subject-19		
+3	non-restrictive	subject-19		
+35	non-restrictive	subject-19		
+48	restrictive	subject-19		subject
+11	non-restrictive	subject-19		
+2	restrictive	subject-19		subject
+22	restrictive	subject-19		
+31	non-restrictive	subject-19		subject
+29	non-restrictive	subject-19		
+33	non-restrictive	subject-19		elsewhere
+25	non-restrictive	subject-19		
+10	restrictive	subject-19		
+9	non-restrictive	subject-19		
+50	restrictive	subject-19		
+15	non-restrictive	subject-19		subject
+1	non-restrictive	subject-19		subject
+8	restrictive	subject-19		
+44	restrictive	subject-19		
+22	non-restrictive	subject-2		
+37	restrictive	subject-2		
+6	non-restrictive	subject-2		
+4	non-restrictive	subject-2		
+42	non-restrictive	subject-2		
+47	restrictive	subject-2		
+23	restrictive	subject-2		
+38	non-restrictive	subject-2		
+45	restrictive	subject-2		
+10	non-restrictive	subject-2		
+18	non-restrictive	subject-2		elsewhere
+41	restrictive	subject-2		elsewhere
+32	non-restrictive	subject-2		elsewhere
+49	restrictive	subject-2		
+48	non-restrictive	subject-2		subject
+24	non-restrictive	subject-2		
+12	non-restrictive	subject-2		
+30	non-restrictive	subject-2		
+17	restrictive	subject-2		
+14	non-restrictive	subject-2		
+5	restrictive	subject-2		
+46	non-restrictive	subject-2		
+43	restrictive	subject-2		elsewhere
+31	restrictive	subject-2		
+39	restrictive	subject-2		
+50	non-restrictive	subject-2		elsewhere
+16	non-restrictive	subject-2		
+20	non-restrictive	subject-2		
+11	restrictive	subject-2		elsewhere
+27	restrictive	subject-2		subject
+1	restrictive	subject-2		
+3	restrictive	subject-2		
+13	restrictive	subject-2		
+29	restrictive	subject-2		
+8	non-restrictive	subject-2		
+36	non-restrictive	subject-2		
+25	restrictive	subject-2		
+26	non-restrictive	subject-2		
+34	non-restrictive	subject-2		
+2	non-restrictive	subject-2		
+44	non-restrictive	subject-2		
+33	restrictive	subject-2		
+15	restrictive	subject-2		
+40	non-restrictive	subject-2		
+21	restrictive	subject-2		subject
+19	restrictive	subject-2		
+9	restrictive	subject-2		
+28	non-restrictive	subject-2		
+7	restrictive	subject-2		
+4	non-restrictive	subject-20		
+11	restrictive	subject-20		elsewhere
+29	restrictive	subject-20		
+7	restrictive	subject-20		
+22	non-restrictive	subject-20		
+13	restrictive	subject-20		
+6	non-restrictive	subject-20		elsewhere
+12	non-restrictive	subject-20		
+43	restrictive	subject-20		
+24	non-restrictive	subject-20		
+50	non-restrictive	subject-20		
+1	restrictive	subject-20		
+5	restrictive	subject-20		
+37	restrictive	subject-20		
+23	restrictive	subject-20		
+42	non-restrictive	subject-20		subject
+47	restrictive	subject-20		
+27	restrictive	subject-20		
+41	restrictive	subject-20		
+10	non-restrictive	subject-20		
+19	restrictive	subject-20		
+44	non-restrictive	subject-20		
+32	non-restrictive	subject-20		
+26	non-restrictive	subject-20		
+2	non-restrictive	subject-20		
+49	restrictive	subject-20		
+48	non-restrictive	subject-20		
+30	non-restrictive	subject-20		
+46	non-restrictive	subject-20		
+31	restrictive	subject-20		
+20	non-restrictive	subject-20		
+34	non-restrictive	subject-20		
+9	restrictive	subject-20		
+16	non-restrictive	subject-20	folder	pos1
+3	restrictive	subject-20		subject
+45	restrictive	subject-20		
+18	non-restrictive	subject-20		subject
+28	non-restrictive	subject-20		
+33	restrictive	subject-20		
+38	non-restrictive	subject-20		
+25	restrictive	subject-20		
+21	restrictive	subject-20		
+40	non-restrictive	subject-20		
+8	non-restrictive	subject-20		
+14	non-restrictive	subject-20		
+15	restrictive	subject-20		
+39	restrictive	subject-20		
+36	non-restrictive	subject-20		
+17	restrictive	subject-20		
+4	non-restrictive	subject-20		
+11	restrictive	subject-20		elsewhere
+29	restrictive	subject-20		
+7	restrictive	subject-20		
+22	non-restrictive	subject-20		
+13	restrictive	subject-20		
+6	non-restrictive	subject-20		elsewhere
+12	non-restrictive	subject-20		
+43	restrictive	subject-20		
+24	non-restrictive	subject-20		
+50	non-restrictive	subject-20		
+1	restrictive	subject-20		
+5	restrictive	subject-20		
+37	restrictive	subject-20		
+23	restrictive	subject-20		
+42	non-restrictive	subject-20		subject
+47	restrictive	subject-20		
+27	restrictive	subject-20		
+41	restrictive	subject-20		
+10	non-restrictive	subject-20		
+19	restrictive	subject-20		
+44	non-restrictive	subject-20		
+32	non-restrictive	subject-20		
+26	non-restrictive	subject-20		
+2	non-restrictive	subject-20		
+49	restrictive	subject-20		
+48	non-restrictive	subject-20		
+30	non-restrictive	subject-20		
+46	non-restrictive	subject-20		
+31	restrictive	subject-20		
+20	non-restrictive	subject-20		
+34	non-restrictive	subject-20		
+9	restrictive	subject-20		
+16	non-restrictive	subject-20	folder	pos1
+3	restrictive	subject-20		subject
+45	restrictive	subject-20		
+18	non-restrictive	subject-20		subject
+28	non-restrictive	subject-20		
+33	restrictive	subject-20		
+38	non-restrictive	subject-20		
+25	restrictive	subject-20		
+21	restrictive	subject-20		
+40	non-restrictive	subject-20		
+8	non-restrictive	subject-20		
+14	non-restrictive	subject-20		
+15	restrictive	subject-20		
+39	restrictive	subject-20		
+36	non-restrictive	subject-20		
+17	restrictive	subject-20		
+3	non-restrictive	subject-21		subject
+2	restrictive	subject-21		
+47	non-restrictive	subject-21		
+37	non-restrictive	subject-21		
+30	restrictive	subject-21		
+12	restrictive	subject-21		
+17	non-restrictive	subject-21		
+31	non-restrictive	subject-21		
+1	non-restrictive	subject-21		
+22	restrictive	subject-21		elsewhere
+11	non-restrictive	subject-21		subject
+50	restrictive	subject-21		
+5	non-restrictive	subject-21		
+19	non-restrictive	subject-21		subject
+4	restrictive	subject-21		
+40	restrictive	subject-21		
+7	non-restrictive	subject-21		
+20	restrictive	subject-21		
+42	restrictive	subject-21		
+41	non-restrictive	subject-21		
+14	restrictive	subject-21		
+34	restrictive	subject-21		
+38	restrictive	subject-21		
+24	restrictive	subject-21		subject
+29	non-restrictive	subject-21		elsewhere
+44	restrictive	subject-21	pan	pos3
+21	non-restrictive	subject-21		subject
+28	restrictive	subject-21		
+10	restrictive	subject-21		
+16	restrictive	subject-21		
+25	non-restrictive	subject-21		
+15	non-restrictive	subject-21		
+27	non-restrictive	subject-21		
+39	non-restrictive	subject-21		
+43	non-restrictive	subject-21		subject
+26	restrictive	subject-21		
+23	non-restrictive	subject-21	hook	pos2
+32	restrictive	subject-21		subject
+8	restrictive	subject-21	microscope	pos1
+18	restrictive	subject-21		elsewhere
+9	non-restrictive	subject-21		
+46	restrictive	subject-21		
+35	non-restrictive	subject-21		subject
+45	non-restrictive	subject-21		elsewhere
+48	restrictive	subject-21		subject
+49	non-restrictive	subject-21	pouch	pos2
+6	restrictive	subject-21	moon	pos3
+36	restrictive	subject-21		
+33	non-restrictive	subject-21		subject
+13	non-restrictive	subject-21		
+3	non-restrictive	subject-21		subject
+2	restrictive	subject-21		
+47	non-restrictive	subject-21		
+37	non-restrictive	subject-21		
+30	restrictive	subject-21		
+12	restrictive	subject-21		
+17	non-restrictive	subject-21		
+31	non-restrictive	subject-21		
+1	non-restrictive	subject-21		
+22	restrictive	subject-21		elsewhere
+11	non-restrictive	subject-21		subject
+50	restrictive	subject-21		
+5	non-restrictive	subject-21		
+19	non-restrictive	subject-21		subject
+4	restrictive	subject-21		
+40	restrictive	subject-21		
+7	non-restrictive	subject-21		
+20	restrictive	subject-21		
+42	restrictive	subject-21		
+41	non-restrictive	subject-21		
+14	restrictive	subject-21		
+34	restrictive	subject-21		
+38	restrictive	subject-21		
+24	restrictive	subject-21		subject
+29	non-restrictive	subject-21		elsewhere
+44	restrictive	subject-21	pan	pos3
+21	non-restrictive	subject-21		subject
+28	restrictive	subject-21		
+10	restrictive	subject-21		
+16	restrictive	subject-21		
+25	non-restrictive	subject-21		
+15	non-restrictive	subject-21		
+27	non-restrictive	subject-21		
+39	non-restrictive	subject-21		
+43	non-restrictive	subject-21		subject
+26	restrictive	subject-21		
+23	non-restrictive	subject-21	hook	pos2
+32	restrictive	subject-21		subject
+8	restrictive	subject-21	microscope	pos1
+18	restrictive	subject-21		elsewhere
+9	non-restrictive	subject-21		
+46	restrictive	subject-21		
+35	non-restrictive	subject-21		subject
+45	non-restrictive	subject-21		elsewhere
+48	restrictive	subject-21		subject
+49	non-restrictive	subject-21	pouch	pos2
+6	restrictive	subject-21	moon	pos3
+36	restrictive	subject-21		
+33	non-restrictive	subject-21		subject
+13	non-restrictive	subject-21		
+46	non-restrictive	subject-22		
+8	non-restrictive	subject-22	microscope	pos2
+30	non-restrictive	subject-22		
+39	restrictive	subject-22		
+7	restrictive	subject-22		
+50	non-restrictive	subject-22		
+6	non-restrictive	subject-22		
+32	non-restrictive	subject-22		
+21	restrictive	subject-22		
+26	non-restrictive	subject-22		subject
+48	non-restrictive	subject-22		
+45	restrictive	subject-22		
+1	restrictive	subject-22		
+38	non-restrictive	subject-22		
+27	restrictive	subject-22		
+22	non-restrictive	subject-22		
+19	restrictive	subject-22		
+40	non-restrictive	subject-22		subject
+2	non-restrictive	subject-22		
+37	restrictive	subject-22		
+23	restrictive	subject-22		
+16	non-restrictive	subject-22		
+17	restrictive	subject-22		
+18	non-restrictive	subject-22		
+15	restrictive	subject-22		
+24	non-restrictive	subject-22		subject
+34	non-restrictive	subject-22		
+31	restrictive	subject-22		
+25	restrictive	subject-22		
+11	restrictive	subject-22		
+20	non-restrictive	subject-22		
+13	restrictive	subject-22		
+41	restrictive	subject-22		
+4	non-restrictive	subject-22		
+47	restrictive	subject-22		subject
+9	restrictive	subject-22		
+28	non-restrictive	subject-22		
+10	non-restrictive	subject-22		
+43	restrictive	subject-22		
+3	restrictive	subject-22		
+14	non-restrictive	subject-22	cigarettes	pos1
+49	restrictive	subject-22		
+12	non-restrictive	subject-22		
+42	non-restrictive	subject-22		
+44	non-restrictive	subject-22		
+5	restrictive	subject-22		
+36	non-restrictive	subject-22		elsewhere
+29	restrictive	subject-22		
+33	restrictive	subject-22		
+25	non-restrictive	subject-23		elsewhere
+4	restrictive	subject-23		subject
+7	non-restrictive	subject-23		subject
+45	non-restrictive	subject-23		elsewhere
+10	restrictive	subject-23		
+12	restrictive	subject-23		elsewhere
+19	non-restrictive	subject-23		
+43	non-restrictive	subject-23		elsewhere
+24	restrictive	subject-23		elsewhere
+47	non-restrictive	subject-23		elsewhere
+27	non-restrictive	subject-23		elsewhere
+8	restrictive	subject-23		subject
+42	restrictive	subject-23		elsewhere
+48	restrictive	subject-23		
+11	non-restrictive	subject-23		elsewhere
+35	non-restrictive	subject-23		subject
+30	restrictive	subject-23		
+50	restrictive	subject-23		elsewhere
+34	restrictive	subject-23	envelope	pos2
+22	restrictive	subject-23		
+23	non-restrictive	subject-23		elsewhere
+2	restrictive	subject-23		elsewhere
+17	non-restrictive	subject-23		
+46	restrictive	subject-23		
+26	restrictive	subject-23		
+33	non-restrictive	subject-23		elsewhere
+21	non-restrictive	subject-23		
+5	non-restrictive	subject-23		elsewhere
+14	restrictive	subject-23		
+6	restrictive	subject-23		elsewhere
+16	restrictive	subject-23	wallet	pos4
+49	non-restrictive	subject-23	flag	pos2
+29	non-restrictive	subject-23		elsewhere
+38	restrictive	subject-23		subject
+9	non-restrictive	subject-23		
+40	restrictive	subject-23		
+20	restrictive	subject-23		elsewhere
+18	restrictive	subject-23		elsewhere
+28	restrictive	subject-23		
+13	non-restrictive	subject-23		subject
+39	non-restrictive	subject-23	broom	pos4
+31	non-restrictive	subject-23		subject
+32	restrictive	subject-23		subject
+36	restrictive	subject-23		subject
+37	non-restrictive	subject-23		subject
+3	non-restrictive	subject-23		
+15	non-restrictive	subject-23	bird	pos3
+41	non-restrictive	subject-23		elsewhere
+44	restrictive	subject-23		subject
+1	non-restrictive	subject-23		elsewhere
+23	restrictive	subject-24		
+32	non-restrictive	subject-24		
+8	non-restrictive	subject-24		
+31	restrictive	subject-24		subject
+4	non-restrictive	subject-24		
+20	non-restrictive	subject-24		
+6	non-restrictive	subject-24		
+45	restrictive	subject-24		
+49	restrictive	subject-24		
+10	non-restrictive	subject-24		
+26	non-restrictive	subject-24		
+17	restrictive	subject-24	backpack	pos3
+22	non-restrictive	subject-24	magazine	pos3
+40	non-restrictive	subject-24		elsewhere
+38	non-restrictive	subject-24	marker	pos4
+33	restrictive	subject-24		elsewhere
+21	restrictive	subject-24		
+2	non-restrictive	subject-24	wine	pos2
+19	restrictive	subject-24	leaf	pos2
+7	restrictive	subject-24	mushrooms	pos3
+48	non-restrictive	subject-24	roller	pos2
+15	restrictive	subject-24	hen	pos2
+43	restrictive	subject-24	shirt	pos3
+47	restrictive	subject-24	violin	pos3
+36	non-restrictive	subject-24	pot	pos3
+5	restrictive	subject-24		elsewhere
+42	non-restrictive	subject-24	stone	pos3
+37	restrictive	subject-24	lego	pos1
+44	non-restrictive	subject-24	bolt	pos2
+50	non-restrictive	subject-24	envelope	pos3
+14	non-restrictive	subject-24		elsewhere
+12	non-restrictive	subject-24		elsewhere
+16	non-restrictive	subject-24		elsewhere
+34	non-restrictive	subject-24	box	pos4
+39	restrictive	subject-24	cloth	pos2
+11	restrictive	subject-24	washing machine	pos3
+3	restrictive	subject-24	man	pos3
+25	restrictive	subject-24		
+18	non-restrictive	subject-24	bucket	pos3
+9	restrictive	subject-24	table	pos2
+27	restrictive	subject-24	coaster	pos2
+28	non-restrictive	subject-24	picture	pos3
+13	restrictive	subject-24		
+1	restrictive	subject-24		
+29	restrictive	subject-24	milk	pos1
+30	non-restrictive	subject-24		
+41	restrictive	subject-24		
+24	non-restrictive	subject-24	scarf	pos4
+46	non-restrictive	subject-24	ladle	pos3
+7	non-restrictive	subject-3		
+37	non-restrictive	subject-3		
+11	non-restrictive	subject-3		subject
+36	restrictive	subject-3		
+42	restrictive	subject-3		
+31	non-restrictive	subject-3		
+45	non-restrictive	subject-3		
+22	restrictive	subject-3	flower	pos3
+9	non-restrictive	subject-3		
+18	restrictive	subject-3		
+10	restrictive	subject-3		
+16	restrictive	subject-3		
+21	non-restrictive	subject-3		
+1	non-restrictive	subject-3		
+41	non-restrictive	subject-3		
+35	non-restrictive	subject-3		
+25	non-restrictive	subject-3		
+15	non-restrictive	subject-3		elsewhere
+44	restrictive	subject-3		
+27	non-restrictive	subject-3		
+12	restrictive	subject-3		
+5	non-restrictive	subject-3		
+34	restrictive	subject-3		elsewhere
+49	non-restrictive	subject-3		
+48	restrictive	subject-3		
+3	non-restrictive	subject-3		
+46	restrictive	subject-3		
+32	restrictive	subject-3		
+13	non-restrictive	subject-3		
+20	restrictive	subject-3		
+50	restrictive	subject-3		
+43	non-restrictive	subject-3		
+26	restrictive	subject-3		
+33	non-restrictive	subject-3		
+8	restrictive	subject-3		
+24	restrictive	subject-3		
+47	non-restrictive	subject-3		
+30	restrictive	subject-3		elsewhere
+39	non-restrictive	subject-3		
+4	restrictive	subject-3		
+29	non-restrictive	subject-3		
+2	restrictive	subject-3		
+17	non-restrictive	subject-3		
+6	restrictive	subject-3		
+14	restrictive	subject-3		
+28	restrictive	subject-3		
+19	non-restrictive	subject-3		
+38	restrictive	subject-3		subject
+40	restrictive	subject-3		
+23	non-restrictive	subject-3		
+22	non-restrictive	subject-4		
+1	restrictive	subject-4	cake	pos3
+10	non-restrictive	subject-4		subject
+34	non-restrictive	subject-4		
+26	non-restrictive	subject-4		
+5	restrictive	subject-4		subject
+6	non-restrictive	subject-4		
+40	non-restrictive	subject-4		
+44	non-restrictive	subject-4		
+27	restrictive	subject-4		
+24	non-restrictive	subject-4		
+21	restrictive	subject-4		
+38	non-restrictive	subject-4		
+20	non-restrictive	subject-4		
+8	non-restrictive	subject-4		
+29	restrictive	subject-4		
+36	non-restrictive	subject-4		elsewhere
+28	non-restrictive	subject-4		
+47	restrictive	subject-4		
+33	restrictive	subject-4	mug	pos4
+37	restrictive	subject-4		elsewhere
+23	restrictive	subject-4		
+11	restrictive	subject-4		elsewhere
+41	restrictive	subject-4		elsewhere
+49	restrictive	subject-4		subject
+16	non-restrictive	subject-4		
+45	restrictive	subject-4		
+9	restrictive	subject-4		subject
+25	restrictive	subject-4		
+32	non-restrictive	subject-4		subject
+4	non-restrictive	subject-4		
+30	non-restrictive	subject-4	tissue	pos3
+2	non-restrictive	subject-4		
+39	restrictive	subject-4		
+18	non-restrictive	subject-4		
+12	non-restrictive	subject-4		
+17	restrictive	subject-4	dress	pos3
+46	non-restrictive	subject-4		
+15	restrictive	subject-4		elsewhere
+7	restrictive	subject-4		subject
+31	restrictive	subject-4		
+50	non-restrictive	subject-4		
+19	restrictive	subject-4		
+13	restrictive	subject-4		
+43	restrictive	subject-4		elsewhere
+3	restrictive	subject-4		elsewhere
+42	non-restrictive	subject-4		
+48	non-restrictive	subject-4		
+14	non-restrictive	subject-4		
+22	restrictive	subject-5	vase	pos2
+15	non-restrictive	subject-5	ball	pos3
+18	restrictive	subject-5	stone	pos2
+43	non-restrictive	subject-5		elsewhere
+8	restrictive	subject-5		subject
+24	restrictive	subject-5		
+49	non-restrictive	subject-5	pump	pos4
+21	non-restrictive	subject-5	block	pos4
+6	restrictive	subject-5		elsewhere
+47	non-restrictive	subject-5		
+30	restrictive	subject-5		
+35	non-restrictive	subject-5		
+41	non-restrictive	subject-5		
+40	restrictive	subject-5		
+5	non-restrictive	subject-5		
+4	restrictive	subject-5		
+37	non-restrictive	subject-5	boxes	pos1
+45	non-restrictive	subject-5		
+32	restrictive	subject-5		elsewhere
+7	non-restrictive	subject-5		
+33	non-restrictive	subject-5		
+19	non-restrictive	subject-5		
+2	restrictive	subject-5	lipstick	pos3
+27	non-restrictive	subject-5		
+46	restrictive	subject-5		
+48	restrictive	subject-5		
+11	non-restrictive	subject-5	dog	pos3
+10	restrictive	subject-5	cup	pos2
+20	restrictive	subject-5		
+9	non-restrictive	subject-5	telephone	pos1
+38	restrictive	subject-5		
+42	restrictive	subject-5		
+44	restrictive	subject-5		
+14	restrictive	subject-5		
+16	restrictive	subject-5		
+39	non-restrictive	subject-5		
+34	restrictive	subject-5		
+50	restrictive	subject-5		
+1	non-restrictive	subject-5		
+13	non-restrictive	subject-5		
+29	non-restrictive	subject-5		elsewhere
+26	restrictive	subject-5		
+36	restrictive	subject-5		
+3	non-restrictive	subject-5		
+31	non-restrictive	subject-5		
+28	restrictive	subject-5		
+25	non-restrictive	subject-5		
+12	restrictive	subject-5		
+23	non-restrictive	subject-5		
+17	non-restrictive	subject-5		elsewhere
+41	restrictive	subject-6		
+31	restrictive	subject-6	headphones	pos1
+10	non-restrictive	subject-6		
+30	non-restrictive	subject-6		elsewhere
+11	restrictive	subject-6		elsewhere
+38	non-restrictive	subject-6		
+7	restrictive	subject-6		
+23	restrictive	subject-6		
+50	non-restrictive	subject-6		
+12	non-restrictive	subject-6		subject
+34	non-restrictive	subject-6		
+4	non-restrictive	subject-6		
+42	non-restrictive	subject-6		
+45	restrictive	subject-6		
+36	non-restrictive	subject-6		subject
+21	restrictive	subject-6		subject
+2	non-restrictive	subject-6		
+48	non-restrictive	subject-6		
+47	restrictive	subject-6		
+26	non-restrictive	subject-6		
+49	restrictive	subject-6		
+16	non-restrictive	subject-6		subject
+29	restrictive	subject-6		
+43	restrictive	subject-6		
+5	restrictive	subject-6		
+9	restrictive	subject-6		
+14	non-restrictive	subject-6		
+13	restrictive	subject-6		
+1	restrictive	subject-6		
+46	non-restrictive	subject-6		
+20	non-restrictive	subject-6		elsewhere
+44	non-restrictive	subject-6		
+18	non-restrictive	subject-6		
+27	restrictive	subject-6		
+6	non-restrictive	subject-6		
+25	restrictive	subject-6		
+37	restrictive	subject-6		
+17	restrictive	subject-6		
+19	restrictive	subject-6		
+15	restrictive	subject-6		
+22	non-restrictive	subject-6		
+32	non-restrictive	subject-6		
+40	non-restrictive	subject-6		
+24	non-restrictive	subject-6		
+33	restrictive	subject-6		
+3	restrictive	subject-6		
+28	non-restrictive	subject-6		
+39	restrictive	subject-6		
+8	non-restrictive	subject-6		
+17	non-restrictive	subject-7		
+18	restrictive	subject-7		
+45	non-restrictive	subject-7		
+44	restrictive	subject-7		
+47	non-restrictive	subject-7		elsewhere
+20	restrictive	subject-7		
+14	restrictive	subject-7		
+19	non-restrictive	subject-7		
+30	restrictive	subject-7		
+41	non-restrictive	subject-7		
+23	non-restrictive	subject-7		
+48	restrictive	subject-7	roller	pos1
+4	restrictive	subject-7	stool	pos1
+10	restrictive	subject-7		
+35	non-restrictive	subject-7		
+13	non-restrictive	subject-7		
+2	restrictive	subject-7		subject
+42	restrictive	subject-7		subject
+43	non-restrictive	subject-7		
+36	restrictive	subject-7		
+38	restrictive	subject-7		elsewhere
+25	non-restrictive	subject-7		
+12	restrictive	subject-7		
+29	non-restrictive	subject-7		
+46	restrictive	subject-7		
+32	restrictive	subject-7	sponge	pos1
+3	non-restrictive	subject-7		
+22	restrictive	subject-7		
+39	non-restrictive	subject-7		
+49	non-restrictive	subject-7		
+6	restrictive	subject-7	mountain	pos1
+15	non-restrictive	subject-7		
+28	restrictive	subject-7		
+40	restrictive	subject-7		
+27	non-restrictive	subject-7		
+33	non-restrictive	subject-7		subject
+31	non-restrictive	subject-7		
+8	restrictive	subject-7		
+26	restrictive	subject-7		
+7	non-restrictive	subject-7		elsewhere
+37	non-restrictive	subject-7		subject
+11	non-restrictive	subject-7		elsewhere
+21	non-restrictive	subject-7	cup	pos3
+16	restrictive	subject-7		
+1	non-restrictive	subject-7		subject
+9	non-restrictive	subject-7		
+34	restrictive	subject-7		subject
+5	non-restrictive	subject-7		
+50	restrictive	subject-7		
+24	restrictive	subject-7		elsewhere
+12	non-restrictive	subject-8		
+4	non-restrictive	subject-8	stool	pos2
+13	restrictive	subject-8		elsewhere
+37	restrictive	subject-8		subject
+45	restrictive	subject-8		
+17	restrictive	subject-8		
+19	restrictive	subject-8		subject
+30	non-restrictive	subject-8		
+34	non-restrictive	subject-8		
+41	restrictive	subject-8		
+31	restrictive	subject-8		
+15	restrictive	subject-8		
+47	restrictive	subject-8		
+26	non-restrictive	subject-8		
+29	restrictive	subject-8	milk	pos1
+10	non-restrictive	subject-8		
+43	restrictive	subject-8		
+3	restrictive	subject-8		elsewhere
+36	non-restrictive	subject-8		subject
+48	non-restrictive	subject-8		elsewhere
+32	non-restrictive	subject-8		
+18	non-restrictive	subject-8		
+8	non-restrictive	subject-8	toy bear	pos2
+21	restrictive	subject-8		
+28	non-restrictive	subject-8		subject
+44	non-restrictive	subject-8		
+20	non-restrictive	subject-8		
+24	non-restrictive	subject-8		
+39	restrictive	subject-8		
+11	restrictive	subject-8		elsewhere
+22	non-restrictive	subject-8		
+14	non-restrictive	subject-8	filofax	pos3
+33	restrictive	subject-8		
+23	restrictive	subject-8		
+46	non-restrictive	subject-8		subject
+9	restrictive	subject-8		
+27	restrictive	subject-8		elsewhere
+49	restrictive	subject-8		subject
+38	non-restrictive	subject-8		
+50	non-restrictive	subject-8		
+16	non-restrictive	subject-8		subject
+40	non-restrictive	subject-8	mat	pos2
+2	non-restrictive	subject-8		
+42	non-restrictive	subject-8		
+1	restrictive	subject-8		
+6	non-restrictive	subject-8	mountain	pos2
+7	restrictive	subject-8	weighing scales	pos1
+25	restrictive	subject-8	glass	pos4
+5	restrictive	subject-8		
+49	non-restrictive	subject-9		
+29	non-restrictive	subject-9	sock	pos4
+9	non-restrictive	subject-9	television	pos4
+45	non-restrictive	subject-9		
+34	restrictive	subject-9	gift	pos1
+42	restrictive	subject-9	shell	pos1
+35	non-restrictive	subject-9	pillow	pos2
+36	restrictive	subject-9		
+2	restrictive	subject-9	chair	pos4
+43	non-restrictive	subject-9	shirt	pos3
+1	non-restrictive	subject-9	ball	pos4
+6	restrictive	subject-9		elsewhere
+8	restrictive	subject-9	child	pos4
+26	restrictive	subject-9	keyboard	pos3
+47	non-restrictive	subject-9	bow	pos4
+27	non-restrictive	subject-9	candle	pos3
+46	restrictive	subject-9	carrot	pos2
+50	restrictive	subject-9	stamp	pos2
+18	restrictive	subject-9		elsewhere
+15	non-restrictive	subject-9		elsewhere
+16	restrictive	subject-9		
+31	non-restrictive	subject-9		elsewhere
+17	non-restrictive	subject-9		subject
+11	non-restrictive	subject-9	mirror	pos4
+32	restrictive	subject-9	seed	pos3
+25	non-restrictive	subject-9	rabbit	pos1
+20	restrictive	subject-9	spoon	pos1
+38	restrictive	subject-9	mitten	pos3
+23	non-restrictive	subject-9	coat	pos3
+48	restrictive	subject-9	footstool	pos3
+37	non-restrictive	subject-9		
+24	restrictive	subject-9	scarf	pos4
+30	restrictive	subject-9	newspaper	pos2
+4	restrictive	subject-9		
+3	non-restrictive	subject-9		
+28	restrictive	subject-9		elsewhere
+10	restrictive	subject-9		
+7	non-restrictive	subject-9	jug	pos2
+21	non-restrictive	subject-9	kitten	pos1
+13	non-restrictive	subject-9	boat	pos1
+5	non-restrictive	subject-9	shuttle cock	pos4
+40	restrictive	subject-9	mat	pos2
+39	non-restrictive	subject-9	broom	pos1
+22	restrictive	subject-9	vase	pos4
+12	restrictive	subject-9		
+14	restrictive	subject-9	filofax	pos3
+33	non-restrictive	subject-9	mug	pos2
+44	restrictive	subject-9		
+41	non-restrictive	subject-9		
+19	non-restrictive	subject-9	football	pos3

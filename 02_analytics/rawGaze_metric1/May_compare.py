@@ -8,7 +8,7 @@ pd.set_option("display.max_rows", 30)
 sns.set_theme(style="whitegrid", context="talk")
 
 # ── load & clean ─────────────────────────────────────────────────────────
-human_df = pd.read_csv("../human_predictions/output_all_withPercentages.csv")
+human_df = pd.read_csv("output_all_withPercentages.csv")
 llm_df = pd.read_csv("../llm_predictions/result_vwp50_scene_table.csv")
 
 llm_df = llm_df.rename(columns={"Item": "stimuliId", "Condition": "condition", "Object": "obj"})
@@ -21,56 +21,81 @@ print(human_df)
 
 
 #before excluding any trials we analyze the percentage of trials where participants predicted the target
-def calculate_top_is_target(df):
+def calculate_human_top_is_target(df):
     """
-    For each trial (stimuliId + condition), check if the object with the highest 
-    probability is also the target object.
-    
-    Returns:
-        dict: Agreement rates overall and per condition for both human and LLM
+    For each trial (stimuliId + condition): 
+    Is the object with highest human_percent also the target?
+    Returns percentage and bar chart.
     """
     results = []
     
     for (stim_id, cond), group in df.groupby(["stimuliId", "condition"]):
-        # Find top choices
+        if group["human_percent"].isna().all():
+            continue  # Skip trials with no predictions
+        
         human_top_obj = group.loc[group["human_percent"].idxmax(), "obj"]
-        llm_top_obj = group.loc[group["P_norm"].idxmax(), "obj"]
-        
-        # Get target object(s) in this trial
         target_objs = group.loc[group["is_target"] == 1, "obj"].values
-        
-        # Check if top choice is target
-        human_is_target = human_top_obj in target_objs
-        llm_is_target = llm_top_obj in target_objs
+        is_target = human_top_obj in target_objs
         
         results.append({
-            "stimuliId": stim_id,
             "condition": cond,
-            "human_top_obj": human_top_obj,
-            "human_top_is_target": human_is_target,
-            "llm_top_obj": llm_top_obj,
-            "llm_top_is_target": llm_is_target,
+            "human_top_is_target": is_target,
         })
     
     results_df = pd.DataFrame(results)
     
-    # Print summary statistics
-    print("\n=== Top Choice = Target Agreement ===")
-    print(f"Human: {results_df['human_top_is_target'].mean():.1%} of trials")
-    print(f"LLM:   {results_df['llm_top_is_target'].mean():.1%} of trials")
+    # Calculate percentages
+    overall = results_df["human_top_is_target"].mean()
+    by_cond = results_df.groupby("condition")["human_top_is_target"].mean()
     
-    print("\nBy condition:")
-    for cond in results_df["condition"].unique():
-        sub = results_df[results_df["condition"] == cond]
-        print(f"  {cond}:")
-        print(f"    Human: {sub['human_top_is_target'].mean():.1%}")
-        print(f"    LLM:   {sub['llm_top_is_target'].mean():.1%}")
+    print(f"Overall: {overall:.1%}")
+    print(f"\nBy condition:")
+    for cond, pct in by_cond.items():
+        print(f"  {cond}: {pct:.1%}")
     
-    return results_df
+    # Bar chart
+    fig, ax = plt.subplots(figsize=(6, 5))
+    by_cond.plot(kind="bar", ax=ax, color=["blue", "red"])
+    ax.set_ylabel("% Top Human = Target")
+    ax.set_xlabel("Condition")
+    ax.set_ylim(0, 1)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+    for i, v in enumerate(by_cond):
+        ax.text(i, v + 0.02, f"{v:.0%}", ha="center")
+    plt.tight_layout()
+    plt.show()
+    
+    return overall, by_cond
 
 # Run the analysis
-top_is_target_df = calculate_top_is_target(human_df)
+top_is_target_df = calculate_human_top_is_target(human_df)
 print(top_is_target_df)
+
+def plot_human_percent_histograms(df):
+    """
+    Display histograms of human_percent distribution 
+    for restrictive vs non-restrictive conditions.
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    
+    for ax, cond in zip(axes, ["restrictive", "non-restrictive"]):
+        data = df[df["condition"] == cond]["human_percent"].dropna()
+        
+        ax.hist(data, bins=20, edgecolor="black", alpha=0.7, color="steelblue")
+        ax.set_xlabel("Human Probability (%)")
+        ax.set_ylabel("Frequency")
+        ax.set_title(f"{cond.capitalize()}")
+        ax.grid(axis="y", alpha=0.3)
+        
+        # Add stats
+        stats_text = f"n = {len(data)}\nmean = {data.mean():.2f}\nmedian = {data.median():.2f}"
+        ax.text(0.98, 0.97, stats_text, transform=ax.transAxes, 
+                verticalalignment="top", horizontalalignment="right",
+                bbox=dict(boxstyle="round", facecolor="wheat", alpha=0.5))
+    
+    plt.tight_layout()
+    plt.show()
+plot_human_percent_histograms(human_df)
 
 # ── exclude trials with no usable human gaze data ───────────────────────
 # trials (stimuliId + condition) where all 4 objects got zero gaze samples come out as

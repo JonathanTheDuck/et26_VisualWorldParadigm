@@ -154,7 +154,7 @@ for d in (OUT_DIR, CSV_DIR, PLOTS_DIR):
     d.mkdir(parents=True, exist_ok=True)
 
 CONDITIONS = ["restrictive", "non-restrictive"]
-COND_COLOR = {"restrictive": "#1f77b4", "non-restrictive": "#d62728"}
+COND_COLOR = {"restrictive": "#d62728", "non-restrictive": "#1f77b4"}
 
 # Mismatch: saccade pipeline's sentence_id / group CSV's 'id' is 0-indexed;
 # LLM CSV's 'Item' is 1-indexed for the same items. Verified across all 50

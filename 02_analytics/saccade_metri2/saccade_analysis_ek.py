@@ -745,7 +745,8 @@ def plot_latency_by_condition(df, out_path):
 
 
 def plot_landing_accuracy_by_condition(df, out_path):
-    d = df[df["first_saccade_is_target"].notna()]
+    d = df[df["first_saccade_is_object"] == True].copy()
+
     if d.empty:
         print(f"  [plot] skipped {out_path} -- no first-saccade landing data")
         return

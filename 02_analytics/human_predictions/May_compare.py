@@ -19,6 +19,59 @@ llm_df["condition"] = llm_df["condition"].replace({"Restrictive": "restrictive",
 human_df = human_df.rename(columns={"percentages": "human_percent"})
 print(human_df)
 
+
+#before excluding any trials we analyze the percentage of trials where participants predicted the target
+def calculate_top_is_target(df):
+    """
+    For each trial (stimuliId + condition), check if the object with the highest 
+    probability is also the target object.
+    
+    Returns:
+        dict: Agreement rates overall and per condition for both human and LLM
+    """
+    results = []
+    
+    for (stim_id, cond), group in df.groupby(["stimuliId", "condition"]):
+        # Find top choices
+        human_top_obj = group.loc[group["human_percent"].idxmax(), "obj"]
+        llm_top_obj = group.loc[group["P_norm"].idxmax(), "obj"]
+        
+        # Get target object(s) in this trial
+        target_objs = group.loc[group["is_target"] == 1, "obj"].values
+        
+        # Check if top choice is target
+        human_is_target = human_top_obj in target_objs
+        llm_is_target = llm_top_obj in target_objs
+        
+        results.append({
+            "stimuliId": stim_id,
+            "condition": cond,
+            "human_top_obj": human_top_obj,
+            "human_top_is_target": human_is_target,
+            "llm_top_obj": llm_top_obj,
+            "llm_top_is_target": llm_is_target,
+        })
+    
+    results_df = pd.DataFrame(results)
+    
+    # Print summary statistics
+    print("\n=== Top Choice = Target Agreement ===")
+    print(f"Human: {results_df['human_top_is_target'].mean():.1%} of trials")
+    print(f"LLM:   {results_df['llm_top_is_target'].mean():.1%} of trials")
+    
+    print("\nBy condition:")
+    for cond in results_df["condition"].unique():
+        sub = results_df[results_df["condition"] == cond]
+        print(f"  {cond}:")
+        print(f"    Human: {sub['human_top_is_target'].mean():.1%}")
+        print(f"    LLM:   {sub['llm_top_is_target'].mean():.1%}")
+    
+    return results_df
+
+# Run the analysis
+top_is_target_df = calculate_top_is_target(human_df)
+print(top_is_target_df)
+
 # ── exclude trials with no usable human gaze data ───────────────────────
 # trials (stimuliId + condition) where all 4 objects got zero gaze samples come out as
 # NaN in human_percent (0/0) and carry no signal, so exclude them before comparing to the LLM
